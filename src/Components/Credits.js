@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
+import { Tween } from "react-gsap";
 
 // styles
 const Icon = styled.button`
@@ -18,17 +19,18 @@ const Icon = styled.button`
 `;
 const CreditsDiv = styled.div`
   padding: 1rem;
-  transition-duration: 2s;
-  width: 25vw;
+  transition-duration: 1s;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 3px solid #fff;
   border-radius: 20px;
-  position: relative;
-  top: -10rem;
-  left: -22rem;
+  position: fixed;
+  left: 65vw;
+  top: 65vh;
   cursor: auto;
+  opacity: 1;
   background-color: #aaa;
   font-family: "Raleway", sans-serif;
 `;
@@ -64,12 +66,13 @@ class Credits extends Component {
       }
     ],
     tern: "none",
-    height: 0
+    height: 0,
+    opacity: 0
   };
   showCredits = () => {
     this.state.tern === "none"
-      ? this.setState({ tern: "flex", height: "fit-content" })
-      : this.setState({ tern: "none", height: 0 });
+      ? this.setState({ tern: "flex", height: "fit-content", opacity: 1 })
+      : this.setState({ tern: "none", height: 0, opacity: 0 });
   };
 
   render() {

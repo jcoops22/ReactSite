@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Credits from "./Credits";
+import "../App.css";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 
@@ -18,21 +19,29 @@ const Link = styled.li`
   color: #fff;
   list-style: none;
   text-decoration: none;
+  display: none;
+  font-size: 20px;
+  opacity: 0.7;
   @media ${device.tablet} {
-    color: orange;
+    display: flex;
   }
 `;
 const Burger = styled.div`
+  &:hover {
+    /* border: 3px solid #fff; */
+  }
   position: fixed;
   top: 90vh;
   left: 2rem;
   height: 36px;
   width: 36px;
-  border: 1px solid black;
   border-radius: 50px;
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   transition-delay: 0.4s;
-  border: 3px solid #fff;
+  opacity: 0.7;
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 const Pat1 = styled.div`
   height: 3px;
@@ -42,6 +51,7 @@ const Pat1 = styled.div`
   left: 3px;
   background-color: #fff;
   top: 12px;
+  border-radius: 20px;
 `;
 const Pat2 = styled.div`
   height: 3px;
@@ -51,55 +61,84 @@ const Pat2 = styled.div`
   left: 3px;
   background-color: #fff;
   top: 19px;
+  border-radius: 20px;
 `;
 
 // Component
 class Navbar extends Component {
   state = {
     navItems: ["About", "Contact", "Resume", "Projects"],
-    expanded: false,
-    open: {
-      transform: "rotate(137deg)"
-    },
-    patty1open: {
-      transform: "rotate(-90deg)",
-      top: "17px"
-    },
-    patty2open: {
-      transform: "rotate(-90deg)",
-      top: "17px"
-    }
+    expanded: false
   };
-  animate = () => {
-    // if (!this.state.expanded) {
-    //   this.state.expanded = true;
+  // functions
+  animateBerg = () => {
+    let berg = document.querySelector(".burger");
+    let patty1 = document.querySelector(".patty1");
+    let patty2 = document.querySelector(".patty2");
+    this.state.expanded = !this.state.expanded;
 
-    //   two.style.top = "14px";
-    // } else {
-    //   expanded = false;
-    //   button.style.transform = "rotate(0deg)";
-    //   one.style.transform = "rotate(0deg)";
-    //   one.style.top = "12px";
-    //   two.style.top = "19px";
-    // }
-    console.log("it worked");
-    this.state.expanded = true;
-  };
-  detStyle = () => {
     if (this.state.expanded) {
-      <Burger style={{ transform: "rotate(137deg)" }} />;
+      berg.style.transform = "rotate(137deg)";
+      patty1.style.transform = "rotate(-90deg)";
+      patty1.style.top = "17px";
+      patty2.style.top = "14px";
+    } else {
+      berg.style.transform = "rotate(0deg)";
+      patty1.style.transform = "rotate(0deg)";
+      patty1.style.top = "12px";
+      patty2.style.top = "19px";
     }
   };
+  animateAbout = () => {
+    let about = document.querySelectorAll("link")[0];
+    console.log(about);
+    about.style.position = "relative";
+    about.style.color = "orange";
+  };
+  // not working yet
+  // need to reset the berge on resize
+  reset = () => {
+    let berg = document.querySelector(".burger");
+    if (berg.style.display == "none") {
+      console.log("shouldn't be showing");
+      this.setState({ expanded: false });
+    }
+  };
+  linkAction = link => {
+    switch (link) {
+      case 0:
+        // console.log(`go to the ${this.state.navItems[link]} page`);
+        this.animateAbout();
+        break;
+      case 1:
+        console.log(`go to the ${this.state.navItems[link]} page`);
+        break;
+      case 2:
+        console.log(`go to the ${this.state.navItems[link]} page`);
+        break;
+      case 3:
+        console.log(`go to the ${this.state.navItems[link]} page`);
+        break;
+    }
+  };
+
+  // RENDER
   render() {
     return (
-      <div>
-        <Burger onClick={(this.animate, this.detStyle)}>
-          <Pat1 style={this.state.expanded ? this.state.patty1open : null} />
-          <Pat2 style={this.state.expanded ? this.state.patty2open : null} />
+      <div className="navDiv">
+        <Burger className="burger" onClick={this.animateBerg}>
+          <Pat1 className="patty1" />
+          <Pat2 className="patty2" />
         </Burger>
         <List>
           {this.state.navItems.map((nav, ind) => (
-            <Link key={ind} as="a" href="/">
+            <Link
+              className="link"
+              key={ind}
+              as="a"
+              href="#"
+              onClick={() => this.linkAction(ind)}
+            >
               {nav}
             </Link>
           ))}
