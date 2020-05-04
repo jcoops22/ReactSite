@@ -148,21 +148,16 @@ class Navbar extends Component {
           <Pat2 className="patty2" />
         </Burger>
         <List>
-          <Link
-            style={this.animateAbout()}
-            className="link"
-            onClick={() => this.animateAbout()}
-            to="/"
-          >
+          <Link className="link" to="/">
             Home
           </Link>
-          <Link className="link" href="#">
+          <Link className="link" to="/about">
             About
           </Link>
-          <Link className="link" href="#">
+          <Link className="link" to="/Projects">
             Projects
           </Link>
-          <Link className="link" href="#">
+          <Link className="link" to="/Contact">
             Contact
           </Link>
 
