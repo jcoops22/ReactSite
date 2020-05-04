@@ -3,7 +3,7 @@ import Credits from "./Credits";
 import "../App.css";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
-import { Controller, Scene } from "react-scrollmagic";
+import { Link } from "react-router-dom";
 
 // styles
 const List = styled.ul`
@@ -15,23 +15,23 @@ const List = styled.ul`
   padding: 0;
   width: 100%;
 `;
-const Link = styled.li`
-  &:hover {
-    cursor: pointer;
-    color: orange;
-  }
-  transition-duration: 0.3s;
-  margin: 2rem;
-  color: #fff;
-  list-style: none;
-  text-decoration: none;
-  display: none;
-  font-size: 20px;
-  opacity: 0.7;
-  @media ${device.tablet} {
-    display: flex;
-  }
-`;
+// const Link = styled.li`
+//   &:hover {
+//     cursor: pointer;
+//     color: orange;
+//   }
+//   transition-duration: 0.3s;
+//   margin: 2rem;
+//   color: #fff;
+//   list-style: none;
+//   text-decoration: none;
+//   display: none;
+//   font-size: 20px;
+//   opacity: 0.7;
+//   @media ${device.tablet} {
+//     display: flex;
+//   }
+// `;
 const Burger = styled.div`
   &:hover {
     /* border: 3px solid #fff; */
@@ -80,9 +80,9 @@ class Navbar extends Component {
       about: {
         position: "relative",
         top: "-20vh",
-        color: "red"
-      }
-    }
+        color: "red",
+      },
+    },
   };
 
   // functions
@@ -121,7 +121,7 @@ class Navbar extends Component {
       return this.state.style.default;
     }
   };
-  linkAction = link => {
+  linkAction = (link) => {
     switch (link) {
       case 0:
         // console.log(`go to the ${this.state.navItems[link]} page`);
@@ -152,6 +152,7 @@ class Navbar extends Component {
             style={this.animateAbout()}
             className="link"
             onClick={() => this.animateAbout()}
+            to="/"
           >
             Home
           </Link>
