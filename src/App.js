@@ -4,6 +4,7 @@ import img from "./resources/nightsky.jpg";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Letters from "./Components/Letters";
+import { Switch, Route } from "react-router-dom";
 // import { Controller, Scene } from "react-scrollmagic";
 
 // styles
@@ -30,7 +31,9 @@ function App(props) {
   return (
     <Container className="App">
       <Letters />
-      <Header>My Website</Header>
+      <Switch>
+        <Header>My Website</Header>
+      </Switch>
       <Navbar />
     </Container>
   );

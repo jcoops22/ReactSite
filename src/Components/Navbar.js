@@ -3,6 +3,7 @@ import Credits from "./Credits";
 import "../App.css";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
+import { Controller, Scene } from "react-scrollmagic";
 
 // styles
 const List = styled.ul`
@@ -15,6 +16,11 @@ const List = styled.ul`
   width: 100%;
 `;
 const Link = styled.li`
+  &:hover {
+    cursor: pointer;
+    color: orange;
+  }
+  transition-duration: 0.3s;
   margin: 2rem;
   color: #fff;
   list-style: none;
@@ -68,8 +74,17 @@ const Pat2 = styled.div`
 class Navbar extends Component {
   state = {
     navItems: ["About", "Contact", "Resume", "Projects"],
-    expanded: false
+    expanded: false,
+    style: {
+      default: {},
+      about: {
+        position: "relative",
+        top: "-20vh",
+        color: "red"
+      }
+    }
   };
+
   // functions
   animateBerg = () => {
     let berg = document.querySelector(".burger");
@@ -89,19 +104,21 @@ class Navbar extends Component {
       patty2.style.top = "19px";
     }
   };
-  animateAbout = () => {
-    let about = document.querySelectorAll("link")[0];
-    console.log(about);
-    about.style.position = "relative";
-    about.style.color = "orange";
-  };
-  // not working yet
-  // need to reset the berge on resize
+
   reset = () => {
     let berg = document.querySelector(".burger");
     if (berg.style.display == "none") {
       console.log("shouldn't be showing");
       this.setState({ expanded: false });
+    }
+  };
+  animateAbout = () => {
+    if (this.state.style.default) {
+      console.log("we ran first");
+      return this.state.style.about;
+    } else {
+      console.log("we ran");
+      return this.state.style.default;
     }
   };
   linkAction = link => {
@@ -131,17 +148,23 @@ class Navbar extends Component {
           <Pat2 className="patty2" />
         </Burger>
         <List>
-          {this.state.navItems.map((nav, ind) => (
-            <Link
-              className="link"
-              key={ind}
-              as="a"
-              href="#"
-              onClick={() => this.linkAction(ind)}
-            >
-              {nav}
-            </Link>
-          ))}
+          <Link
+            style={this.animateAbout()}
+            className="link"
+            onClick={() => this.animateAbout()}
+          >
+            Home
+          </Link>
+          <Link className="link" href="#">
+            About
+          </Link>
+          <Link className="link" href="#">
+            Projects
+          </Link>
+          <Link className="link" href="#">
+            Contact
+          </Link>
+
           <Credits />
         </List>
       </div>
