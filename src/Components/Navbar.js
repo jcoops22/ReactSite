@@ -22,6 +22,21 @@ class Navbar extends Component {
 
   // functions
   animateBerg = () => {
+    let a = document.querySelectorAll(".tag");
+    setTimeout(() => {
+      if (this.state.expanded) {
+        a.forEach((a, ind) => {
+          a.style.opacity = 1;
+          a.style.left = `${ind}0rem`;
+        });
+      } else {
+        a.forEach((a, ind) => {
+          a.style.opacity = 0;
+          a.style.left = 0;
+        });
+      }
+    }, 1000);
+
     let berg = document.querySelector(".burger");
     let patty1 = document.querySelector(".patty1");
     let patty2 = document.querySelector(".patty2");
@@ -40,23 +55,6 @@ class Navbar extends Component {
     }
   };
 
-  reset = () => {
-    let berg = document.querySelector(".burger");
-    if (berg.style.display == "none") {
-      console.log("shouldn't be showing");
-      this.setState({ expanded: false });
-    }
-  };
-  animateAbout = () => {
-    if (this.state.style.default) {
-      console.log("we ran first");
-      return this.state.style.about;
-    } else {
-      console.log("we ran");
-      return this.state.style.default;
-    }
-  };
-
   // RENDER
   render() {
     return (
@@ -66,19 +64,26 @@ class Navbar extends Component {
           <Pat2 className="patty2" />
         </Burger>
         <List>
-          <Link className="link" to="/">
-            Home
-          </Link>
-          <Link className="link" to="/about">
-            About
-          </Link>
-          <Link className="link" to="/Projects">
-            Projects
-          </Link>
-          <Link className="link" to="/Contact">
-            Contact
-          </Link>
-
+          <Lnk className="tag">
+            <Link className="link" to="/">
+              Home
+            </Link>
+          </Lnk>
+          <Lnk className="tag">
+            <Link className="link" to="/about">
+              About
+            </Link>
+          </Lnk>
+          <Lnk className="tag">
+            <Link className="link" to="/Projects">
+              Projects
+            </Link>
+          </Lnk>
+          <Lnk className="tag">
+            <Link className="link" to="/Contact">
+              Contact
+            </Link>
+          </Lnk>
           <Credits />
         </List>
       </div>
@@ -97,6 +102,11 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   width: 100%;
+`;
+const Lnk = styled.span`
+  position: absolute;
+  left: 0;
+  opacity: 0;
 `;
 const Burger = styled.div`
   &:hover {

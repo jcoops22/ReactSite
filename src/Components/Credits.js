@@ -1,39 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import { Tween } from "react-gsap";
-
-// styles
-const Icon = styled.button`
-  &:focus {
-    outline: none;
-  }
-  border-radius: 50%;
-  border: 3px solid #aaa;
-  height: 20px;
-  width: 20px;
-  cursor: pointer;
-  position: fixed;
-  left: calc(100% - 20px);
-  top: 90vh;
-  padding: 0;
-`;
-const CreditsDiv = styled.div`
-  padding: 1rem;
-  transition-duration: 1s;
-  width: 200px;
-  position: fixed;
-  left: calc(100% - 240px);
-  top: 25rem;
-  cursor: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 3px solid #fff;
-  border-radius: 20px;
-  opacity: 1;
-  background-color: #aaa;
-  font-family: "Raleway", sans-serif;
-`;
+import { device } from "../resources/mediaquery";
 
 // Component
 class Credits extends Component {
@@ -65,35 +32,34 @@ class Credits extends Component {
         href: "https://unsplash.com/@krisroller",
       },
     ],
-    tern: "none",
-    height: 0,
-    opacity: 0,
+    showing: false,
+    left: "100%",
   };
   showCredits = () => {
-    this.state.tern === "none"
-      ? this.setState({ tern: "flex", height: "fit-content", opacity: 1 })
-      : this.setState({ tern: "none", height: 0, opacity: 0 });
+    this.state.showing == false
+      ? this.setState({ left: "calc(100% - 430px)", showing: true })
+      : this.setState({ left: "100%", showing: false });
   };
 
   render() {
     return (
-      <Icon onClick={this.showCredits}>
+      <Icon
+        onClick={this.showCredits}
+        style={{ backgroundColor: this.state.showing ? "green" : "white" }}
+      >
         <CreditsDiv
-          style={{ display: this.state.tern, height: this.state.height }}
+          style={{
+            left: this.state.left,
+          }}
         >
           {this.state.credits.map((c, ind) => {
             return (
-              <div key={ind}>
-                <p style={{ display: "inline" }}>{c.description}: </p>
-                <a
-                  style={{ textDecoration: "none", color: "white" }}
-                  href={c.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <Line key={ind}>
+                <p>{c.description}: </p>
+                <a href={c.href} target="_blank" rel="noopener noreferrer">
                   {c.source}
                 </a>
-              </div>
+              </Line>
             );
           })}
         </CreditsDiv>
@@ -103,3 +69,46 @@ class Credits extends Component {
 }
 
 export default Credits;
+
+// styles
+const Icon = styled.button`
+  &:focus {
+    outline: none;
+  }
+  display: none;
+  border-radius: 50%;
+  border: 3px solid #aaa;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  position: fixed;
+  left: calc(100% - 20px);
+  top: 90vh;
+  padding: 0;
+  @media ${device.tablet} {
+    display: initial;
+  }
+`;
+const CreditsDiv = styled.div`
+  padding: 1rem;
+  transition-duration: 0.3s;
+  height: 10rem;
+  width: 400px;
+  position: fixed;
+  overflow: scroll;
+  top: 25rem;
+  cursor: auto;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  background-color: #aaa;
+  font-family: "Raleway", sans-serif;
+`;
+const Line = styled.div`
+  width: 100%;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+`;
