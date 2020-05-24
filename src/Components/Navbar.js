@@ -29,13 +29,13 @@ class Navbar extends Component {
         a.forEach((a, ind) => {
           a.style.transitionDuration = "0.4s";
           a.style.transitionDelay = `${ind}00ms`;
-          a.style.top = `-${ind}00px`;
+          a.style.top = `calc(100vh - ${ind}8vh)`;
           a.style.opacity = 1;
         });
       } else {
         a.forEach((a, ind) => {
           a.style.opacity = 0;
-          a.style.top = 0;
+          a.style.top = "0vh";
         });
       }
     }, 1000);
@@ -114,7 +114,8 @@ const List = styled.ul`
   width: 100%;
 `;
 const Lnk = styled.span`
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
   opacity: 0;
 `;
@@ -125,18 +126,20 @@ const Burger = styled.div`
   &:focus {
     outline: none;
   }
+  cursor: pointer;
+  box-sizing: initial;
   position: fixed;
-  top: 37rem;
-  left: 2rem;
+  top: 90vh;
+  left: 1rem;
   height: 36px;
   width: 36px;
   border-radius: 50px;
   transition-duration: 0.4s;
   transition-delay: 0.4s;
   opacity: 0.7;
-  border: 1px solid blue;
+  border: 1px solid #fff;
   @media ${device.tablet} {
-    display: none;
+    /* display: none; */
   }
 `;
 const Pat1 = styled.div`
