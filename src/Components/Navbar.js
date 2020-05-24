@@ -35,7 +35,7 @@ class Navbar extends Component {
       } else {
         a.forEach((a, ind) => {
           a.style.opacity = 0;
-          a.style.top = "0vh";
+          a.style.top = "-10vh";
         });
       }
     }, 1000);
@@ -115,9 +115,10 @@ const List = styled.ul`
 `;
 const Lnk = styled.span`
   position: fixed;
-  top: 0;
+  top: -10vh;
   left: 0;
   opacity: 0;
+  margin: 0.5rem;
 `;
 const Burger = styled.div`
   &:hover {
