@@ -5,55 +5,6 @@ import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
 
-// styles
-const List = styled.ul`
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  top: 35rem;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  border: 2px solid red;
-`;
-const Burger = styled.div`
-  &:hover {
-    /* border: 3px solid #fff; */
-  }
-  position: fixed;
-  top: 90vh;
-  left: 2rem;
-  height: 36px;
-  width: 36px;
-  border-radius: 50px;
-  transition-duration: 0.4s;
-  transition-delay: 0.4s;
-  opacity: 0.7;
-  @media ${device.tablet} {
-    display: none;
-  }
-`;
-const Pat1 = styled.div`
-  height: 3px;
-  width: 80%;
-  position: relative;
-  transition-duration: 0.3s;
-  left: 3px;
-  background-color: #fff;
-  top: 12px;
-  border-radius: 20px;
-`;
-const Pat2 = styled.div`
-  height: 3px;
-  width: 80%;
-  position: relative;
-  transition-duration: 0.3s;
-  left: 3px;
-  background-color: #fff;
-  top: 19px;
-  border-radius: 20px;
-`;
-
 // Component
 class Navbar extends Component {
   state = {
@@ -136,3 +87,52 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
+// styles
+const List = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 35rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+`;
+const Burger = styled.div`
+  &:hover {
+    /* border: 3px solid #fff; */
+  }
+  position: fixed;
+  top: 90vh;
+  left: 2rem;
+  height: 36px;
+  width: 36px;
+  border-radius: 50px;
+  transition-duration: 0.4s;
+  transition-delay: 0.4s;
+  opacity: 0.7;
+  border: 2px solid red;
+  @media ${device.tablet} {
+    display: none;
+  }
+`;
+const Pat1 = styled.div`
+  height: 3px;
+  width: 80%;
+  position: relative;
+  transition-duration: 0.3s;
+  left: 3px;
+  background-color: #fff;
+  top: 12px;
+  border-radius: 20px;
+`;
+const Pat2 = styled.div`
+  height: 3px;
+  width: 80%;
+  position: relative;
+  transition-duration: 0.3s;
+  left: 3px;
+  background-color: #fff;
+  top: 19px;
+  border-radius: 20px;
+`;
