@@ -10,10 +10,11 @@ const List = styled.ul`
   display: flex;
   justify-content: space-around;
   position: relative;
-  top: 80vh;
+  top: 80rem;
   margin: 0;
   padding: 0;
   width: 100%;
+  border: 2px solid red;
 `;
 // const Link = styled.li`
 //   &:hover {
