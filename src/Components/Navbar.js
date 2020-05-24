@@ -26,13 +26,15 @@ class Navbar extends Component {
     setTimeout(() => {
       if (this.state.expanded) {
         a.forEach((a, ind) => {
+          a.style.transitionDuration = "0.4s";
+          a.style.transitionDelay = `${ind}00ms`;
+          a.style.top = `-${ind}00px`;
           a.style.opacity = 1;
-          a.style.left = `${ind}0rem`;
         });
       } else {
         a.forEach((a, ind) => {
           a.style.opacity = 0;
-          a.style.left = 0;
+          a.style.top = 0;
         });
       }
     }, 1000);
@@ -47,11 +49,17 @@ class Navbar extends Component {
       patty1.style.transform = "rotate(-90deg)";
       patty1.style.top = "17px";
       patty2.style.top = "14px";
+      setTimeout(() => {
+        berg.style.left = "20rem";
+      }, 600);
     } else {
       berg.style.transform = "rotate(0deg)";
       patty1.style.transform = "rotate(0deg)";
       patty1.style.top = "12px";
       patty2.style.top = "19px";
+      setTimeout(() => {
+        berg.style.left = "1rem";
+      }, 800);
     }
   };
 
@@ -113,7 +121,7 @@ const Burger = styled.div`
     /* border: 3px solid #fff; */
   }
   position: fixed;
-  top: 90vh;
+  top: 37rem;
   left: 2rem;
   height: 36px;
   width: 36px;
