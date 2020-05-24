@@ -32,9 +32,11 @@ const Container = styled.div`
   background-image: url(${img});
   background-attachment: fixed;
   background-size: cover;
-  height: 42.93rem;
+  height: 100vh;
   width: 100%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* border: 1px solid red; */
 `;

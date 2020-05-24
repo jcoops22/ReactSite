@@ -22,6 +22,7 @@ class Navbar extends Component {
 
   // functions
   animateBerg = () => {
+    // animate the links
     let a = document.querySelectorAll(".tag");
     setTimeout(() => {
       if (this.state.expanded) {
@@ -38,7 +39,7 @@ class Navbar extends Component {
         });
       }
     }, 1000);
-
+    // animate the burger
     let berg = document.querySelector(".burger");
     let patty1 = document.querySelector(".patty1");
     let patty2 = document.querySelector(".patty2");
@@ -50,7 +51,8 @@ class Navbar extends Component {
       patty1.style.top = "17px";
       patty2.style.top = "14px";
       setTimeout(() => {
-        berg.style.left = "20rem";
+        berg.style.left = "89%";
+        berg.style.border = "2px solid #fff";
       }, 600);
     } else {
       berg.style.transform = "rotate(0deg)";
@@ -120,6 +122,9 @@ const Burger = styled.div`
   &:hover {
     /* border: 3px solid #fff; */
   }
+  &:focus {
+    outline: none;
+  }
   position: fixed;
   top: 37rem;
   left: 2rem;
@@ -129,7 +134,7 @@ const Burger = styled.div`
   transition-duration: 0.4s;
   transition-delay: 0.4s;
   opacity: 0.7;
-  border: 2px solid red;
+  border: 1px solid blue;
   @media ${device.tablet} {
     display: none;
   }
