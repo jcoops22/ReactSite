@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 import img from "./resources/nightsky.jpg";
 import "./App.css";
@@ -32,7 +32,7 @@ const Container = styled.div`
   background-image: url(${img});
   background-attachment: fixed;
   background-size: cover;
-  height: 200vh;
+  height: 42.93rem;
   width: 100%;
   display: flex;
   flex-direction: column;

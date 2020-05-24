@@ -10,29 +10,12 @@ const List = styled.ul`
   display: flex;
   justify-content: space-around;
   position: relative;
-  top: 80rem;
+  top: 35rem;
   margin: 0;
   padding: 0;
   width: 100%;
   border: 2px solid red;
 `;
-// const Link = styled.li`
-//   &:hover {
-//     cursor: pointer;
-//     color: orange;
-//   }
-//   transition-duration: 0.3s;
-//   margin: 2rem;
-//   color: #fff;
-//   list-style: none;
-//   text-decoration: none;
-//   display: none;
-//   font-size: 20px;
-//   opacity: 0.7;
-//   @media ${device.tablet} {
-//     display: flex;
-//   }
-// `;
 const Burger = styled.div`
   &:hover {
     /* border: 3px solid #fff; */
@@ -120,23 +103,6 @@ class Navbar extends Component {
     } else {
       console.log("we ran");
       return this.state.style.default;
-    }
-  };
-  linkAction = (link) => {
-    switch (link) {
-      case 0:
-        // console.log(`go to the ${this.state.navItems[link]} page`);
-        this.animateAbout();
-        break;
-      case 1:
-        console.log(`go to the ${this.state.navItems[link]} page`);
-        break;
-      case 2:
-        console.log(`go to the ${this.state.navItems[link]} page`);
-        break;
-      case 3:
-        console.log(`go to the ${this.state.navItems[link]} page`);
-        break;
     }
   };
 
