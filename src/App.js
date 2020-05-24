@@ -32,7 +32,7 @@ const Container = styled.div`
   background-image: url(${img});
   background-attachment: fixed;
   background-size: cover;
-  height: 200vh;
+  height: 100vh;
   width: 100%;
   padding: 1rem;
   display: flex;
