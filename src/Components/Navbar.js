@@ -55,7 +55,7 @@ class Navbar extends Component {
         this.state.expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
-        berg.style.left = "89%";
+        berg.style.left = "calc(100% - 40px)";
         berg.style.border = "2px solid #fff";
       }, 600);
     } else {
@@ -64,11 +64,13 @@ class Navbar extends Component {
       patty1.style.top = "12px";
       patty2.style.top = "19px";
       setTimeout(() => {
+        berg.style.left = "1rem";
+      }, 800);
+      setTimeout(() => {
         this.state.expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
-        berg.style.left = "1rem";
-      }, 800);
+      }, 1000);
     }
   };
   // hide/show overlay

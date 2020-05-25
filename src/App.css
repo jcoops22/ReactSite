@@ -18,3 +18,6 @@ a:hover {
 .navDiv {
   width: 100%;
 }
+.overlay {
+  transition-duration: 1s;
+}

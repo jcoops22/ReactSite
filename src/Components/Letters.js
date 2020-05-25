@@ -1,26 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 
-// styles
-const shimmer = keyframes`
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  `;
-const Letter = styled.span`
-  animation: ${shimmer} 5s ease-out infinite;
-  animation-delay: ${(props) => props.delay};
-  margin: 0 5vw;
-  color: #fff;
-  position: relative;
-  top: ${(props) => props.top};
-  font-size: 18px;
-  font-family: "Liu Jian Mao Cao";
-`;
-
 // Component
 class Letters extends Component {
   state = {
@@ -55,3 +35,23 @@ class Letters extends Component {
 }
 
 export default Letters;
+
+// styles
+const shimmer = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
+const Letter = styled.span`
+  animation: ${shimmer} 5s ease-out infinite;
+  animation-delay: ${(props) => props.delay};
+  margin: 0 5vw;
+  color: #fff;
+  position: relative;
+  top: ${(props) => props.top};
+  font-size: 18px;
+  font-family: "Liu Jian Mao Cao";
+`;
