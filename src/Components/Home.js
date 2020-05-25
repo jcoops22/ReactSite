@@ -30,14 +30,13 @@ export default Home;
 // styles
 const Container = styled.div`
   position: relative;
-  top: 40%;
+  top: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   background-color: #000;
-  /* background-color: rgba(0, 5, 5, 0.6); */
   border-radius: 8px;
 `;
 const Header = styled.h1`
