@@ -21,3 +21,9 @@ a:hover {
 .overlay {
   transition-duration: 1s;
 }
+
+@keyframes typing {
+  to {
+    visibility: visible;
+  }
+}

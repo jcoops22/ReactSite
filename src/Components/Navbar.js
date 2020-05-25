@@ -70,7 +70,7 @@ class Navbar extends Component {
         this.state.expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
-      }, 1000);
+      }, 1600);
     }
   };
   // hide/show overlay
