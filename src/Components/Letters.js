@@ -15,7 +15,7 @@ class Letters extends Component {
     }
   };
   setTop = () => {
-    let top = Math.floor(Math.random() * 5);
+    let top = Math.floor(Math.random() * 8);
     return top + "vh";
   };
   render() {

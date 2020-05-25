@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Letters from "./Letters";
+import Typer from "./Typer";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -12,14 +13,11 @@ const Home = () => {
         <Intro>
           I'm a fullstack web developer in Ogden, UT. I enjoy creating
           websites/applications that are performant, fun, and provide a great
-          user experience.{" "}
-          <Link to="/contact">
-            {" "}
-            <span style={{ color: "#ccc" }}>
-              I'd love to help build your next project!
-            </span>
-          </Link>
+          user experience.
         </Intro>
+        <Link style={{ margin: "0.5rem" }} to="/contact">
+          <Typer sentence="I'd love to help build your next project!" />
+        </Link>
       </Container>
     </div>
   );
@@ -30,7 +28,7 @@ export default Home;
 // styles
 const Container = styled.div`
   position: relative;
-  top: 20vh;
+  top: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -49,5 +47,5 @@ const Intro = styled.p`
   color: #fff;
   padding: 0.5rem;
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.4;
 `;
