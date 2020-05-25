@@ -43,6 +43,7 @@ class Navbar extends Component {
     let berg = document.querySelector(".burger");
     let patty1 = document.querySelector(".patty1");
     let patty2 = document.querySelector(".patty2");
+    let overlay = document.querySelector(".overlay");
     this.state.expanded = !this.state.expanded;
 
     if (this.state.expanded) {
@@ -51,6 +52,9 @@ class Navbar extends Component {
       patty1.style.top = "17px";
       patty2.style.top = "14px";
       setTimeout(() => {
+        this.state.expanded
+          ? (overlay.style.display = "initial")
+          : (overlay.style.display = "none");
         berg.style.left = "89%";
         berg.style.border = "2px solid #fff";
       }, 600);
@@ -60,11 +64,18 @@ class Navbar extends Component {
       patty1.style.top = "12px";
       patty2.style.top = "19px";
       setTimeout(() => {
+        this.state.expanded
+          ? (overlay.style.display = "initial")
+          : (overlay.style.display = "none");
         berg.style.left = "1rem";
       }, 800);
     }
   };
-
+  // hide/show overlay
+  toggleOverlay = () => {
+    let overlay = document.querySelector(".overlay");
+    overlay.style.display = "none";
+  };
   // RENDER
   render() {
     return (
@@ -73,28 +84,29 @@ class Navbar extends Component {
           <Pat1 className="patty1" />
           <Pat2 className="patty2" />
         </Burger>
+        <Credits />
+        <Overlay className="overlay"></Overlay>
         <List>
-          <Lnk className="tag">
+          <Lnk className="tag" onClick={this.animateBerg}>
             <Link className="link" to="/">
               Home
             </Link>
           </Lnk>
-          <Lnk className="tag">
+          <Lnk className="tag" onClick={this.animateBerg}>
             <Link className="link" to="/about">
               About
             </Link>
           </Lnk>
-          <Lnk className="tag">
+          <Lnk className="tag" onClick={this.animateBerg}>
             <Link className="link" to="/Projects">
               Projects
             </Link>
           </Lnk>
-          <Lnk className="tag">
+          <Lnk className="tag" onClick={this.animateBerg}>
             <Link className="link" to="/Contact">
               Contact
             </Link>
           </Lnk>
-          <Credits />
         </List>
       </div>
     );
@@ -132,6 +144,7 @@ const Burger = styled.div`
   position: fixed;
   top: 90vh;
   left: 1rem;
+  z-index: 2;
   height: 36px;
   width: 36px;
   border-radius: 50px;
@@ -162,4 +175,14 @@ const Pat2 = styled.div`
   background-color: #fff;
   top: 19px;
   border-radius: 20px;
+`;
+const Overlay = styled.div`
+  display: none;
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  left: 0;
 `;
