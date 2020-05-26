@@ -11,14 +11,7 @@ class Navbar extends Component {
   state = {
     navItems: ["About", "Contact", "Resume", "Projects"],
     expanded: false,
-    style: {
-      default: {},
-      about: {
-        position: "relative",
-        top: "-20vh",
-        color: "red",
-      },
-    },
+    places: ["Check out my projects", "Learn more 'About' me", "Contact me"],
   };
 
   // functions
@@ -88,12 +81,7 @@ class Navbar extends Component {
   };
   // get the random phrase to check out
   phrase = () => {
-    let places = [
-      "Check out my projects",
-      "Learn more 'About' me",
-      "Contact me",
-    ];
-    return places[Math.floor(Math.random() * 3)];
+    return this.state.places[Math.floor(Math.random() * 3)];
   };
   // checkout something
   explore = () => {
@@ -232,7 +220,7 @@ const Explore = styled.span`
   transition-duration: 0.3s;
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
 `;
 const Icon = styled.img`
   width: ${(props) => props.width + "rem"};

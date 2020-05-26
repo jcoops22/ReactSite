@@ -6,7 +6,7 @@ import { device } from "../resources/mediaquery";
 
 const Typer = (props) => {
   // animate typing
-  const addName = () => {
+  const startTyping = () => {
     let char = document.querySelectorAll(".letter");
     setTimeout(() => {
       char.forEach((letter) => {
@@ -26,7 +26,7 @@ const Typer = (props) => {
   };
   // call functions on component mount
   useEffect(() => {
-    addName();
+    startTyping();
   }, []);
 
   return (

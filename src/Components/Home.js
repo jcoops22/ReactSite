@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Letters from "./Letters";
 import Typer from "./Typer";
 import { device } from "../resources/mediaquery";
+import jon from "../resources/Icons/keeper1.JPG";
 
 import { Link } from "react-router-dom";
 
@@ -11,8 +12,16 @@ const Home = () => {
   // <Letters word="SITE" top={50} />
   // <Letters word="TO MY" top={50} />
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Letters word="WELCOME" top={50} />
+      <Img width={8} src={jon} />
       <Container>
         <Header>Hello, I'm Jonathan...</Header>
         <Intro>
@@ -33,7 +42,7 @@ export default Home;
 // styles
 const Container = styled.div`
   position: relative;
-  /* top: 19.7vh; */
+  /* border: 1px solid red; */
   top: 13vw;
   display: flex;
   padding: 1rem 0;
@@ -44,11 +53,14 @@ const Container = styled.div`
   background-color: #000;
   border-radius: 8px;
   @media ${device.mobileM} {
-    top: 40%;
+    top: 21%;
+  }
+  @media ${device.mobileL} {
+    top: 36%;
   }
   @media ${device.tablet} {
     position: relative;
-    top: 25vh;
+    top: 0;
     margin: 0 auto;
     width: 70%;
   }
@@ -67,5 +79,13 @@ const Intro = styled.p`
   font-family: "Chelsea Market", cursive;
   @media ${device.tablet} {
     width: 70%;
+  }
+`;
+const Img = styled.img`
+  /* border: 1px solid red; */
+  display: none;
+  width: ${(props) => props.width + "rem"};
+  @media ${device.tablet} {
+    display: block;
   }
 `;
