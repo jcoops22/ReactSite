@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 // Component
 class Letters extends Component {
   state = {
-    word: "WELCOME",
+    word: this.props.word,
     arr: [],
   };
   setDelay = () => {
@@ -14,18 +14,27 @@ class Letters extends Component {
       );
     }
   };
-  setTop = () => {
-    let top = Math.floor(Math.random() * 8);
-    return top + "vh";
+  setTop = (amount) => {
+    let top = Math.floor(Math.random() * amount);
+    return top + "%";
   };
   render() {
     return (
       <div
         onLoad={this.setDelay()}
-        style={{ display: "flex", justifyContent: "center" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          height: "5rem",
+          margin: "1rem 0",
+        }}
       >
         {this.state.word.split("").map((l, ind) => (
-          <Letter key={ind} delay={this.state.arr[ind]} top={this.setTop}>
+          <Letter
+            key={ind}
+            delay={this.state.arr[ind]}
+            top={this.setTop(this.props.top)}
+          >
             {l}
           </Letter>
         ))}

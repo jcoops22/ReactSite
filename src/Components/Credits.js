@@ -52,6 +52,7 @@ class Credits extends Component {
             left: this.state.left,
           }}
         >
+          <span>(click to hide)</span>
           {this.state.credits.map((c, ind) => {
             return (
               <Line key={ind}>
@@ -92,11 +93,10 @@ const Icon = styled.button`
 const CreditsDiv = styled.div`
   padding: 1rem;
   transition-duration: 0.3s;
-  height: 10rem;
   width: 400px;
   position: fixed;
   overflow: scroll;
-  top: 25rem;
+  top: 40vh;
   cursor: auto;
   display: flex;
   flex-direction: column;
