@@ -21,7 +21,6 @@ const Home = () => {
       }}
     >
       <Letters word="WELCOME" top={50} />
-      <Img width={8} src={jon} />
       <Container>
         <Header>Hello, I'm Jonathan...</Header>
         <Intro>
@@ -50,7 +49,8 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-color: #000;
+  /* background-color: #000; */
+  background-color: transparent;
   border-radius: 8px;
   @media ${device.mobileM} {
     top: 21%;
@@ -60,7 +60,7 @@ const Container = styled.div`
   }
   @media ${device.tablet} {
     position: relative;
-    top: 0;
+    top: 12vh;
     margin: 0 auto;
     width: 70%;
   }
@@ -82,6 +82,10 @@ const Intro = styled.p`
   }
 `;
 const Img = styled.img`
+  position: relative;
+  margin-bottom: -4rem;
+  z-index: 1;
+  left: -30%;
   /* border: 1px solid red; */
   display: none;
   width: ${(props) => props.width + "rem"};

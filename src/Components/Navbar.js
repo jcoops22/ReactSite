@@ -209,11 +209,12 @@ const Overlay = styled.div`
 `;
 const Explore = styled.span`
   position: absolute;
-  width: 11rem;
+  width: 12rem;
   font-size: 0.8rem;
   top: 91vh;
   left: calc(0% + 7rem);
   color: #fff;
+  padding-left: 0.5rem;
   display: none;
   align-items: center;
   justify-content: space-around;
