@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Chelsea Market", cursive;
 }
 html {
   background-color: #000;
@@ -25,5 +26,10 @@ a:hover {
 @keyframes typing {
   to {
     visibility: visible;
+  }
+}
+@keyframes shift {
+  to {
+    transform: translateX(1rem);
   }
 }

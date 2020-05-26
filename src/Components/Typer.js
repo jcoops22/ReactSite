@@ -58,9 +58,11 @@ const Type = styled.span`
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: ${(props) => props.delay};
+  font-family: "Chelsea Market", cursive;
 `;
 const Underline = styled.div`
   transition-duration: 0.8s;
+  margin-top: 8px;
   position: relative;
   width: 0;
   height: 3px;
@@ -75,7 +77,7 @@ const Icon = styled.img`
   transition-duration: 0.8s;
   position: relative;
   width: 1.4rem;
-  top: -1.5rem;
+  top: -2rem;
   left: 104%;
   opacity: 0;
   transform: rotate(180deg);

@@ -64,6 +64,7 @@ const Intro = styled.p`
   padding: 0.5rem;
   text-align: center;
   line-height: 1.4;
+  font-family: "Chelsea Market", cursive;
   @media ${device.tablet} {
     width: 70%;
   }

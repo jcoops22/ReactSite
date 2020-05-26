@@ -4,6 +4,7 @@ import "../App.css";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
+import leftArrow from "../resources/Icons/left-arrow-arrows-svgrepo-com.svg";
 
 // Component
 class Navbar extends Component {
@@ -21,7 +22,14 @@ class Navbar extends Component {
   };
 
   // functions
+  componentDidMount() {
+    this.explore();
+  }
   animateBerg = () => {
+    // remove animation for "explore"
+    let explore = document.querySelector(".explore");
+    explore.style.display = "none";
+    explore.style.animationName = "none";
     // animate the links
     let a = document.querySelectorAll(".tag");
     setTimeout(() => {
@@ -33,7 +41,7 @@ class Navbar extends Component {
           a.style.opacity = 1;
         });
       } else {
-        a.forEach((a, ind) => {
+        a.forEach((a) => {
           a.style.opacity = 0;
           a.style.top = "-10vh";
         });
@@ -78,6 +86,23 @@ class Navbar extends Component {
     let overlay = document.querySelector(".overlay");
     overlay.style.display = "none";
   };
+  // get the random phrase to check out
+  phrase = () => {
+    let places = [
+      "Check out my projects",
+      "Learn more 'About' me",
+      "Contact me",
+    ];
+    return places[Math.floor(Math.random() * 3)];
+  };
+  // checkout something
+  explore = () => {
+    let explore = document.querySelector(".explore");
+    setTimeout(() => {
+      explore.style.display = "flex";
+      explore.style.animationName = "shift";
+    }, 1000);
+  };
   // RENDER
   render() {
     return (
@@ -86,6 +111,12 @@ class Navbar extends Component {
           <Pat1 className="patty1" />
           <Pat2 className="patty2" />
         </Burger>
+
+        <Explore className="explore">
+          <Icon width={1.3} src={leftArrow} />
+          {this.phrase()}
+        </Explore>
+
         <Credits />
         <Overlay className="overlay"></Overlay>
         <List>
@@ -187,4 +218,22 @@ const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+`;
+const Explore = styled.span`
+  position: absolute;
+  width: 11rem;
+  font-size: 0.8rem;
+  top: 91vh;
+  left: calc(0% + 7rem);
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  transition-duration: 0.3s;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+`;
+const Icon = styled.img`
+  width: ${(props) => props.width + "rem"};
 `;
