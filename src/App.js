@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import img from "./resources/nightsky.jpg";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import { Switch, Route } from "react-router-dom";
@@ -30,7 +29,7 @@ export default App;
 // styles
 
 const Container = styled.div`
-  background-image: url(${img});
+  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1590472301/Portfolio%20Site/nightsky_vh99sk.jpg");
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;

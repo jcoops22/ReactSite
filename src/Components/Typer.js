@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "../App.css";
-import arrow from "../resources/Icons/arrow.svg";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 
@@ -39,7 +38,10 @@ const Typer = (props) => {
         ))}
         <Underline className="underline" />
       </div>
-      <Icon className="icon" src={arrow} />
+      <Icon
+        className="icon"
+        src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590472301/Portfolio%20Site/arrow_uvf7cw.svg"
+      />
     </div>
   );
 };
@@ -81,7 +83,7 @@ const Icon = styled.img`
   left: 104%;
   opacity: 0;
   transform: rotate(180deg);
-  @media ${device.mobileM} {
+  @media ${device.mobileL} {
     display: initial;
   }
 `;

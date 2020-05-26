@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Letters from "./Letters";
 import Typer from "./Typer";
 import { device } from "../resources/mediaquery";
-import jon from "../resources/Icons/keeper1.JPG";
 
 import { Link } from "react-router-dom";
 
