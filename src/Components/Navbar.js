@@ -30,7 +30,7 @@ class Navbar extends Component {
         a.forEach((a, ind) => {
           a.style.transitionDuration = "0.4s";
           a.style.transitionDelay = `${ind}00ms`;
-          a.style.top = `calc(90% - ${ind * 20}%)`;
+          a.style.top = `calc(90% - ${ind * 15}%)`;
           a.style.opacity = 1;
         });
       } else {

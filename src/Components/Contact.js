@@ -28,9 +28,9 @@ class Contact extends Component {
         color: "#fff",
         link: "https://www.linkedin.com/in/jonathancooperwebdeveloper/",
         bg: "#0e76a8",
-        imgbg: "#fff",
+        imgbg: "#0e76a8",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590542217/Portfolio%20Site/Icons/linkedin-svgrepo-com_qovutr.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590616011/Portfolio%20Site/Icons/5808508161555589661_fqzgz4.svg",
       },
       {
         name: "Instagram",
@@ -62,33 +62,22 @@ class Contact extends Component {
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1590545420/Portfolio%20Site/Icons/youtube-svgrepo-com_jkwykh.svg",
       },
       {
-        name: "Instagram",
+        name: "Twitter",
         color: "#fff",
-        link: "https://www.instagram.com/jontheawesome/",
-        bg:
-          "linear-gradient(90deg, rgba(250,161,30,1) 5%, rgba(250,126,30,1) 26%, rgba(214,41,118,1) 42%, rgba(150,47,191,1) 64%, rgba(79,91,213,1) 82%)",
-        imgbg: "#",
-        img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590542498/Portfolio%20Site/Icons/instagram-2-1-logo-svgrepo-com_tuerrj.svg",
-      },
-      {
-        name: "Codepen",
-        color: "#000",
-        link: "https://codepen.io/jon-cooper",
-        bg: "#fff",
-        imgbg: "#",
-        img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590542642/Portfolio%20Site/Icons/11898456151579517832_fhixga.svg",
-      },
-      {
-        name: "YouTube",
-        color: "#fff",
-        link:
-          "https://www.youtube.com/channel/UCEnHYoOPw05HXXUuQhsHiMg?view_as=subscriber",
-        bg: "#c4302b",
+        link: "https://twitter.com/Maffmatology",
+        bg: "#00acee",
         imgbg: "#fff",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590545420/Portfolio%20Site/Icons/youtube-svgrepo-com_jkwykh.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590615825/Portfolio%20Site/Icons/9457207801555590088_u71mai.svg",
+      },
+      {
+        name: "FaceBook",
+        color: "#fff",
+        link: "https://www.facebook.com/jon.cooper.9849/",
+        bg: "#3b5998",
+        imgbg: "#3b5998",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590615825/Portfolio%20Site/Icons/10165394971530077750_uqwvpu.svg",
       },
     ],
   };
@@ -150,35 +139,32 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-  border: 2px solid red;
   @media ${device.tablet} {
     margin: 20% 0rem;
   }
 `;
 const H1 = styled.h1`
   margin: 0;
-  border: 2px solid red;
   color: #fff;
   font-size: 1.5rem;
 `;
 const Wrapper = styled.div`
   height: 100%;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
   padding: 0 1rem;
   margin-top: 1rem;
-  border: 1px solid green;
 `;
 const Link = styled.a`
   &:hover {
     opacity: 0.8;
   }
-  border: 1px solid green;
+  opacity: 1;
   transition-duration: 0.3s;
   max-height: 3.8rem;
   display: flex;
@@ -187,9 +173,6 @@ const Link = styled.a`
   animation-fill-mode: backwards;
   animation-duration: 0.6s;
   animation-iteration-count: 1;
-`;
-const Method = styled.div`
-  opacity: 1;
 `;
 const Text = styled.div`
   position: relative;
@@ -202,7 +185,6 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border: 2px solid blue;
 `;
 const Img = styled.img`
   cursor: pointer;
