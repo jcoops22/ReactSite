@@ -87,12 +87,6 @@ class Contact extends Component {
       // });
     });
   };
-  // <Link
-  //   key={ind}
-  //   href={method.link}
-  //   target="_blank"
-  //   rel="noopener noreferrer"
-  // ></Link>
 
   // <Method className="method">
   // </Method>
@@ -110,12 +104,17 @@ class Contact extends Component {
           </H1>
           <Wrapper>
             {this.state.methods.map((method, ind) => (
-              <div>
+              <Link
+                key={ind}
+                href={method.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Img background={method.imgbg} src={method.img} width={4} />
                 <Text color={method.color} background={method.bg}>
                   <span>{method.name}</span>
                 </Text>
-              </div>
+              </Link>
             ))}
           </Wrapper>
         </Container>
@@ -146,14 +145,14 @@ const Wrapper = styled.div`
   align-content: center;
   justify-content: center;
   padding: 0 1rem;
-  border: 1px solid red;
 `;
 const Link = styled.a`
   &:hover {
     opacity: 0.8;
   }
+  border: 1px solid green;
   transition-duration: 0.3s;
-  max-height: 3.8rem;
+  /* max-height: 3.8rem; */
 `;
 const Method = styled.div`
   opacity: 1;
