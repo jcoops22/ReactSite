@@ -87,8 +87,8 @@ class Contact extends Component {
       // });
     });
   };
-  //   <Wrapper>
-  //   {this.state.methods.map((method, ind) => (
+  //   {
+  //   this.state.methods.map((method, ind) => (
   //     <Link
   //       key={ind}
   //       href={method.link}
@@ -102,12 +102,13 @@ class Contact extends Component {
   //         </Text>
   //       </Method>
   //     </Link>
-  //   ))}
-  //   <Pointer
-  //     className="pointer"
-  //     src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
-  //   />
-  // </Wrapper>
+  //   ))
+  // }
+  // <Pointer
+  //   className="pointer"
+  //   src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
+  // />
+
   render() {
     return (
       <div>
@@ -115,6 +116,7 @@ class Contact extends Component {
           <H1 style={{ color: "#fff", marginBottom: "2rem" }}>
             You Can Reach Me Here...
           </H1>
+          <Wrapper>Somestuff in the wrappper</Wrapper>
         </Container>
       </div>
     );
