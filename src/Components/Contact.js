@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { device } from "../resources/mediaquery";
 import styled from "styled-components";
 
-class Contact extends React.Component {
+class Contact extends Component {
   state = {
     methods: [
       {
@@ -62,6 +62,20 @@ class Contact extends React.Component {
       },
     ],
   };
+  componentDidMount() {
+    this.hoverEffect();
+  }
+  hoverEffect = () => {
+    let methods = document.querySelectorAll(".method");
+    let pointer = document.querySelector(".pointer");
+    methods.forEach((method, ind) => {
+      method.style.animationName = "swing";
+      method.style.animationDelay = ind + "s";
+      // method.addEventListener("mouseover", () => {
+      //   pointer.style.animationName = "point";
+      // });
+    });
+  };
   render() {
     return (
       <div>
@@ -70,14 +84,18 @@ class Contact extends React.Component {
             You Can Reach Me Here...
           </H1>
           <Wrapper>
-            {this.state.methods.map((method) => (
-              <Method>
+            {this.state.methods.map((method, ind) => (
+              <Method key={ind} className="method">
                 <Img background={method.imgbg} src={method.img} width={3} />
                 <Text color={method.color} background={method.bg}>
                   <span>{method.name}</span>
                 </Text>
               </Method>
             ))}
+            <Pointer
+              className="pointer"
+              src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
+            />
           </Wrapper>
         </Container>
       </div>
@@ -105,12 +123,18 @@ const Wrapper = styled.div`
   padding: 0 1rem;
 `;
 const Method = styled.div`
+  &:hover {
+    opacity: 0.8;
+  }
   display: flex;
   justify-content: space-between;
-
   margin: 0.5rem 0;
+  animation-fill-mode: backwards;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 `;
 const Text = styled.div`
+  position: relative;
   border-radius: 8px;
   background: ${(props) => props.background};
   width: 100%;
@@ -119,11 +143,20 @@ const Text = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 const Img = styled.img`
+  z-index: 1;
   position: relative;
   left: ${(props) => props.width - 0.2 + "rem"};
   border-radius: 8px;
   background: ${(props) => props.background};
   width: ${(props) => props.width + "rem"};
+`;
+const Pointer = styled.img`
+  display: none;
+  width: 2.2rem;
+  position: relative;
+  top: -4rem;
+  transform: rotate(90deg);
 `;

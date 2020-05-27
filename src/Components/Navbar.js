@@ -147,6 +147,7 @@ const List = styled.ul`
 `;
 const Lnk = styled.span`
   position: fixed;
+  z-index: 100;
   top: -10vh;
   left: 0;
   opacity: 0;
@@ -154,7 +155,7 @@ const Lnk = styled.span`
 `;
 const Burger = styled.div`
   &:hover {
-    /* border: 3px solid #fff; */
+    /* border: 3px solid red; */
   }
   &:focus {
     outline: none;
@@ -164,7 +165,7 @@ const Burger = styled.div`
   position: fixed;
   top: 90vh;
   left: 1rem;
-  z-index: 2;
+  z-index: 100;
   height: 36px;
   width: 36px;
   border-radius: 50px;
@@ -203,6 +204,7 @@ const Overlay = styled.div`
   background-color: #000;
   opacity: 0.7;
   position: fixed;
+  z-index: 99;
   top: 0;
   left: 0;
 `;
