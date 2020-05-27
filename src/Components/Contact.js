@@ -87,7 +87,12 @@ class Contact extends Component {
       // });
     });
   };
-
+  // <Link
+  //   key={ind}
+  //   href={method.link}
+  //   target="_blank"
+  //   rel="noopener noreferrer"
+  // ></Link>
   // <Pointer
   //   className="pointer"
   //   src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
@@ -102,19 +107,12 @@ class Contact extends Component {
           </H1>
           <Wrapper>
             {this.state.methods.map((method, ind) => (
-              <Link
-                key={ind}
-                href={method.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Method className="method">
-                  <Img background={method.imgbg} src={method.img} width={3} />
-                  <Text color={method.color} background={method.bg}>
-                    <span>{method.name}</span>
-                  </Text>
-                </Method>
-              </Link>
+              <Method className="method">
+                <Img background={method.imgbg} src={method.img} width={3} />
+                <Text color={method.color} background={method.bg}>
+                  <span>{method.name}</span>
+                </Text>
+              </Method>
             ))}
           </Wrapper>
         </Container>
