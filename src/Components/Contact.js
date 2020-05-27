@@ -89,32 +89,34 @@ class Contact extends Component {
   };
   render() {
     return (
-      <Container>
-        <H1 style={{ color: "#fff", marginBottom: "2rem" }}>
-          You Can Reach Me Here...
-        </H1>
-        <Wrapper>
-          {this.state.methods.map((method, ind) => (
-            <Link
-              key={ind}
-              href={method.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Method className="method">
-                <Img background={method.imgbg} src={method.img} width={3} />
-                <Text color={method.color} background={method.bg}>
-                  <span>{method.name}</span>
-                </Text>
-              </Method>
-            </Link>
-          ))}
-          <Pointer
-            className="pointer"
-            src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
-          />
-        </Wrapper>
-      </Container>
+      <div>
+        <Container>
+          <H1 style={{ color: "#fff", marginBottom: "2rem" }}>
+            You Can Reach Me Here...
+          </H1>
+          <Wrapper>
+            {this.state.methods.map((method, ind) => (
+              <Link
+                key={ind}
+                href={method.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Method className="method">
+                  <Img background={method.imgbg} src={method.img} width={3} />
+                  <Text color={method.color} background={method.bg}>
+                    <span>{method.name}</span>
+                  </Text>
+                </Method>
+              </Link>
+            ))}
+            <Pointer
+              className="pointer"
+              src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
+            />
+          </Wrapper>
+        </Container>
+      </div>
     );
   }
 }
@@ -122,11 +124,11 @@ class Contact extends Component {
 export default Contact;
 
 const Container = styled.div`
-  height: 40rem;
   padding: 0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* border: 2px solid red; */
   @media ${device.tablet} {
     margin: 20% 0rem;
   }
@@ -138,19 +140,18 @@ const H1 = styled.h1`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-content: center; */
+  align-content: center;
   justify-content: center;
   padding: 0 1rem;
 `;
 const Link = styled.a`
   transition-duration: 0.3s;
-  max-height: 3.8rem;
+  height: 3.8rem;
 `;
 const Method = styled.div`
   &:hover {
     opacity: 0.8;
   }
-  border: 2px solid red;
   opacity: 1;
   display: flex;
   justify-content: space-between;
