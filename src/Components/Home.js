@@ -7,9 +7,6 @@ import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  // <Letters word="PORTFOLIO" top={50} />
-  // <Letters word="SITE" top={50} />
-  // <Letters word="TO MY" top={50} />
   return (
     <div
       style={{
@@ -28,7 +25,12 @@ const Home = () => {
           user experience.
         </Intro>
         <Link style={{ margin: "0.5rem" }} to="/contact">
-          <Typer sentence="I'd love to help build your next project!" />
+          <Typer
+            sentence="I'd love to help build your next project!"
+            underline="true"
+            icon="false"
+            fontSize={8}
+          />
         </Link>
       </Container>
     </div>

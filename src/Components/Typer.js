@@ -4,18 +4,27 @@ import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 
 const Typer = (props) => {
+  console.log(props);
   // animate typing
   const startTyping = () => {
+    // get the letters
     let char = document.querySelectorAll(".letter");
     setTimeout(() => {
       char.forEach((letter) => {
         letter.style.animationName = "typing";
       });
       char[char.length - 1].addEventListener("webkitAnimationEnd", () => {
+        // after the last letter add underline and arrow or not
         let underline = document.querySelector(".underline");
         let icon = document.querySelector(".icon");
-        icon.style.opacity = "1";
-        underline.style.width = "100%";
+        // do checks based on props
+        if (props.icon == "true") {
+          icon.style.opacity = "1";
+        }
+        if (props.underline == "true") {
+          underline.style.width = "100%";
+        }
+        // if mobile then center the sentence
         if (window.innerWidth < 768) {
           let wrapper = document.querySelector(".wrapper");
           wrapper.style.textAlign = "center";
@@ -32,7 +41,12 @@ const Typer = (props) => {
     <div>
       <div className="wrapper" style={{ transitionDuration: "1s" }}>
         {props.sentence.split("").map((letter, ind) => (
-          <Type delay={ind * 100 + "ms"} className="letter" key={ind}>
+          <Type
+            style={{ fontSize: props.fontSize + "rem" }}
+            delay={ind * 100 + "ms"}
+            className="letter"
+            key={ind}
+          >
             {letter}
           </Type>
         ))}

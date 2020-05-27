@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { device } from "../resources/mediaquery";
 import styled from "styled-components";
+import Typer from "./Typer";
 
 class Contact extends Component {
   state = {
@@ -100,16 +101,20 @@ class Contact extends Component {
       method.style.animationName = "swing";
       method.style.display = "flex";
       method.style.animationDelay = ind * 0.6 + "s";
-      // method.addEventListener("mouseover", () => {
-      //   pointer.style.animationName = "point";
-      // });
+      method.addEventListener("mouseover", () => {});
     });
   };
+  // <H1>You Can Reach Me Here...</H1>
 
   render() {
     return (
       <Container>
-        <H1>You Can Reach Me Here...</H1>
+        <Typer
+          sentence="You can reach out to me here..."
+          underline="false"
+          icon="false"
+          fontSize={1.6}
+        />
         <Wrapper>
           {this.state.methods.map((method, ind) => (
             <Link
