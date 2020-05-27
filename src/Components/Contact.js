@@ -111,7 +111,7 @@ class Contact extends Component {
           <Wrapper>
             {this.state.methods.map((method, ind) => (
               <div>
-                <Img background={method.imgbg} src={method.img} width={3} />
+                <Img background={method.imgbg} src={method.img} width={4} />
                 <Text color={method.color} background={method.bg}>
                   <span>{method.name}</span>
                 </Text>
@@ -146,15 +146,16 @@ const Wrapper = styled.div`
   align-content: center;
   justify-content: center;
   padding: 0 1rem;
+  border: 1px solid red;
 `;
 const Link = styled.a`
+  &:hover {
+    opacity: 0.8;
+  }
   transition-duration: 0.3s;
   max-height: 3.8rem;
 `;
 const Method = styled.div`
-  &:hover {
-    opacity: 0.8;
-  }
   opacity: 1;
   display: flex;
   justify-content: space-between;
@@ -164,6 +165,7 @@ const Method = styled.div`
   animation-iteration-count: 1;
 `;
 const Text = styled.div`
+  height: 3.8rem;
   position: relative;
   border-radius: 8px;
   background: ${(props) => props.background};
@@ -174,11 +176,13 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: 2px solid blue;
 `;
 const Img = styled.img`
   cursor: pointer;
   z-index: 1;
   position: relative;
+  top: 3rem;
   left: ${(props) => props.width - 0.2 + "rem"};
   border-radius: 8px;
   background: ${(props) => props.background};
