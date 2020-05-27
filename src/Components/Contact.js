@@ -64,10 +64,10 @@ class Contact extends Component {
     ],
   };
   componentDidMount() {
-    this.hideMethods();
-    setTimeout(() => {
-      this.hoverEffect();
-    }, 2000);
+    // this.hideMethods();
+    // setTimeout(() => {
+    //   this.hoverEffect();
+    // }, 2000);
   }
   hideMethods = () => {
     let methods = document.querySelectorAll(".method");
@@ -124,10 +124,12 @@ class Contact extends Component {
 export default Contact;
 
 const Container = styled.div`
+  height: 40rem;
   padding: 0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 2px solid red;
   @media ${device.tablet} {
     margin: 20% 0rem;
   }
