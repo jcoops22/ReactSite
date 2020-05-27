@@ -64,13 +64,23 @@ class Contact extends Component {
     ],
   };
   componentDidMount() {
-    this.hoverEffect();
+    this.hideMethods();
+    setTimeout(() => {
+      this.hoverEffect();
+    }, 2000);
   }
+  hideMethods = () => {
+    let methods = document.querySelectorAll(".method");
+    methods.forEach((method) => {
+      method.style.display = "none";
+    });
+  };
   hoverEffect = () => {
     let methods = document.querySelectorAll(".method");
     let pointer = document.querySelector(".pointer");
     methods.forEach((method, ind) => {
       method.style.animationName = "swing";
+      method.style.display = "flex";
       method.style.animationDelay = ind * 0.6 + "s";
       // method.addEventListener("mouseover", () => {
       //   pointer.style.animationName = "point";
@@ -132,11 +142,14 @@ const Wrapper = styled.div`
   justify-content: center;
   padding: 0 1rem;
 `;
-const Link = styled.a``;
+const Link = styled.a`
+  transition-duration: 0.3s;
+`;
 const Method = styled.div`
   &:hover {
     opacity: 0.8;
   }
+  opacity: 1;
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
