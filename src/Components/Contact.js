@@ -172,6 +172,7 @@ const Link = styled.a`
   }
   opacity: 1;
   transition-duration: 0.3s;
+  height: 3.8rem;
   max-height: 3.8rem;
   display: flex;
   justify-content: space-between;
