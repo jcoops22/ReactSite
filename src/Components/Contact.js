@@ -93,6 +93,9 @@ class Contact extends Component {
   //   target="_blank"
   //   rel="noopener noreferrer"
   // ></Link>
+
+  // <Method className="method">
+  // </Method>
   // <Pointer
   //   className="pointer"
   //   src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
@@ -107,12 +110,10 @@ class Contact extends Component {
           </H1>
           <Wrapper>
             {this.state.methods.map((method, ind) => (
-              <Method className="method">
+              <Text color={method.color} background={method.bg}>
                 <Img background={method.imgbg} src={method.img} width={3} />
-                <Text color={method.color} background={method.bg}>
-                  <span>{method.name}</span>
-                </Text>
-              </Method>
+                <span>{method.name}</span>
+              </Text>
             ))}
           </Wrapper>
         </Container>
