@@ -61,13 +61,42 @@ class Contact extends Component {
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1590545420/Portfolio%20Site/Icons/youtube-svgrepo-com_jkwykh.svg",
       },
+      {
+        name: "Instagram",
+        color: "#fff",
+        link: "https://www.instagram.com/jontheawesome/",
+        bg:
+          "linear-gradient(90deg, rgba(250,161,30,1) 5%, rgba(250,126,30,1) 26%, rgba(214,41,118,1) 42%, rgba(150,47,191,1) 64%, rgba(79,91,213,1) 82%)",
+        imgbg: "#",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590542498/Portfolio%20Site/Icons/instagram-2-1-logo-svgrepo-com_tuerrj.svg",
+      },
+      {
+        name: "Codepen",
+        color: "#000",
+        link: "https://codepen.io/jon-cooper",
+        bg: "#fff",
+        imgbg: "#",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590542642/Portfolio%20Site/Icons/11898456151579517832_fhixga.svg",
+      },
+      {
+        name: "YouTube",
+        color: "#fff",
+        link:
+          "https://www.youtube.com/channel/UCEnHYoOPw05HXXUuQhsHiMg?view_as=subscriber",
+        bg: "#c4302b",
+        imgbg: "#fff",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590545420/Portfolio%20Site/Icons/youtube-svgrepo-com_jkwykh.svg",
+      },
     ],
   };
   componentDidMount() {
-    // this.hideMethods();
-    // setTimeout(() => {
-    //   this.hoverEffect();
-    // }, 2000);
+    this.hideMethods();
+    setTimeout(() => {
+      this.hoverEffect();
+    }, 2000);
   }
   hideMethods = () => {
     let methods = document.querySelectorAll(".method");
@@ -87,13 +116,6 @@ class Contact extends Component {
       // });
     });
   };
-
-  // <Method >
-  // </Method>
-  // <Pointer
-  //   className="pointer"
-  //   src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
-  // />
 
   render() {
     return (
@@ -170,7 +192,6 @@ const Method = styled.div`
   opacity: 1;
 `;
 const Text = styled.div`
-  /* height: 3.8rem; */
   position: relative;
   border-radius: 8px;
   background: ${(props) => props.background};
@@ -189,7 +210,8 @@ const Img = styled.img`
   position: relative;
   top: 0rem;
   left: ${(props) => props.width - 0.2 + "rem"};
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   background: ${(props) => props.background};
   width: ${(props) => props.width + "rem"};
 `;
