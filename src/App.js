@@ -40,7 +40,7 @@ const Container = styled.div`
   align-items: center;
 `;
 const Overlay = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: 0;

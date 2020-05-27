@@ -87,6 +87,27 @@ class Contact extends Component {
       // });
     });
   };
+  //   <Wrapper>
+  //   {this.state.methods.map((method, ind) => (
+  //     <Link
+  //       key={ind}
+  //       href={method.link}
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //     >
+  //       <Method className="method">
+  //         <Img background={method.imgbg} src={method.img} width={3} />
+  //         <Text color={method.color} background={method.bg}>
+  //           <span>{method.name}</span>
+  //         </Text>
+  //       </Method>
+  //     </Link>
+  //   ))}
+  //   <Pointer
+  //     className="pointer"
+  //     src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
+  //   />
+  // </Wrapper>
   render() {
     return (
       <div>
@@ -94,27 +115,6 @@ class Contact extends Component {
           <H1 style={{ color: "#fff", marginBottom: "2rem" }}>
             You Can Reach Me Here...
           </H1>
-          <Wrapper>
-            {this.state.methods.map((method, ind) => (
-              <Link
-                key={ind}
-                href={method.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Method className="method">
-                  <Img background={method.imgbg} src={method.img} width={3} />
-                  <Text color={method.color} background={method.bg}>
-                    <span>{method.name}</span>
-                  </Text>
-                </Method>
-              </Link>
-            ))}
-            <Pointer
-              className="pointer"
-              src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
-            />
-          </Wrapper>
         </Container>
       </div>
     );
@@ -161,7 +161,7 @@ const Method = styled.div`
   animation-iteration-count: 1;
 `;
 const Text = styled.div`
-  /* position: relative; */
+  position: relative;
   border-radius: 8px;
   background: ${(props) => props.background};
   width: 100%;
@@ -175,7 +175,7 @@ const Text = styled.div`
 const Img = styled.img`
   cursor: pointer;
   z-index: 1;
-  /* position: relative; */
+  position: relative;
   left: ${(props) => props.width - 0.2 + "rem"};
   border-radius: 8px;
   background: ${(props) => props.background};
