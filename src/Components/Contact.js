@@ -110,10 +110,12 @@ class Contact extends Component {
           </H1>
           <Wrapper>
             {this.state.methods.map((method, ind) => (
-              <Text color={method.color} background={method.bg}>
+              <div>
                 <Img background={method.imgbg} src={method.img} width={3} />
-                <span>{method.name}</span>
-              </Text>
+                <Text color={method.color} background={method.bg}>
+                  <span>{method.name}</span>
+                </Text>
+              </div>
             ))}
           </Wrapper>
         </Container>
