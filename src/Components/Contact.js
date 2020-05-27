@@ -88,7 +88,7 @@ class Contact extends Component {
     });
   };
 
-  // <Method className="method">
+  // <Method >
   // </Method>
   // <Pointer
   //   className="pointer"
@@ -105,6 +105,7 @@ class Contact extends Component {
           <Wrapper>
             {this.state.methods.map((method, ind) => (
               <Link
+                className="method"
                 key={ind}
                 href={method.link}
                 target="_blank"
@@ -152,10 +153,7 @@ const Link = styled.a`
   }
   border: 1px solid green;
   transition-duration: 0.3s;
-  /* max-height: 3.8rem; */
-`;
-const Method = styled.div`
-  opacity: 1;
+  max-height: 3.8rem;
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
@@ -163,9 +161,12 @@ const Method = styled.div`
   animation-duration: 0.6s;
   animation-iteration-count: 1;
 `;
+const Method = styled.div`
+  opacity: 1;
+`;
 const Text = styled.div`
   height: 3.8rem;
-  position: relative;
+  /* position: relative; */
   border-radius: 8px;
   background: ${(props) => props.background};
   width: 100%;
@@ -180,7 +181,7 @@ const Text = styled.div`
 const Img = styled.img`
   cursor: pointer;
   z-index: 1;
-  position: relative;
+  /* position: relative; */
   top: 3rem;
   left: ${(props) => props.width - 0.2 + "rem"};
   border-radius: 8px;
