@@ -124,6 +124,7 @@ class Contact extends Component {
 export default Contact;
 
 const Container = styled.div`
+  padding: 0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,7 +145,7 @@ const Wrapper = styled.div`
 `;
 const Link = styled.a`
   transition-duration: 0.3s;
-  height: 2.3rem;
+  height: 3.8rem;
 `;
 const Method = styled.div`
   &:hover {
