@@ -56,8 +56,7 @@ class Navbar extends Component {
         this.state.expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
-        berg.style.left = "calc(100% - 40px)";
-        berg.style.border = "2px solid #fff";
+        berg.style.left = "calc(100% - 44px)";
       }, 600);
     } else {
       berg.style.transform = "rotate(0deg)";
@@ -171,8 +170,8 @@ const Burger = styled.div`
   border-radius: 50px;
   transition-duration: 0.4s;
   transition-delay: 0.4s;
-  opacity: 0.7;
-  border: 1px solid #fff;
+  opacity: 1;
+  border: 2px solid #fff;
   @media ${device.tablet} {
     /* display: none; */
   }
@@ -218,10 +217,9 @@ const Explore = styled.span`
   display: none;
   align-items: center;
   justify-content: space-around;
-  transition-duration: 0.3s;
-  animation-duration: 0.8s;
+  animation-duration: 1.5s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease;
+  animation-timing-function: linear;
 `;
 const Icon = styled.img`
   width: ${(props) => props.width + "rem"};

@@ -29,7 +29,13 @@ a:hover {
   }
 }
 @keyframes shift {
-  to {
+  0% {
+    transform: translateX(1rem);
+  }
+  50% {
+    transform: translateX(0rem);
+  }
+  100% {
     transform: translateX(1rem);
   }
 }

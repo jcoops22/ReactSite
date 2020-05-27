@@ -34,7 +34,7 @@ const Container = styled.div`
   background-size: cover;
   height: 100vh;
   width: 100%;
-  padding: 1rem;
+  padding: 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
