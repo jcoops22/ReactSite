@@ -144,6 +144,7 @@ const Wrapper = styled.div`
 `;
 const Link = styled.a`
   transition-duration: 0.3s;
+  height: 2.3rem;
 `;
 const Method = styled.div`
   &:hover {
