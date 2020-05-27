@@ -97,29 +97,25 @@ class Contact extends Component {
 
   render() {
     return (
-      <div>
-        <Container>
-          <H1 style={{ color: "#fff", marginBottom: "2rem" }}>
-            You Can Reach Me Here...
-          </H1>
-          <Wrapper>
-            {this.state.methods.map((method, ind) => (
-              <Link
-                className="method"
-                key={ind}
-                href={method.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Img background={method.imgbg} src={method.img} width={4} />
-                <Text color={method.color} background={method.bg}>
-                  <span>{method.name}</span>
-                </Text>
-              </Link>
-            ))}
-          </Wrapper>
-        </Container>
-      </div>
+      <Container>
+        <H1>You Can Reach Me Here...</H1>
+        <Wrapper>
+          {this.state.methods.map((method, ind) => (
+            <Link
+              className="method"
+              key={ind}
+              href={method.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Img background={method.imgbg} src={method.img} width={4} />
+              <Text color={method.color} background={method.bg}>
+                <span>{method.name}</span>
+              </Text>
+            </Link>
+          ))}
+        </Wrapper>
+      </Container>
     );
   }
 }
@@ -128,24 +124,33 @@ export default Contact;
 
 const Container = styled.div`
   padding: 0.6rem;
+  height: 90vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
+
   justify-content: center;
-  /* border: 2px solid red; */
+  border: 2px solid red;
   @media ${device.tablet} {
     margin: 20% 0rem;
   }
 `;
 const H1 = styled.h1`
+  margin: 0;
+  border: 2px solid red;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 const Wrapper = styled.div`
+  height: 100%;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0 1rem;
+  margin-top: 1rem;
+  border: 1px solid green;
 `;
 const Link = styled.a`
   &:hover {
@@ -165,8 +170,8 @@ const Method = styled.div`
   opacity: 1;
 `;
 const Text = styled.div`
-  height: 3.8rem;
-  /* position: relative; */
+  /* height: 3.8rem; */
+  position: relative;
   border-radius: 8px;
   background: ${(props) => props.background};
   width: 100%;
@@ -181,8 +186,8 @@ const Text = styled.div`
 const Img = styled.img`
   cursor: pointer;
   z-index: 1;
-  /* position: relative; */
-  top: 3rem;
+  position: relative;
+  top: 0rem;
   left: ${(props) => props.width - 0.2 + "rem"};
   border-radius: 8px;
   background: ${(props) => props.background};
