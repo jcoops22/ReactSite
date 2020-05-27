@@ -26,10 +26,11 @@ const Home = () => {
         </Intro>
         <Link style={{ margin: "0.5rem" }} to="/contact">
           <Typer
+            delay={3000}
             sentence="I'd love to help build your next project!"
             underline="true"
-            icon="false"
-            fontSize={8}
+            icon="true"
+            fontSize={1}
           />
         </Link>
       </Container>

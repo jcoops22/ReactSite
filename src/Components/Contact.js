@@ -114,6 +114,7 @@ class Contact extends Component {
           underline="false"
           icon="false"
           fontSize={1.6}
+          delay={1000}
         />
         <Wrapper>
           {this.state.methods.map((method, ind) => (
@@ -146,7 +147,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   @media ${device.tablet} {
-    margin: 20% 0rem;
+    /* margin: 20% 0rem; */
   }
 `;
 const H1 = styled.h1`

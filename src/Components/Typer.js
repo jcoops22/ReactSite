@@ -30,7 +30,7 @@ const Typer = (props) => {
           wrapper.style.textAlign = "center";
         }
       });
-    }, 3000);
+    }, props.delay);
   };
   // call functions on component mount
   useEffect(() => {
