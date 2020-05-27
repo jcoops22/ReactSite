@@ -161,7 +161,7 @@ const Method = styled.div`
   animation-iteration-count: 1;
 `;
 const Text = styled.div`
-  position: relative;
+  /* position: relative; */
   border-radius: 8px;
   background: ${(props) => props.background};
   width: 100%;
@@ -175,7 +175,7 @@ const Text = styled.div`
 const Img = styled.img`
   cursor: pointer;
   z-index: 1;
-  position: relative;
+  /* position: relative; */
   left: ${(props) => props.width - 0.2 + "rem"};
   border-radius: 8px;
   background: ${(props) => props.background};
