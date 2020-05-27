@@ -87,23 +87,7 @@ class Contact extends Component {
       // });
     });
   };
-  //   {
-  //   this.state.methods.map((method, ind) => (
-  //     <Link
-  //       key={ind}
-  //       href={method.link}
-  //       target="_blank"
-  //       rel="noopener noreferrer"
-  //     >
-  //       <Method className="method">
-  //         <Img background={method.imgbg} src={method.img} width={3} />
-  //         <Text color={method.color} background={method.bg}>
-  //           <span>{method.name}</span>
-  //         </Text>
-  //       </Method>
-  //     </Link>
-  //   ))
-  // }
+
   // <Pointer
   //   className="pointer"
   //   src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590549754/Portfolio%20Site/Icons/hand-pointer-svgrepo-com_gwg67l.svg"
@@ -116,7 +100,23 @@ class Contact extends Component {
           <H1 style={{ color: "#fff", marginBottom: "2rem" }}>
             You Can Reach Me Here...
           </H1>
-          <Wrapper>Somestuff in the wrappper</Wrapper>
+          <Wrapper>
+            {this.state.methods.map((method, ind) => (
+              <Link
+                key={ind}
+                href={method.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Method className="method">
+                  <Img background={method.imgbg} src={method.img} width={3} />
+                  <Text color={method.color} background={method.bg}>
+                    <span>{method.name}</span>
+                  </Text>
+                </Method>
+              </Link>
+            ))}
+          </Wrapper>
         </Container>
       </div>
     );
@@ -148,7 +148,7 @@ const Wrapper = styled.div`
 `;
 const Link = styled.a`
   transition-duration: 0.3s;
-  height: 3.8rem;
+  max-height: 3.8rem;
 `;
 const Method = styled.div`
   &:hover {
