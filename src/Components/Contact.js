@@ -8,7 +8,7 @@ class Contact extends Component {
       {
         name: "GMail",
         color: "#D44638",
-        link: "",
+        link: "mailto:%20jcooper232074@gmail.com?subject=Getting%20In%20Touch",
         bg: "#fff",
         imgbg: "#",
         img:
@@ -17,7 +17,7 @@ class Contact extends Component {
       {
         name: "GitHub",
         color: "#fff",
-        link: "",
+        link: "https://github.com/jcoops22",
         bg: "#211F1F",
         imgbg: "#fff",
         img:
@@ -26,7 +26,7 @@ class Contact extends Component {
       {
         name: "LinkedIn",
         color: "#fff",
-        link: "",
+        link: "https://www.linkedin.com/in/jonathancooperwebdeveloper/",
         bg: "#0e76a8",
         imgbg: "#fff",
         img:
@@ -35,7 +35,7 @@ class Contact extends Component {
       {
         name: "Instagram",
         color: "#fff",
-        link: "",
+        link: "https://www.instagram.com/jontheawesome/",
         bg:
           "linear-gradient(90deg, rgba(250,161,30,1) 5%, rgba(250,126,30,1) 26%, rgba(214,41,118,1) 42%, rgba(150,47,191,1) 64%, rgba(79,91,213,1) 82%)",
         imgbg: "#",
@@ -45,7 +45,7 @@ class Contact extends Component {
       {
         name: "Codepen",
         color: "#000",
-        link: "",
+        link: "https://codepen.io/jon-cooper",
         bg: "#fff",
         imgbg: "#",
         img:
@@ -54,7 +54,8 @@ class Contact extends Component {
       {
         name: "YouTube",
         color: "#fff",
-        link: "",
+        link:
+          "https://www.youtube.com/channel/UCEnHYoOPw05HXXUuQhsHiMg?view_as=subscriber",
         bg: "#c4302b",
         imgbg: "#fff",
         img:
@@ -70,7 +71,7 @@ class Contact extends Component {
     let pointer = document.querySelector(".pointer");
     methods.forEach((method, ind) => {
       method.style.animationName = "swing";
-      method.style.animationDelay = ind + "s";
+      method.style.animationDelay = ind * 0.6 + "s";
       // method.addEventListener("mouseover", () => {
       //   pointer.style.animationName = "point";
       // });
@@ -85,12 +86,19 @@ class Contact extends Component {
           </H1>
           <Wrapper>
             {this.state.methods.map((method, ind) => (
-              <Method key={ind} className="method">
-                <Img background={method.imgbg} src={method.img} width={3} />
-                <Text color={method.color} background={method.bg}>
-                  <span>{method.name}</span>
-                </Text>
-              </Method>
+              <Link
+                key={ind}
+                href={method.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Method className="method">
+                  <Img background={method.imgbg} src={method.img} width={3} />
+                  <Text color={method.color} background={method.bg}>
+                    <span>{method.name}</span>
+                  </Text>
+                </Method>
+              </Link>
             ))}
             <Pointer
               className="pointer"
@@ -106,10 +114,12 @@ class Contact extends Component {
 export default Contact;
 
 const Container = styled.div`
-  margin: 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media ${device.tablet} {
+    margin: 20% 0rem;
+  }
 `;
 const H1 = styled.h1`
   color: #fff;
@@ -122,6 +132,7 @@ const Wrapper = styled.div`
   justify-content: center;
   padding: 0 1rem;
 `;
+const Link = styled.a``;
 const Method = styled.div`
   &:hover {
     opacity: 0.8;
@@ -130,7 +141,7 @@ const Method = styled.div`
   justify-content: space-between;
   margin: 0.5rem 0;
   animation-fill-mode: backwards;
-  animation-duration: 1s;
+  animation-duration: 0.6s;
   animation-iteration-count: 1;
 `;
 const Text = styled.div`
@@ -146,6 +157,7 @@ const Text = styled.div`
   cursor: pointer;
 `;
 const Img = styled.img`
+  cursor: pointer;
   z-index: 1;
   position: relative;
   left: ${(props) => props.width - 0.2 + "rem"};
