@@ -157,14 +157,16 @@ const H1 = styled.h1`
 `;
 const Wrapper = styled.div`
   height: 100%;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: flex-start;
   padding: 0 1rem;
   margin-top: 3.5rem;
+  border: 1px solid green;
 `;
 const Link = styled.a`
   &:hover {
@@ -173,6 +175,7 @@ const Link = styled.a`
   opacity: 1;
   transition-duration: 0.3s;
   height: 8vh;
+  width: 300px;
   max-height: 3.8rem;
   max-width: 300px;
   display: flex;
@@ -197,6 +200,7 @@ const Text = styled.div`
 const Img = styled.img`
   cursor: pointer;
   z-index: 1;
+  margin-left: -${(props) => props.width + "rem"};
   position: relative;
   top: 0rem;
   left: ${(props) => props.width - 0.2 + "rem"};
