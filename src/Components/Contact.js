@@ -164,7 +164,7 @@ const Wrapper = styled.div`
   align-content: center;
   justify-content: flex-start;
   padding: 0 1rem;
-  margin-top: 1rem;
+  margin-top: 3.5rem;
 `;
 const Link = styled.a`
   &:hover {
