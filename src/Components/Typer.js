@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 
 const Typer = (props) => {
-  console.log(props);
   // animate typing
   const startTyping = () => {
     // get the letters
