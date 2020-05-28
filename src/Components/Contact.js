@@ -86,7 +86,7 @@ class Contact extends Component {
     this.hideMethods();
     setTimeout(() => {
       this.hoverEffect();
-    }, 2000);
+    }, 1000);
   }
   hideMethods = () => {
     let methods = document.querySelectorAll(".method");
@@ -98,9 +98,9 @@ class Contact extends Component {
     let methods = document.querySelectorAll(".method");
     let pointer = document.querySelector(".pointer");
     methods.forEach((method, ind) => {
-      method.style.animationName = "swing";
+      method.style.animationName = "jump";
       method.style.display = "flex";
-      method.style.animationDelay = ind * 0.6 + "s";
+      method.style.animationDelay = ind * 0.3 + "s";
       method.addEventListener("mouseover", () => {});
     });
   };
@@ -113,7 +113,7 @@ class Contact extends Component {
           sentence="You can reach out to me here..."
           underline="false"
           icon="false"
-          fontSize={"8vh"}
+          fontSize={"8vw"}
           delay={1000}
         />
         <Wrapper>
@@ -150,14 +150,9 @@ const Container = styled.div`
     width: 80%;
   }
 `;
-const H1 = styled.h1`
-  margin: 0;
-  color: #fff;
-  font-size: 1.5rem;
-`;
 const Wrapper = styled.div`
+  position: relative;
   width: 100%;
-  min-height: 15rem;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
@@ -181,7 +176,7 @@ const Link = styled.a`
   justify-content: space-between;
   margin: 0.5rem 0;
   animation-fill-mode: backwards;
-  animation-duration: 0.6s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
 `;
 const Text = styled.div`

@@ -54,3 +54,15 @@ a:hover {
     transform: translateX(0);
   }
 }
+@keyframes jump {
+  0% {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+  20% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
