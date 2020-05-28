@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Letters from "./Letters";
 import Typer from "./Typer";
 import { device } from "../resources/mediaquery";
-
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -43,7 +42,6 @@ export default Home;
 // styles
 const Container = styled.div`
   position: relative;
-  /* border: 1px solid red; */
   top: 13vw;
   display: flex;
   padding: 1rem 0;
@@ -51,8 +49,6 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  /* background-color: #000; */
-  background-color: transparent;
   border-radius: 8px;
   @media ${device.mobileM} {
     top: 21%;

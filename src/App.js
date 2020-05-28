@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import "./App.css";
-import Navbar from "./Components/Navbar";
 import { Switch, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
@@ -10,6 +10,21 @@ import Projects from "./Components/Projects";
 
 // Component
 function App(props) {
+  useEffect(() => {
+    changeBackground();
+  });
+  const backgrounds = [
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627951/Portfolio%20Site/denis-degioanni-9wH624ALFQA-unsplash_tthfqv.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627980/Portfolio%20Site/jeremy-thomas-E0AHdsENmDg-unsplash_d0zp1h.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627994/Portfolio%20Site/jeremy-thomas-4dpAqfTbvKA-unsplash_1_q0sbll.jpg",
+  ];
+  const changeBackground = () => {
+    let app = document.querySelector(".App");
+    let limit = backgrounds.length;
+    let ind = Math.floor(Math.random() * limit);
+    console.log(ind);
+    app.style.backgroundImage = `url(${backgrounds[ind]})`;
+  };
   return (
     <Container className="App">
       <Overlay />
@@ -19,7 +34,7 @@ function App(props) {
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/contact" component={Contact} />
       </Switch>
-      <Navbar />
+      <Navbar change={changeBackground} />
     </Container>
   );
 }
@@ -29,7 +44,6 @@ export default App;
 // styles
 
 const Container = styled.div`
-  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1590472301/Portfolio%20Site/nightsky_vh99sk.jpg");
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;

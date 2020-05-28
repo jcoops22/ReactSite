@@ -107,7 +107,13 @@ class Navbar extends Component {
         <Credits />
         <Overlay className="overlay"></Overlay>
         <List>
-          <Lnk className="tag" onClick={this.animateBerg}>
+          <Lnk
+            className="tag"
+            onClick={() => {
+              this.animateBerg();
+              this.props.change();
+            }}
+          >
             <Link className="link" to="/">
               Home
             </Link>
