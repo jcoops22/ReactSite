@@ -17,6 +17,7 @@ function App(props) {
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627951/Portfolio%20Site/denis-degioanni-9wH624ALFQA-unsplash_tthfqv.jpg",
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627980/Portfolio%20Site/jeremy-thomas-E0AHdsENmDg-unsplash_d0zp1h.jpg",
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627994/Portfolio%20Site/jeremy-thomas-4dpAqfTbvKA-unsplash_1_q0sbll.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590472301/Portfolio%20Site/nightsky_vh99sk.jpg",
   ];
   const changeBackground = () => {
     let app = document.querySelector(".App");

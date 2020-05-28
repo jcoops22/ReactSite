@@ -118,17 +118,35 @@ class Navbar extends Component {
               Home
             </Link>
           </Lnk>
-          <Lnk className="tag" onClick={this.animateBerg}>
+          <Lnk
+            className="tag"
+            onClick={() => {
+              this.animateBerg();
+              this.props.change();
+            }}
+          >
             <Link className="link" to="/about">
               About
             </Link>
           </Lnk>
-          <Lnk className="tag" onClick={this.animateBerg}>
+          <Lnk
+            className="tag"
+            onClick={() => {
+              this.animateBerg();
+              this.props.change();
+            }}
+          >
             <Link className="link" to="/Projects">
               Projects
             </Link>
           </Lnk>
-          <Lnk className="tag" onClick={this.animateBerg}>
+          <Lnk
+            className="tag"
+            onClick={() => {
+              this.animateBerg();
+              this.props.change();
+            }}
+          >
             <Link className="link" to="/Contact">
               Contact
             </Link>

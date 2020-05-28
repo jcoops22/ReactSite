@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { device } from "../resources/mediaquery";
 import styled from "styled-components";
 import Typer from "./Typer";
-import stars from "../resources/stars.jpg";
 
 class Contact extends Component {
   state = {
@@ -141,9 +140,6 @@ class Contact extends Component {
 export default Contact;
 
 const Container = styled.div`
-  background-image: url(${stars});
-  background-attachment: fixed;
-  background-size: cover;
   padding: 0.6rem;
   height: 90vh;
   width: 100%;
