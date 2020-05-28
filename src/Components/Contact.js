@@ -181,10 +181,17 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 1rem;
-  margin-top: 3.5rem;
+  padding: 2rem 1rem 0;
+  margin-top: 1.5rem;
   @media ${device.tablet} {
     align-items: flex-start;
+  }
+  @media ${device.laptop} {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 80%;
   }
 `;
 const Link = styled.a`
@@ -203,6 +210,14 @@ const Link = styled.a`
   animation-fill-mode: backwards;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
+  @media ${device.laptop} {
+    &:hover {
+      width: 200px;
+      margin-right: 2rem;
+    }
+    margin: 2rem 100px 2rem 2rem;
+    width: 100px;
+  }
 `;
 const Text = styled.div`
   position: relative;
@@ -215,6 +230,12 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  @media ${device.laptop} {
+    &:hover {
+      justify-content: flex-end;
+      padding-right: 3rem;
+    }
+  }
 `;
 const Img = styled.img`
   cursor: pointer;
@@ -227,6 +248,12 @@ const Img = styled.img`
   border-bottom-left-radius: 8px;
   background: ${(props) => props.background};
   width: ${(props) => props.width + "rem"};
+  @media ${device.laptop} {
+    &:hover + ${Text} {
+      justify-content: flex-end;
+      padding-right: 3rem;
+    }
+  }
 `;
 const Hover = styled.div`
   display: none;
@@ -236,4 +263,8 @@ const Hover = styled.div`
   left: 110%;
   margin-left: -13rem;
   width: 13rem;
+  @media ${device.laptop} {
+    left: 40%;
+    top: 5rem;
+  }
 `;

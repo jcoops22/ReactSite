@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 
 // Component
@@ -85,6 +85,7 @@ const Icon = styled.button`
   position: fixed;
   left: calc(100% - 20px);
   top: 90vh;
+  z-index: 98;
   padding: 0;
   @media ${device.tablet} {
     display: initial;
