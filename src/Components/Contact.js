@@ -113,7 +113,7 @@ class Contact extends Component {
           sentence="You can reach out to me here..."
           underline="false"
           icon="false"
-          fontSize={1.6}
+          fontSize={"8vh"}
           delay={1000}
         />
         <Wrapper>

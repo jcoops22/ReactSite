@@ -29,7 +29,7 @@ const Home = () => {
             sentence="I'd love to help build your next project!"
             underline="true"
             icon="true"
-            fontSize={1}
+            fontSize={"1rem"}
           />
         </Link>
       </Container>

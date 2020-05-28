@@ -41,7 +41,7 @@ const Typer = (props) => {
       <div className="wrapper" style={{ transitionDuration: "1s" }}>
         {props.sentence.split("").map((letter, ind) => (
           <Type
-            style={{ fontSize: props.fontSize + "rem" }}
+            style={{ fontSize: props.fontSize }}
             delay={ind * 100 + "ms"}
             className="letter"
             key={ind}
