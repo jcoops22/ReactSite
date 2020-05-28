@@ -8,6 +8,7 @@ class Contact extends Component {
     methods: [
       {
         name: "GMail",
+        phrase: "preferred method of contact",
         color: "#D44638",
         link: "mailto:%20jcooper232074@gmail.com?subject=Getting%20In%20Touch",
         bg: "#fff",
@@ -17,6 +18,7 @@ class Contact extends Component {
       },
       {
         name: "GitHub",
+        phrase: "check out my repos!",
         color: "#fff",
         link: "https://github.com/jcoops22",
         bg: "#211F1F",
@@ -26,6 +28,7 @@ class Contact extends Component {
       },
       {
         name: "LinkedIn",
+        phrase: "Let's connect!",
         color: "#fff",
         link: "https://www.linkedin.com/in/jonathancooperwebdeveloper/",
         bg: "#0e76a8",
@@ -35,6 +38,7 @@ class Contact extends Component {
       },
       {
         name: "Instagram",
+        phrase: "Follow for Follow?",
         color: "#fff",
         link: "https://www.instagram.com/jontheawesome/",
         bg:
@@ -45,6 +49,7 @@ class Contact extends Component {
       },
       {
         name: "Codepen",
+        phrase: "see my 'scratch paper'",
         color: "#000",
         link: "https://codepen.io/jon-cooper",
         bg: "#fff",
@@ -54,6 +59,7 @@ class Contact extends Component {
       },
       {
         name: "YouTube",
+        phrase: "My neglected drum channel 🙃",
         color: "#fff",
         link:
           "https://www.youtube.com/channel/UCEnHYoOPw05HXXUuQhsHiMg?view_as=subscriber",
@@ -64,6 +70,7 @@ class Contact extends Component {
       },
       {
         name: "Twitter",
+        phrase: "*Tweet *tweet",
         color: "#fff",
         link: "https://twitter.com/Maffmatology",
         bg: "#00acee",
@@ -73,6 +80,7 @@ class Contact extends Component {
       },
       {
         name: "FaceBook",
+        phrase: "Yay Facebook 😒",
         color: "#fff",
         link: "https://www.facebook.com/jon.cooper.9849/",
         bg: "#3b5998",
@@ -86,7 +94,7 @@ class Contact extends Component {
     this.hideMethods();
     setTimeout(() => {
       this.hoverEffect();
-    }, 1000);
+    }, 2000);
   }
   hideMethods = () => {
     let methods = document.querySelectorAll(".method");
@@ -96,15 +104,20 @@ class Contact extends Component {
   };
   hoverEffect = () => {
     let methods = document.querySelectorAll(".method");
-    let pointer = document.querySelector(".pointer");
+    let hover = document.querySelectorAll(".hover");
     methods.forEach((method, ind) => {
       method.style.animationName = "jump";
       method.style.display = "flex";
       method.style.animationDelay = ind * 0.3 + "s";
-      method.addEventListener("mouseover", () => {});
+      // hover effects/ show phrase
+      method.addEventListener("mouseover", () => {
+        hover[ind].style.display = "block";
+      });
+      method.addEventListener("mouseout", () => {
+        hover[ind].style.display = "none";
+      });
     });
   };
-  // <H1>You Can Reach Me Here...</H1>
 
   render() {
     return (
@@ -113,8 +126,8 @@ class Contact extends Component {
           sentence="You can reach out to me here..."
           underline="false"
           icon="false"
-          fontSize={"8vw"}
-          delay={1000}
+          fontSize={"5vh"}
+          delay={3500}
         />
         <Wrapper>
           {this.state.methods.map((method, ind) => (
@@ -128,6 +141,15 @@ class Contact extends Component {
               <Img background={method.imgbg} src={method.img} width={4} />
               <Text color={method.color} background={method.bg}>
                 <span>{method.name}</span>
+                <Hover className="hover">
+                  <Typer
+                    sentence={method.phrase}
+                    underline="false"
+                    icon="false"
+                    fontSize={"1rem"}
+                    delay={3500}
+                  />
+                </Hover>
               </Text>
             </Link>
           ))}
@@ -147,7 +169,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   @media ${device.tablet} {
-    width: 80%;
+    width: 90%;
   }
 `;
 const Wrapper = styled.div`
@@ -161,6 +183,9 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   padding: 0 1rem;
   margin-top: 3.5rem;
+  @media ${device.tablet} {
+    align-items: flex-start;
+  }
 `;
 const Link = styled.a`
   &:hover {
@@ -203,10 +228,12 @@ const Img = styled.img`
   background: ${(props) => props.background};
   width: ${(props) => props.width + "rem"};
 `;
-const Pointer = styled.img`
+const Hover = styled.div`
   display: none;
-  width: 2.2rem;
   position: relative;
-  top: -4rem;
-  transform: rotate(90deg);
+  text-align: center;
+  top: 1rem;
+  left: 110%;
+  margin-left: -13rem;
+  width: 13rem;
 `;

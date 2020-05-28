@@ -7,6 +7,7 @@ class Letters extends Component {
     word: this.props.word,
     arr: [],
   };
+  // create delay array
   setDelay = () => {
     for (let i = 0; i < this.state.word.length; i++) {
       this.state.arr.push(
@@ -31,6 +32,7 @@ class Letters extends Component {
       >
         {this.state.word.split("").map((l, ind) => (
           <Letter
+            marginSides={this.props.marginSides}
             key={ind}
             delay={this.state.arr[ind]}
             top={this.setTop(this.props.top)}
@@ -57,7 +59,7 @@ const shimmer = keyframes`
 const Letter = styled.span`
   animation: ${shimmer} 5s ease-out infinite;
   animation-delay: ${(props) => props.delay};
-  margin: 0 5vw;
+  margin: 0 ${(props) => props.marginSides};
   color: #fff;
   position: relative;
   top: ${(props) => props.top};
