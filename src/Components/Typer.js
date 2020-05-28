@@ -26,7 +26,7 @@ const Typer = (props) => {
         // if mobile then center the sentence
         if (window.innerWidth < 768) {
           let wrapper = document.querySelector(".wrapper");
-          wrapper.style.textAlign = "center";
+          // wrapper.style.textAlign = "center";
         }
       });
     }, props.delay);
@@ -38,7 +38,10 @@ const Typer = (props) => {
 
   return (
     <div>
-      <div className="wrapper" style={{ transitionDuration: "1s" }}>
+      <div
+        className="wrapper"
+        style={{ transitionDuration: "1s", textAlign: "center" }}
+      >
         {props.sentence.split("").map((letter, ind) => (
           <Type
             style={{ fontSize: props.fontSize }}

@@ -28,9 +28,9 @@ function App(props) {
     console.log(ind);
     app.style.backgroundImage = `url(${backgrounds[ind]})`;
   };
+  // <Overlay />
   return (
     <Container className="App">
-      <Overlay />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
@@ -56,17 +56,17 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.6);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 59%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  height: 100vh;
-  width: 100%;
-`;
+// const Overlay = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   opacity: 0;
+//   background: rgba(0, 0, 0, 0.6);
+//   background: linear-gradient(
+//     0deg,
+//     rgba(0, 0, 0, 1) 59%,
+//     rgba(255, 255, 255, 1) 100%
+//   );
+//   height: 100vh;
+//   width: 100%;
+// `;
