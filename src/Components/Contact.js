@@ -147,7 +147,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   @media ${device.tablet} {
-    /* margin: 20% 0rem; */
+    width: 80%;
   }
 `;
 const H1 = styled.h1`
