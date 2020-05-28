@@ -156,7 +156,6 @@ const H1 = styled.h1`
   font-size: 1.5rem;
 `;
 const Wrapper = styled.div`
-  height: 100%;
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -166,7 +165,6 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   padding: 0 1rem;
   margin-top: 3.5rem;
-  border: 1px solid green;
 `;
 const Link = styled.a`
   &:hover {

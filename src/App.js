@@ -14,10 +14,12 @@ function App(props) {
     changeBackground();
   });
   const backgrounds = [
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627951/Portfolio%20Site/denis-degioanni-9wH624ALFQA-unsplash_tthfqv.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627980/Portfolio%20Site/jeremy-thomas-E0AHdsENmDg-unsplash_d0zp1h.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590627994/Portfolio%20Site/jeremy-thomas-4dpAqfTbvKA-unsplash_1_q0sbll.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590472301/Portfolio%20Site/nightsky_vh99sk.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635942/Portfolio%20Site/Background%20Pics/denis-degioanni-9wH624ALFQA-unsplash_z09o6s_hgxatq.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635941/Portfolio%20Site/Background%20Pics/wil-stewart-T26KCgCPsCI-unsplash_f0uqbl_wzr20s.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635925/Portfolio%20Site/Background%20Pics/manuel-will-gd3t5Dtbwkw-unsplash_w48ehm_ltu8d2.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635892/Portfolio%20Site/Background%20Pics/casey-horner-mPnxwQBtUZE-unsplash_jzbmz1_lsipdl.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635879/Portfolio%20Site/Background%20Pics/nightsky_vh99sk_l8ldo2_qmxcmn.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635853/Portfolio%20Site/Background%20Pics/greg-jeanneau-9sxeKzuCVoE-unsplash_znhy2q_buszjq.jpg",
   ];
   const changeBackground = () => {
     let app = document.querySelector(".App");
