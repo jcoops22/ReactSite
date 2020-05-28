@@ -157,6 +157,7 @@ const H1 = styled.h1`
 `;
 const Wrapper = styled.div`
   width: 100%;
+  min-height: 15rem;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
@@ -172,7 +173,7 @@ const Link = styled.a`
   }
   opacity: 1;
   transition-duration: 0.3s;
-  height: 8vh;
+  min-height: 3.8rem;
   width: 300px;
   max-height: 3.8rem;
   max-width: 300px;
