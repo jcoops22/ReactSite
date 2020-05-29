@@ -20,7 +20,7 @@ class Projects extends Component {
       {
         name: "GymPact",
         desc:
-          "Social Media app for sharing gym workouts! Sort of an 'Instagram' for workouts. Built with React frontend Rails backend. Postgresql Database and Semnatic UI fot styling.",
+          "Social Media app for sharing gym workouts! Sort of an Instagram for workouts. Built with React frontend Rails backend. Postgresql Database and Semnatic UI fot styling.",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1590703015/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.42.06_srtizh.png",
         github: "",

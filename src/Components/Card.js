@@ -27,11 +27,12 @@ const Card = (props) => {
         <Img width="100%" src={props.project.img} />
       </div>
       <Desc className="desc">
+        {props.project.desc.length}
         {props.project.desc}
         <More
           onClick={() => showMore()}
           className="more"
-          show={props.project.desc.length > 100 ? "block" : "none"}
+          show={props.project.desc.length > 10 ? "block" : "none"}
         >
           {showing ? "Show More" : "Show Less"}
         </More>
