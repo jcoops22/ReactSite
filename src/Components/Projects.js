@@ -85,7 +85,7 @@ export default Projects;
 const Container = styled.div`
   width: 100%;
   height: 88%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 `;
 const Wrapper = styled.div`
   padding: 0.6rem;
@@ -96,7 +96,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   @media ${device.tablet} {
     /* width: 90%; */
   }

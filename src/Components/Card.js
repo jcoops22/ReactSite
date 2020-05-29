@@ -56,7 +56,7 @@ export default Card;
 // styles
 const Cards = styled.div`
   margin: 1rem 0;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 100%;
   height: auto;
   display: flex;
@@ -65,21 +65,25 @@ const Cards = styled.div`
 `;
 const Name = styled.p`
   color: yellow;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 const Img = styled.img`
   width: ${(props) => props.width};
   height: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 const Desc = styled.div`
+  display: none;
   transition-duration: 0.3s;
   position: relative;
   height: 4rem;
   overflow-y: hidden;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   color: #fff;
   max-width: 380px;
+  @media ${device.tablet} {
+    display: block;
+  }
 `;
 const More = styled.span`
   display: ${(props) => props.show};

@@ -26,7 +26,6 @@ function App(props) {
     let app = document.querySelector(".App");
     let limit = backgrounds.length;
     let ind = Math.floor(Math.random() * limit);
-    console.log(ind);
     app.style.backgroundImage = `url(${backgrounds[ind]})`;
   };
   // <Overlay />
