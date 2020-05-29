@@ -34,7 +34,7 @@ class Projects extends Component {
         github: "",
       },
       {
-        name: "NotePad App",
+        name: "Notebook App",
         desc:
           "Simple notepad app with a backend. Fully responsive, built with VueJS, NodeJS, and Mongo DB database.",
         img:
@@ -59,7 +59,7 @@ class Projects extends Component {
       },
     ],
   };
-  componentDidMount() {}
+
   render() {
     return (
       <Container>
@@ -89,14 +89,13 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   padding: 0.6rem;
-  height: 75vh;
+  height: 87%;
   width: 100%;
   overflow-y: scroll;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* align-items: center; */
   border: 1px solid red;
   @media ${device.tablet} {
     /* width: 90%; */

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { device } from "../resources/mediaquery";
 
 const Card = (props) => {
@@ -22,10 +23,19 @@ const Card = (props) => {
   };
   return (
     <Cards>
-      <div>
-        <Name>{props.project.name}</Name>
-        <Img width="100%" src={props.project.img} />
-      </div>
+      <Link
+        to={{
+          pathname: "/show",
+          state: {
+            project: props.project,
+          },
+        }}
+      >
+        <div>
+          <Name>{props.project.name}</Name>
+          <Img width="100%" src={props.project.img} />
+        </div>
+      </Link>
       <Desc className="desc">
         {props.project.desc.length}
         {props.project.desc}

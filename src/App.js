@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
+import Show from "./Components/Show";
 
 // Component
 function App(props) {
@@ -36,6 +37,7 @@ function App(props) {
         <Route exact path="/about" component={About} />
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/show" component={Show} />
       </Switch>
       <Navbar change={changeBackground} />
     </Container>
