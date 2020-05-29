@@ -98,7 +98,10 @@ const Icon = styled.img`
   top: -2rem;
   left: 104%;
   opacity: 0;
-  transform: rotate(180deg);
+  animation-name: twist;
+  animation-duration: 1.6s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
   @media ${device.mobileL} {
     display: initial;
   }

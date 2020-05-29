@@ -66,3 +66,14 @@ a:hover {
     transform: translateY(0);
   }
 }
+@keyframes twist {
+  0% {
+    transform: rotate(170deg);
+  }
+  50% {
+    transform: rotate(200deg);
+  }
+  100% {
+    transform: rotate(170deg);
+  }
+}

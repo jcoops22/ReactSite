@@ -2,9 +2,56 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 import Typer from "./Typer";
+import Card from "./Card";
 
 class Projects extends Component {
-  state = {};
+  state = {
+    projects: [
+      {
+        name: "HairByShandel",
+        desc:
+          "Local Hair Salon business site. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
+        thumbnail:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/c_thumb,g_face,w_342/v1590703017/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.14.42_jfuiny.png",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590703017/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.14.42_jfuiny.png",
+        github: "",
+      },
+      {
+        name: "GymPact",
+        desc:
+          "Social Media app for sharing gym workouts! Sort of an 'Instagram' for workouts. Built with React frontend Rails backend. Postgresql Database and Semnatic UI fot styling.",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590703015/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.42.06_srtizh.png",
+        github: "",
+      },
+      {
+        name: "",
+        desc: "",
+        img: "",
+        github: "",
+      },
+      {
+        name: "",
+        desc: "",
+        img: "",
+        github: "",
+      },
+      {
+        name: "",
+        desc: "",
+        img: "",
+        github: "",
+      },
+      {
+        name: "",
+        desc: "",
+        img: "",
+        github: "",
+      },
+    ],
+  };
+  componentDidMount() {}
   render() {
     return (
       <Container>
@@ -16,17 +63,9 @@ class Projects extends Component {
           delay={2500}
         />
         <Wrapper>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {this.state.projects.map((project, ind) => (
+            <Card key={ind} project={project}></Card>
+          ))}
         </Wrapper>
       </Container>
     );
@@ -37,7 +76,7 @@ export default Projects;
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 88%;
   border: 1px solid blue;
 `;
 const Wrapper = styled.div`
@@ -54,10 +93,4 @@ const Wrapper = styled.div`
   @media ${device.tablet} {
     /* width: 90%; */
   }
-`;
-const Card = styled.div`
-  margin: 1rem 0;
-  border: 1px solid green;
-  width: 8rem;
-  height: 8rem;
 `;
