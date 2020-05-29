@@ -88,7 +88,7 @@ class Navbar extends Component {
     setTimeout(() => {
       explore.style.display = "flex";
       explore.style.animationName = "shift";
-    }, 1000);
+    }, 12000);
   };
   // RENDER
   render() {

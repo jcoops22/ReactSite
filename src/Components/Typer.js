@@ -44,7 +44,10 @@ const Typer = (props) => {
       >
         {props.sentence.split("").map((letter, ind) => (
           <Type
-            style={{ fontSize: props.fontSize }}
+            style={{
+              fontSize: props.fontSize,
+              repeat: props.repeat,
+            }}
             delay={ind * 100 + "ms"}
             className="letter"
             key={ind}
@@ -73,7 +76,8 @@ const Type = styled.span`
   animation-name: none;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  animation-iteration-count: 1;
+  /* animation-iteration-count: ${(props) => props.repeat}; */
+  animation-iteration-count: infinite;
   animation-fill-mode: forwards;
   animation-delay: ${(props) => props.delay};
   font-family: "Chelsea Market", cursive;

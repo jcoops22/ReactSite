@@ -25,7 +25,13 @@ a:hover {
 .overlay {
   transition-duration: 1s;
 }
-
+.react_player {
+  transition-duration: 0.7s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
 @keyframes typing {
   to {
     visibility: visible;
@@ -75,5 +81,47 @@ a:hover {
   }
   100% {
     transform: rotate(170deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+    opacity: 0.5;
+  }
+  50% {
+    margin-left: 0rem;
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.5;
+  }
+}
+@keyframes cycle {
+  0% {
+    transform: rotate(0);
+    opacity: 0.5;
+  }
+  50% {
+    margin-left: 0rem;
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 0.5;
+  }
+}
+@keyframes cycle2 {
+  0% {
+    transform: skewX(20deg);
+    opacity: 0.5;
+  }
+  50% {
+    margin-left: 0rem;
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 0.5;
   }
 }
