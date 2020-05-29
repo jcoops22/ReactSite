@@ -111,7 +111,9 @@ class Contact extends Component {
       method.style.animationDelay = ind * 0.3 + "s";
       // hover effects/ show phrase
       method.addEventListener("mouseover", () => {
-        hover[ind].style.display = "block";
+        if (window.innerWidth > 520) {
+          hover[ind].style.display = "block";
+        }
       });
       method.addEventListener("mouseout", () => {
         hover[ind].style.display = "none";
@@ -183,8 +185,11 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   padding: 2rem 1rem 0;
   margin-top: 1.5rem;
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     align-items: flex-start;
+  }
+  @media ${device.tablet} {
+    align-items: center;
   }
   @media ${device.laptop} {
     justify-content: space-around;

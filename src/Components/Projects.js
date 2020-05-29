@@ -26,27 +26,35 @@ class Projects extends Component {
         github: "",
       },
       {
-        name: "",
-        desc: "",
-        img: "",
+        name: "Music App",
+        desc:
+          "Little project built with VueJS to make samples from keyboard inputs.",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702972/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.34.40_twwuyx.png",
         github: "",
       },
       {
-        name: "",
-        desc: "",
-        img: "",
+        name: "NotePad App",
+        desc:
+          "Simple notepad app with a backend. Fully responsive, built with VueJS, NodeJS, and Mongo DB database.",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702964/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.36.36_m4y5fu.png",
         github: "",
       },
       {
-        name: "",
-        desc: "",
-        img: "",
+        name: "DrumFinder",
+        desc:
+          "Application to help you pick the perfect drumset for you! I play the drums and wanted to build this single page app to help those others who are in the market for a new kit. Built with ReactJS.",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702963/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.33.35_vnkvi0.png",
         github: "",
       },
       {
-        name: "",
-        desc: "",
-        img: "",
+        name: "Pwd Manager",
+        desc:
+          "Password tracker app. Lets you enter passwords and even generate your own 'strong' password and tag each entry with keywords to search quickly!",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702958/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.37.07_mry4p0.png",
         github: "",
       },
     ],
@@ -81,7 +89,7 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   padding: 0.6rem;
-  height: 80vh;
+  height: 75vh;
   width: 100%;
   overflow-y: scroll;
   display: flex;
