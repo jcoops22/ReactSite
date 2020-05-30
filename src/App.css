@@ -113,15 +113,15 @@ a:hover {
 }
 @keyframes cycle2 {
   0% {
-    transform: rotate(120deg);
+    transform: rotate(0deg);
     opacity: 0.5;
   }
-  50% {
+  /* 50% {
     transform: rotate(10deg);
-    opacity: 0.8;
-  }
+    opacity: 0.8; */
+  /* } */
   100% {
-    transform: rotate(120deg);
+    transform: rotate(360deg);
     opacity: 0.5;
   }
 }

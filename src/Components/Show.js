@@ -14,18 +14,20 @@ const Show = (props) => {
   const loader = () => {
     let player = document.querySelector(".react_player");
     let load = document.querySelectorAll(".load");
+    let loading = document.querySelector(".loading");
+    let vid = document.querySelector(".vid");
     setTimeout(() => {
       load.forEach((loader) => {
-        loader.style.animationDuration = "20s";
-      });
-    }, 1000);
-    setTimeout(() => {
-      load.forEach((loader) => {
+        loader.style.animationPlayState = "paused";
         loader.style.display = "none";
+        loading.style.display = "none";
+        vid.style.backgroundColor = "#000";
       });
+    }, 800);
+    setTimeout(() => {
       player.style.opacity = 1;
       setPlaying(true);
-    }, 3000);
+    }, 1000);
   };
 
   return (
@@ -35,17 +37,35 @@ const Show = (props) => {
       </Link>
       <H1>{project.name}</H1>
       <Desc>{project.desc}</Desc>
-      <Vid>
-        <Loading className="loadingWrapper">
+      <Vid className="vid">
+        <Loading className="loading">
           <Typer
             sentence="Loading..."
             underline="false"
             icon="false"
-            fontSize={"2%"}
+            fontSize={"3vw"}
           />
-          <Img width="8%" className="load" src={galaxy} name={"spin"} />
-          <Img width="8%" className="load" src={galaxylight} name={"cycle"} />
-          <Img width="8%" className="load" src={galaxy2} name={"cycle2"} />
+          <Img
+            width="8%"
+            className="load"
+            duration={"1.5s"}
+            src={galaxy}
+            name={"spin"}
+          />
+          <Img
+            width="8%"
+            className="load"
+            duration={"2s"}
+            src={galaxylight}
+            name={"cycle"}
+          />
+          <Img
+            width="8%"
+            className="load"
+            duration={"2.5s"}
+            src={galaxy2}
+            name={"cycle2"}
+          />
         </Loading>
         <ReactPlayer
           className="react_player"
@@ -87,12 +107,13 @@ const Button = styled.button`
   background-color: grey;
 `;
 const Img = styled.img`
+  transition-duration: 0.5s;
   position: absolute;
-  top: 0;
+  top: 3rem;
   left: 45%;
   margin-top: 25%;
   animation-name: ${(props) => props.name};
-  animation-duration: 2s;
+  animation-duration: ${(props) => props.duration};
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: forwards;
@@ -103,6 +124,7 @@ const Desc = styled.div`
   margin: 3rem;
 `;
 const Vid = styled.div`
+  transition-duration: 0.5s;
   border: 1px solid greenyellow;
   position: relative;
   padding: 56.25% 2rem 0;
