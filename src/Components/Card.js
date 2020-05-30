@@ -6,8 +6,12 @@ import { device } from "../resources/mediaquery";
 const Card = (props) => {
   const [showing, setShowing] = useState(true);
   useEffect(() => {
+    expand();
+
+    // "working on this one", show more of the description, needs to be called once first
     showMore();
   }, []);
+  // show more description function
   const showMore = () => {
     let more = document.querySelectorAll(".more");
     let desc = document.querySelectorAll(".desc");
@@ -18,6 +22,20 @@ const Card = (props) => {
         showing
           ? (desc[ind].style.height = "auto")
           : (desc[ind].style.height = "4rem");
+      });
+    });
+  };
+  // expand when image loads
+  const expand = () => {
+    let images = document.querySelectorAll(".thumbnail");
+    images.forEach((image, ind) => {
+      image.addEventListener("load", () => {
+        setTimeout(() => {
+          image.style.height = "30vh";
+        }, 2000);
+        setTimeout(() => {
+          image.style.height = "auto";
+        }, 3000);
       });
     });
   };
@@ -33,7 +51,12 @@ const Card = (props) => {
       >
         <div>
           <Name>{props.project.name}</Name>
-          <Img width="100%" src={props.project.img} />
+          <Img
+            width="100%"
+            src={props.project.img}
+            loading="lazy"
+            className="thumbnail"
+          />
         </div>
       </Link>
       <Desc className="desc">
@@ -69,7 +92,8 @@ const Name = styled.p`
 `;
 const Img = styled.img`
   width: ${(props) => props.width};
-  height: auto;
+  height: 0;
+  transition-duration: 1s;
   /* border: 1px solid red; */
 `;
 const Desc = styled.div`
