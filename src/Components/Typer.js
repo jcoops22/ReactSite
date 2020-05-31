@@ -74,7 +74,7 @@ const Type = styled.span`
   animation-duration: 1s;
   animation-timing-function: ease-out;
   /* animation-iteration-count: ${(props) => props.repeat}; */
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: ${(props) => props.delay};
   font-family: "Chelsea Market", cursive;
