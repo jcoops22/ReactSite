@@ -11,7 +11,7 @@ const Card = (props) => {
   // addEvent listeners to images
   const addEvents = () => {
     let images = document.querySelectorAll(".thumbnail");
-    let overlay = document.querySelectorAll(".overlay");
+    let overlay = document.querySelectorAll(".card_overlay");
     let desc = document.querySelectorAll(".desc");
     // on load show images
     images.forEach((image) => {
@@ -30,13 +30,11 @@ const Card = (props) => {
       image.addEventListener("mouseover", () => {
         image.style.opacity = "0.4";
         image.style.transform = "scale(1.2)";
-        overlay[ind].style.background = "red";
         desc[ind].style.zIndex = "1";
       });
       image.addEventListener("mouseout", () => {
         image.style.opacity = "1";
         image.style.transform = "scale(1)";
-        overlay[ind].style.background = "transparent";
         desc[ind].style.zIndex = "-1";
       });
     });
@@ -58,8 +56,10 @@ const Card = (props) => {
           loading="lazy"
           className="thumbnail"
         />
-        <Overlay className="overlay">
-          <Desc className="desc">{props.project.desc}</Desc>
+        <Overlay className="card_overlay" background={props.project.hover}>
+          <Desc className="desc" color={props.project.color}>
+            {props.project.desc}
+          </Desc>
         </Overlay>
       </Link>
     </Cards>
@@ -100,10 +100,9 @@ const Desc = styled.div`
   position: relative;
   top: 0;
   left: 0;
-  margin-top: 10%;
   transition-duration: 0.3s;
   pointer-events: none;
-  color: #fff;
+  color: ${(props) => props.color};
   max-width: 380px;
   z-index: -1;
   @media ${device.tablet} {
@@ -115,7 +114,9 @@ const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  padding: 1rem;
   opacity: 1;
+  background-color: ${(props) => props.background};
   height: 100%;
   width: 100%;
 `;
