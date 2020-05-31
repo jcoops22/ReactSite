@@ -28,11 +28,15 @@ const Card = (props) => {
     // hover events
     images.forEach((image, ind) => {
       image.addEventListener("mouseover", () => {
+        // overlay[ind].style.maxHeight = "none";
+        overlay[ind].style.opacity = 1;
         image.style.opacity = "0.4";
         image.style.transform = "scale(1.2)";
         desc[ind].style.zIndex = "1";
       });
       image.addEventListener("mouseout", () => {
+        // overlay[ind].style.maxHeight = "212px";
+        overlay[ind].style.opacity = 0;
         image.style.opacity = "1";
         image.style.transform = "scale(1)";
         desc[ind].style.zIndex = "-1";
@@ -72,14 +76,11 @@ export default Card;
 const Cards = styled.div`
   position: relative;
   margin: 1rem 0;
-  /* border: 1px solid yellow; */
   width: 100%;
   max-width: 450px;
   height: auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
   overflow: hidden;
   @media ${device.tablet} {
     margin: 1rem;
@@ -94,13 +95,13 @@ const Img = styled.img`
   opacity: 0;
   position: relative;
   z-index: 1;
-  transition-duration: 0.5s;
+  transition-duration: 1s;
 `;
 const Desc = styled.div`
   position: relative;
   top: 0;
   left: 0;
-  transition-duration: 0.3s;
+  transition-duration: 0.5s;
   pointer-events: none;
   color: ${(props) => props.color};
   max-width: 380px;
@@ -115,8 +116,9 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   padding: 1rem;
-  opacity: 1;
+  opacity: 0;
   background-color: ${(props) => props.background};
   height: 100%;
+  max-height: 220px;
   width: 100%;
 `;
