@@ -120,6 +120,6 @@ const Overlay = styled.div`
   opacity: 0;
   background-color: ${(props) => props.background};
   height: 100%;
-  /* max-height: 213px; */
+  max-height: 220px;
   width: 100%;
 `;
