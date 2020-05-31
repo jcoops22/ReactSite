@@ -10,12 +10,16 @@ import ReactPlayer from "react-player";
 
 const Show = (props) => {
   const [playing, setPlaying] = useState(false);
+  const [vidHeight, setVidHeight] = useState(0);
   const project = props.location.state.project;
   const loader = () => {
     let player = document.querySelector(".react_player");
     let load = document.querySelectorAll(".load");
     let loading = document.querySelector(".loading");
     let vid = document.querySelector(".vid");
+
+    // console.log(vid.scrollHeight);
+    // console.log(vid.offsetHeight);
     setTimeout(() => {
       load.forEach((loader) => {
         loader.style.animationPlayState = "paused";
@@ -29,6 +33,7 @@ const Show = (props) => {
       setPlaying(true);
     }, 1000);
   };
+  const getHeight = () => {};
 
   return (
     <Container>
@@ -36,7 +41,6 @@ const Show = (props) => {
         <Button>Back</Button>
       </Link>
       <H1>{project.name}</H1>
-      <Desc>{project.desc}</Desc>
       <Vid className="vid">
         <Loading className="loading">
           <Typer
@@ -76,23 +80,13 @@ const Show = (props) => {
           height="100%"
         />
       </Vid>
-
-      <div>
-        <Link to={project.github}>
-          <Button>Github</Button>
-        </Link>
-        <Link to={project.github}>
-          <Button>Visit Site</Button>
-        </Link>
-      </div>
     </Container>
   );
 };
 
 export default Show;
-const H1 = styled.h1`
-  color: white;
-`;
+
+// styles
 const Container = styled.div`
   height: 90vh;
   width: 100%;
@@ -105,6 +99,29 @@ const Button = styled.button`
   margin: 1rem;
   color: white;
   background-color: grey;
+`;
+const H1 = styled.h1`
+  color: white;
+`;
+const Vid = styled.div`
+  transition-duration: 0.5s;
+  /* border: 1px solid greenyellow; */
+  position: relative;
+  padding: 56.25% 2rem 0;
+  width: 100%;
+`;
+const Loading = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  color: #fff;
 `;
 const Img = styled.img`
   transition-duration: 0.5s;
@@ -122,24 +139,4 @@ const Img = styled.img`
 const Desc = styled.div`
   color: #fff;
   margin: 3rem;
-`;
-const Vid = styled.div`
-  transition-duration: 0.5s;
-  border: 1px solid greenyellow;
-  position: relative;
-  padding: 56.25% 2rem 0;
-  width: 100%;
-`;
-const Loading = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  /* border: 1px solid red; */
-  color: #fff;
 `;

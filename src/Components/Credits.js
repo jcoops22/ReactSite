@@ -36,7 +36,7 @@ class Credits extends Component {
     left: "100%",
   };
   showCredits = () => {
-    this.state.showing == false
+    this.state.showing === false
       ? this.setState({ left: "calc(100% - 390px)", showing: true })
       : this.setState({ left: "100%", showing: false });
   };

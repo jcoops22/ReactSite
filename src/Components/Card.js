@@ -6,41 +6,37 @@ import { device } from "../resources/mediaquery";
 const Card = (props) => {
   const [showing, setShowing] = useState(true);
   useEffect(() => {
-    expand();
-
-    // "working on this one", show more of the description, needs to be called once first
-    showMore();
-  }, []);
-  // show more description function
-  const showMore = () => {
-    let more = document.querySelectorAll(".more");
-    let desc = document.querySelectorAll(".desc");
-
-    more.forEach((more, ind) => {
-      more.addEventListener("click", () => {
-        setShowing(!showing);
-        showing
-          ? (desc[ind].style.height = "auto")
-          : (desc[ind].style.height = "4rem");
-      });
-    });
-  };
-  // expand when image loads
-  const expand = () => {
+    addEvents();
+  });
+  // addEvent listeners to images
+  const addEvents = () => {
     let images = document.querySelectorAll(".thumbnail");
-    images.forEach((image, ind) => {
+    // on load show images
+    images.forEach((image) => {
       image.addEventListener("load", () => {
-        setTimeout(() => {
-          image.style.height = "30vh";
-        }, 2000);
-        setTimeout(() => {
-          image.style.height = "auto";
-        }, 3000);
+        image.style.opacity = "1";
       });
     });
+    // hover events
+    images.forEach((image) => {
+      image.addEventListener("mouseover", () => {
+        image.style.opacity = "0.4";
+        image.style.transform = "scale(1.2)";
+      });
+      image.addEventListener("mouseout", () => {
+        image.style.opacity = "1";
+        image.style.transform = "scale(1)";
+      });
+    });
+    // to fix refresh not showing images
+    setTimeout(() => {
+      images.forEach((image) => {
+        image.style.opacity = "1";
+      });
+    }, 1000);
   };
   return (
-    <Cards>
+    <Cards className="card">
       <Link
         to={{
           pathname: "/show",
@@ -49,27 +45,17 @@ const Card = (props) => {
           },
         }}
       >
-        <div>
-          <Name>{props.project.name}</Name>
+        <Overlay className="overlay">
           <Img
             width="100%"
+            height="auto"
             src={props.project.img}
             loading="lazy"
             className="thumbnail"
           />
-        </div>
+          <Desc className="desc">{props.project.desc}</Desc>
+        </Overlay>
       </Link>
-      <Desc className="desc">
-        {props.project.desc.length}
-        {props.project.desc}
-        <More
-          onClick={() => showMore()}
-          className="more"
-          show={props.project.desc.length > 10 ? "block" : "none"}
-        >
-          {showing ? "Show More" : "Show Less"}
-        </More>
-      </Desc>
     </Cards>
   );
 };
@@ -78,51 +64,54 @@ export default Card;
 
 // styles
 const Cards = styled.div`
+  position: relative;
   margin: 1rem 0;
-  /* border: 1px solid green; */
+  border: 1px solid green;
   width: 100%;
+  max-width: 450px;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  @media ${device.tablet} {
+    margin: 1rem;
+  }
 `;
 const Name = styled.p`
-  color: yellow;
+  color: #fff;
   /* border: 1px solid red; */
 `;
 const Img = styled.img`
   width: ${(props) => props.width};
-  height: 0;
-  transition-duration: 1s;
+  height: auto;
+  opacity: 0;
+  transition-duration: 0.5s;
   /* border: 1px solid red; */
 `;
 const Desc = styled.div`
-  display: none;
-  transition-duration: 0.3s;
   position: relative;
+  top: -8rem;
+  left: 0;
+  margin-top: -5rem;
+  transition-duration: 0.3s;
   height: 4rem;
-  overflow-y: hidden;
+  /* z-index: -1; */
+  /* overflow-y: hidden; */
   /* border: 2px solid white; */
   color: #fff;
   max-width: 380px;
   @media ${device.tablet} {
-    display: block;
+    /* display: none; */
   }
 `;
-const More = styled.span`
-  display: ${(props) => props.show};
-  color: red;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  height: 2rem;
+const Overlay = styled.div`
   border: 1px solid green;
-  text-align: center;
   position: relative;
-  z-index: 0;
-  top: calc(100% - 5rem);
-  cursor: pointer;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-color: red;
+  height: 100%;
+  width: 100%;
 `;

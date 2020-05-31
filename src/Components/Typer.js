@@ -13,20 +13,17 @@ const Typer = (props) => {
         letter.style.animationName = "typing";
       });
       char[char.length - 1].addEventListener("webkitAnimationEnd", () => {
-        // after the last letter add underline and arrow or not
+        // after the last letter add underline and arrow icon or not
         let underline = document.querySelector(".underline");
         let icon = document.querySelector(".icon");
         // do checks based on props
-        if (props.icon == "true") {
+        // show the icon
+        if (props.icon === "true") {
           icon.style.opacity = "1";
         }
-        if (props.underline == "true") {
+        // underline
+        if (props.underline === "true") {
           underline.style.width = "100%";
-        }
-        // if mobile then center the sentence
-        if (window.innerWidth < 768) {
-          let wrapper = document.querySelector(".wrapper");
-          // wrapper.style.textAlign = "center";
         }
       });
     }, props.delay);
@@ -34,7 +31,7 @@ const Typer = (props) => {
   // call functions on component mount
   useEffect(() => {
     startTyping();
-  }, []);
+  });
 
   return (
     <div>

@@ -73,11 +73,11 @@ class Projects extends Component {
     return (
       <Container>
         <Typer
-          sentence="My Work"
+          sentence="Here's some of my recent work"
           underline="false"
           icon="false"
           fontSize={"5vh"}
-          delay={2500}
+          delay={1500}
         />
         <Wrapper>
           {this.state.projects.map((project, ind) => (
@@ -103,7 +103,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   @media ${device.tablet} {
     /* width: 90%; */
   }
