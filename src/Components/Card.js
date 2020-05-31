@@ -82,7 +82,6 @@ const Cards = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid red;
   @media ${device.tablet} {
     margin: 1rem;
   }
