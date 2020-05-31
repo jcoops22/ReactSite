@@ -204,7 +204,7 @@ const Link = styled.a`
     opacity: 0.8;
   }
   opacity: 1;
-  transition-duration: 0.3s;
+  transition-duration: 0.6s;
   min-height: 3.8rem;
   width: 300px;
   max-height: 3.8rem;
@@ -217,11 +217,10 @@ const Link = styled.a`
   animation-iteration-count: 1;
   @media ${device.laptop} {
     &:hover {
-      width: 200px;
-      margin-right: 2rem;
+      padding-right: 65px;
     }
-    margin: 2rem 100px 2rem 2rem;
-    width: 100px;
+    /* margin: 2rem 200px 2rem 2rem; */
+    padding-right: 100px;
   }
 `;
 const Text = styled.div`

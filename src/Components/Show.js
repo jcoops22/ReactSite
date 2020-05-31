@@ -123,6 +123,9 @@ const Loading = styled.div`
   width: 100%;
   height: 100%;
   color: #fff;
+  @media ${device.tablet} {
+    top: -5rem;
+  }
 `;
 const Img = styled.img`
   transition-duration: 0.5s;
@@ -135,6 +138,12 @@ const Img = styled.img`
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: forwards;
+  @media ${device.tablet} {
+    margin-top: 15%;
+  }
+  @media ${device.laptop} {
+    margin-top: 20%;
+  }
 `;
 const Desc = styled.div`
   color: #fff;
