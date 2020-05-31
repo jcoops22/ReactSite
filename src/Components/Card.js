@@ -78,10 +78,11 @@ const Cards = styled.div`
   margin: 1rem 0;
   width: 100%;
   max-width: 450px;
-  height: auto;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border: 1px solid red;
   @media ${device.tablet} {
     margin: 1rem;
   }
@@ -119,6 +120,6 @@ const Overlay = styled.div`
   opacity: 0;
   background-color: ${(props) => props.background};
   height: 100%;
-  max-height: 213px;
+  /* max-height: 213px; */
   width: 100%;
 `;
