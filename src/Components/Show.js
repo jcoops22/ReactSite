@@ -16,16 +16,13 @@ const Show = (props) => {
     let player = document.querySelector(".react_player");
     let load = document.querySelectorAll(".load");
     let loading = document.querySelector(".loading");
-    let vid = document.querySelector(".vid");
 
-    // console.log(vid.scrollHeight);
-    // console.log(vid.offsetHeight);
     setTimeout(() => {
       load.forEach((loader) => {
         loader.style.animationPlayState = "paused";
         loader.style.display = "none";
         loading.style.display = "none";
-        vid.style.backgroundColor = "#000";
+        document.getElementById("react_p").scrollIntoView();
       });
     }, 800);
     setTimeout(() => {
@@ -33,7 +30,6 @@ const Show = (props) => {
       setPlaying(true);
     }, 1000);
   };
-  const getHeight = () => {};
 
   return (
     <Container>
@@ -41,6 +37,7 @@ const Show = (props) => {
         <Button>Back</Button>
       </Link>
       <H1>{project.name}</H1>
+      <Desc>{project.desc}</Desc>
       <Vid className="vid">
         <Loading className="loading">
           <Typer
@@ -72,6 +69,7 @@ const Show = (props) => {
           />
         </Loading>
         <ReactPlayer
+          id="react_p"
           className="react_player"
           onReady={loader}
           playing={playing}
@@ -90,8 +88,8 @@ export default Show;
 const Container = styled.div`
   height: 90vh;
   width: 100%;
+  padding: 0.5rem;
   overflow: scroll;
-  border: 1px solid red;
 `;
 const Button = styled.button`
   cursor: pointer;
@@ -102,13 +100,17 @@ const Button = styled.button`
 `;
 const H1 = styled.h1`
   color: white;
+  margin-top: 8vw;
 `;
 const Vid = styled.div`
   transition-duration: 0.5s;
-  /* border: 1px solid greenyellow; */
   position: relative;
   padding: 56.25% 2rem 0;
   width: 100%;
+  margin: 10% auto 0;
+  @media ${device.tablet} {
+    width: 70%;
+  }
 `;
 const Loading = styled.div`
   position: absolute;
@@ -120,7 +122,6 @@ const Loading = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  /* border: 1px solid red; */
   color: #fff;
 `;
 const Img = styled.img`
@@ -134,9 +135,12 @@ const Img = styled.img`
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: forwards;
-  /* border: 1px solid blue; */
 `;
 const Desc = styled.div`
   color: #fff;
   margin: 3rem;
+  @media ${device.tablet} {
+    width: 60%;
+    margin: 6rem auto;
+  }
 `;

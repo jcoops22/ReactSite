@@ -10,7 +10,7 @@ class Projects extends Component {
       {
         name: "HairByShandel",
         hover: "#e0bc75",
-        color: "#",
+        color: "#000",
         desc:
           "Local Hair Salon business site. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
         video:
