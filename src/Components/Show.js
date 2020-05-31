@@ -90,6 +90,9 @@ const Container = styled.div`
   width: 100%;
   padding: 0.5rem;
   overflow: scroll;
+  @media ${device.laptop} {
+    width: 80%;
+  }
 `;
 const Button = styled.button`
   cursor: pointer;
@@ -124,7 +127,10 @@ const Loading = styled.div`
   height: 100%;
   color: #fff;
   @media ${device.tablet} {
-    top: -5rem;
+    top: -8rem;
+  }
+  @media ${device.laptop} {
+    top: -12rem;
   }
 `;
 const Img = styled.img`
@@ -142,7 +148,7 @@ const Img = styled.img`
     margin-top: 15%;
   }
   @media ${device.laptop} {
-    margin-top: 20%;
+    /* margin-top: %; */
   }
 `;
 const Desc = styled.div`

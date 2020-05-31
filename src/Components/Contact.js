@@ -185,6 +185,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   padding: 2rem 1rem 0;
   margin-top: 1.5rem;
+  /* border: 2px solid red; */
   @media ${device.mobileL} {
     align-items: flex-start;
   }
@@ -197,6 +198,8 @@ const Wrapper = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     height: 80%;
+    margin-top: -1rem;
+    overflow: visible;
   }
 `;
 const Link = styled.a`
@@ -235,10 +238,8 @@ const Text = styled.div`
   align-items: center;
   cursor: pointer;
   @media ${device.laptop} {
-    &:hover {
-      justify-content: flex-end;
-      padding-right: 3rem;
-    }
+    justify-content: flex-end;
+    padding-right: 3rem;
   }
 `;
 const Img = styled.img`
@@ -263,7 +264,7 @@ const Hover = styled.div`
   display: none;
   position: relative;
   text-align: center;
-  top: 1rem;
+  padding-top: 1rem;
   left: 110%;
   margin-left: -13rem;
   width: 13rem;
