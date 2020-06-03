@@ -33,6 +33,15 @@ const Show = (props) => {
   };
   // end video ready funtion
 
+  const showFullScreen = () => {
+    let fs = document.querySelector(".fsbutton");
+    fs.style.opacity = 0.6;
+  };
+  const hideFullScreen = () => {
+    let fs = document.querySelector(".fsbutton");
+    fs.style.opacity = 0;
+  };
+
   //  go fullscreen
   const openFullscreen = () => {
     let player = document.querySelector(".react_player");
@@ -49,21 +58,6 @@ const Show = (props) => {
       player.msRequestFullscreen();
     }
   };
-  // Close fullscreen
-  function closeFullscreen() {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      /* Firefox */
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      /* Chrome, Safari and Opera */
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      /* IE/Edge */
-      document.msExitFullscreen();
-    }
-  }
 
   return (
     <Container>
@@ -72,7 +66,11 @@ const Show = (props) => {
       </Link>
       <H1>{project.name}</H1>
       <Desc>{project.desc}</Desc>
-      <Vid className="vid">
+      <Vid
+        className="vid"
+        onMouseOver={showFullScreen}
+        onMouseOut={hideFullScreen}
+      >
         <Loading className="loading">
           <Typer
             sentence="Loading..."
@@ -111,7 +109,7 @@ const Show = (props) => {
           width="100%"
           height="100%"
         />
-        <FSButton onClick={openFullscreen} />
+        <FSButton className="fsbutton" onClick={openFullscreen} />
       </Vid>
     </Container>
   );
@@ -195,9 +193,18 @@ const Desc = styled.div`
     margin: 6rem auto;
   }
 `;
-const FSButton = styled.button`
-  position: relative;
-  border: 2px solid yellow;
+const FSButton = styled.span`
+  background: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591157488/Portfolio%20Site/Icons/expand-fullscreen-svgrepo-com_jetai9.svg");
+  opacity: 0;
+  transition-duration: 0.7s;
+  cursor: pointer;
+  position: absolute;
+  top: 0rem;
+  margin-top: 4%;
+  left: calc(100% - 40px);
   height: 40px;
   width: 40px;
+  @media ${device.tablet} {
+    margin-top: 58%;
+  }
 `;
