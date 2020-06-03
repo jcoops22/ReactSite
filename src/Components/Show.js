@@ -10,8 +10,9 @@ import ReactPlayer from "react-player";
 
 const Show = (props) => {
   const [playing, setPlaying] = useState(false);
-  const [vidHeight, setVidHeight] = useState(0);
   const project = props.location.state.project;
+
+  // video ready function
   const loader = () => {
     let player = document.querySelector(".react_player");
     let load = document.querySelectorAll(".load");
@@ -22,14 +23,47 @@ const Show = (props) => {
         loader.style.animationPlayState = "paused";
         loader.style.display = "none";
         loading.style.display = "none";
-        document.getElementById("react_p").scrollIntoView();
       });
     }, 800);
     setTimeout(() => {
+      document.getElementById("react_p").scrollIntoView();
       player.style.opacity = 1;
       setPlaying(true);
     }, 1000);
   };
+  // end video ready funtion
+
+  //  go fullscreen
+  const openFullscreen = () => {
+    let player = document.querySelector(".react_player");
+    if (player.requestFullscreen) {
+      player.requestFullscreen();
+    } else if (player.mozRequestFullScreen) {
+      /* Firefox */
+      player.mozRequestFullScreen();
+    } else if (player.webkitRequestFullscreen) {
+      /* Chrome, Safari and Opera */
+      player.webkitRequestFullscreen();
+    } else if (player.msRequestFullscreen) {
+      /* IE/Edge */
+      player.msRequestFullscreen();
+    }
+  };
+  // Close fullscreen
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      /* IE/Edge */
+      document.msExitFullscreen();
+    }
+  }
 
   return (
     <Container>
@@ -77,6 +111,7 @@ const Show = (props) => {
           width="100%"
           height="100%"
         />
+        <FSButton onClick={openFullscreen} />
       </Vid>
     </Container>
   );
@@ -89,7 +124,8 @@ const Container = styled.div`
   height: 90vh;
   width: 100%;
   padding: 0.5rem;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   @media ${device.laptop} {
     width: 80%;
   }
@@ -158,4 +194,10 @@ const Desc = styled.div`
     width: 60%;
     margin: 6rem auto;
   }
+`;
+const FSButton = styled.button`
+  position: relative;
+  border: 2px solid yellow;
+  height: 40px;
+  width: 40px;
 `;

@@ -25,6 +25,7 @@ class Navbar extends Component {
     explore.style.animationName = "none";
     // animate the links
     let a = document.querySelectorAll(".tag");
+    // slide in links
     setTimeout(() => {
       if (this.state.expanded) {
         a.forEach((a, ind) => {
@@ -65,7 +66,7 @@ class Navbar extends Component {
       patty2.style.top = "19px";
       setTimeout(() => {
         berg.style.left = "1rem";
-      }, 800);
+      }, 600);
       setTimeout(() => {
         this.state.expanded
           ? (overlay.style.display = "initial")

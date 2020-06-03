@@ -30,7 +30,7 @@ const Card = (props) => {
       image.addEventListener("mouseover", () => {
         // overlay[ind].style.maxHeight = "none";
         overlay[ind].style.opacity = 1;
-        image.style.opacity = "0.4";
+        image.style.opacity = "0.2";
         image.style.transform = "scale(1.2)";
         desc[ind].style.zIndex = "1";
       });
@@ -95,7 +95,7 @@ const Img = styled.img`
   opacity: 0;
   position: relative;
   z-index: 1;
-  transition-duration: 1s;
+  transition-duration: 0.6s;
 `;
 const Desc = styled.div`
   position: relative;
@@ -115,7 +115,7 @@ const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 1rem;
+  padding: 15% 1rem 1rem;
   opacity: 0;
   background-color: ${(props) => props.background};
   height: 100%;

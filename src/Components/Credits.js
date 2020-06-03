@@ -17,18 +17,13 @@ class Credits extends Component {
         href: "https://reactjs.org/docs/getting-started.html",
       },
       {
-        source: "ScrollMagic",
-        description: "Animated with",
-        href: "https://www.npmjs.com/package/react-scrollmagic",
-      },
-      {
         source: "Styled Components",
         description: "Styled with",
         href: "https://styled-components.com/docs/basics#coming-from-css",
       },
       {
         source: "Unsplash",
-        description: "Photo by Kristopher Roller",
+        description: "Stars with peach background and water",
         href: "https://unsplash.com/@krisroller",
       },
     ],
