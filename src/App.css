@@ -33,6 +33,38 @@ a:hover {
   left: 0;
   opacity: 0;
 }
+/* stars */
+#star1,
+#star2,
+#star3,
+#star4 {
+  opacity: 1;
+}
+#star1 {
+  position: absolute;
+  transition-duration: 0.3s;
+  z-index: 0;
+  pointer-events: none;
+  top: 0;
+  left: 35%;
+  width: 30px;
+  border: 1px solid red;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /* transform: rotate(-130deg); */
+}
+#star2 {
+  position: absolute;
+}
+#star3 {
+  position: absolute;
+}
+#star4 {
+  position: absolute;
+}
+/* keyframes */
 @keyframes typing {
   to {
     visibility: visible;
@@ -117,12 +149,16 @@ a:hover {
     transform: rotate(0deg);
     opacity: 0.5;
   }
-  /* 50% {
-    transform: rotate(10deg);
-    opacity: 0.8; */
-  /* } */
   100% {
     transform: rotate(360deg);
     opacity: 0.5;
+  }
+}
+
+/* Stars  */
+@keyframes shoot1 {
+  to {
+    opacity: 1;
+    width: 60px;
   }
 }

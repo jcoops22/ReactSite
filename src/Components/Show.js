@@ -22,12 +22,16 @@ const Show = (props) => {
     setTimeout(() => {
       load.forEach((loader) => {
         loader.style.animationPlayState = "paused";
+      });
+      player.style.backgroundColor = "black";
+    }, 600);
+    setTimeout(() => {
+      load.forEach((loader) => {
         loader.style.display = "none";
         loading.style.display = "none";
       });
-    }, 800);
-    setTimeout(() => {
       document.getElementById("react_p").scrollIntoView();
+      player.style.backgroundColor = "transparent";
       player.style.opacity = 1;
       setPlaying(true);
     }, 1000);
@@ -63,8 +67,9 @@ const Show = (props) => {
   return (
     <Container>
       <Link to="/projects">
-        <Button>Back</Button>
-        <Stars top={0} left={"2rem"} />
+        <Stars top={"2rem"} left={"2rem"}>
+          <Button>Back</Button>
+        </Stars>
       </Link>
       <H1>{project.name}</H1>
       <Desc>{project.desc}</Desc>
@@ -196,6 +201,9 @@ const Desc = styled.div`
   }
 `;
 const FSButton = styled.span`
+  &:hover {
+    opacity: 1;
+  }
   background: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591157488/Portfolio%20Site/Icons/expand-fullscreen-svgrepo-com_jetai9.svg");
   opacity: 0;
   transition-duration: 0.7s;

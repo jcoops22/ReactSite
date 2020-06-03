@@ -162,7 +162,10 @@ export default Navbar;
 
 // styles
 const List = styled.ul`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   position: relative;
   top: 35rem;
@@ -179,13 +182,11 @@ const Lnk = styled.span`
   margin: 0.5rem;
 `;
 const Burger = styled.div`
-  &:hover {
-    /* border: 3px solid red; */
-  }
   &:focus {
     outline: none;
   }
   cursor: pointer;
+  -webkit-box-sizing: initial;
   box-sizing: initial;
   position: fixed;
   top: 90vh;
@@ -194,7 +195,11 @@ const Burger = styled.div`
   height: 36px;
   width: 36px;
   border-radius: 50px;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
   transition-delay: 0.4s;
   opacity: 1;
   border: 2px solid #fff;
@@ -206,6 +211,8 @@ const Pat1 = styled.div`
   height: 3px;
   width: 80%;
   position: relative;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   left: 3px;
   background-color: #fff;
@@ -216,6 +223,8 @@ const Pat2 = styled.div`
   height: 3px;
   width: 80%;
   position: relative;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   left: 3px;
   background-color: #fff;
@@ -242,10 +251,16 @@ const Explore = styled.span`
   color: #fff;
   padding-left: 0.5rem;
   display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 `;
 const Icon = styled.img`
