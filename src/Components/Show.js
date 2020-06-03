@@ -7,6 +7,7 @@ import galaxy from "../resources/Icons/galaxy.svg";
 import galaxy2 from "../resources/Icons/galaxy2.svg";
 import galaxylight from "../resources/Icons/galaxylight.svg";
 import ReactPlayer from "react-player";
+import Stars from "./Stars";
 
 const Show = (props) => {
   const [playing, setPlaying] = useState(false);
@@ -63,6 +64,7 @@ const Show = (props) => {
     <Container>
       <Link to="/projects">
         <Button>Back</Button>
+        <Stars top={0} left={"2rem"} />
       </Link>
       <H1>{project.name}</H1>
       <Desc>{project.desc}</Desc>
