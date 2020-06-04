@@ -117,7 +117,9 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/">
-              <Stars id={"home"}>Home</Stars>
+              <Stars id={"home"} top={"0.7rem"}>
+                Home
+              </Stars>
             </Link>
           </Lnk>
           <Lnk
@@ -128,7 +130,9 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/about">
-              <Stars id={"about"}>About</Stars>
+              <Stars id={"about"} top={"0.7rem"}>
+                About
+              </Stars>
             </Link>
           </Lnk>
           <Lnk
@@ -139,7 +143,9 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/Projects">
-              <Stars id={"projects"}>Projects</Stars>
+              <Stars id={"projects"} top={"0.7rem"}>
+                Projects
+              </Stars>
             </Link>
           </Lnk>
           <Lnk
@@ -150,7 +156,9 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/Contact">
-              <Stars id={"contact"}>Contact</Stars>
+              <Stars id={"contact"} top={"0.7rem"}>
+                Contact
+              </Stars>
             </Link>
           </Lnk>
         </List>
@@ -178,14 +186,16 @@ const Lnk = styled.span`
   &:hover {
     transform: scale(1.3);
   }
-  transition-duration: 1s;
+  transition-duration: 0.3s;
   position: fixed;
   z-index: 100;
   top: -10vh;
   left: 1rem;
   opacity: 0;
+  height: 3rem;
   width: 8rem;
   margin: 0.5rem;
+  /* border: 1px solid red; */
 `;
 const Burger = styled.div`
   &:focus {

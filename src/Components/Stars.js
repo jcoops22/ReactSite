@@ -3,10 +3,11 @@ import styled, { keyframes } from "styled-components";
 import star from "../resources/Icons/star.svg";
 
 const Stars = (props) => {
-  const shootStars = (id) => {
+  const shootStars = (id, top) => {
     let star = document.getElementById(`star${id}`);
     let div = document.getElementById(`div${id}`);
     star.style.animationName = "shoot1";
+    star.style.top = `${top}`;
     div.style.animationName = "slideIn";
     console.log("you hovered");
   };
@@ -20,7 +21,7 @@ const Stars = (props) => {
   return (
     <Star
       onMouseOver={() => {
-        shootStars(props.id);
+        shootStars(props.id, props.top);
       }}
       onMouseOut={() => {
         callStars(props.id);
@@ -36,11 +37,14 @@ const Stars = (props) => {
 export default Stars;
 
 const Star = styled.div`
+  width: 100%;
+  height: 100%;
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   position: relative;
   top: 0;
   left: 0;
+  /* border: 1px solid green; */
 `;

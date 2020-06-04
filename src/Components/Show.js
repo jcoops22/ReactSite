@@ -67,9 +67,11 @@ const Show = (props) => {
   return (
     <Container>
       <Link to="/projects">
-        <Stars id={"back"}>
-          <Button>Back</Button>
-        </Stars>
+        <ButtonDiv>
+          <Stars id={"back"} top={"1.4rem"}>
+            <Button>Back</Button>
+          </Stars>
+        </ButtonDiv>
       </Link>
       <H1>{project.name}</H1>
       <Desc>{project.desc}</Desc>
@@ -134,6 +136,10 @@ const Container = styled.div`
   @media ${device.laptop} {
     width: 80%;
   }
+`;
+const ButtonDiv = styled.div`
+  height: 4rem;
+  width: 8rem;
 `;
 const Button = styled.button`
   cursor: pointer;
