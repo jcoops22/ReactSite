@@ -26,6 +26,10 @@ a:hover {
 .overlay {
   transition-duration: 1s;
 }
+.tag {
+  width: 8rem;
+  margin-right: 50px;
+}
 .react_player {
   transition-duration: 0.7s;
   position: absolute;
@@ -34,35 +38,33 @@ a:hover {
   opacity: 0;
 }
 /* stars */
-#star1,
-#star2,
-#star3,
-#star4 {
-  opacity: 1;
-}
-#star1 {
-  position: absolute;
-  transition-duration: 0.3s;
-  z-index: 0;
+#starhome,
+#starabout,
+#starprojects,
+#starcontact,
+#starback {
+  transition-duration: 0.7s;
   pointer-events: none;
-  top: 0;
-  left: 35%;
-  width: 30px;
-  border: 1px solid red;
+  width: 20px;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+#divhome,
+#divabout,
+#divprojects,
+#divcontact,
+#divback {
+  position: absolute;
+  transition-duration: 0.7s;
+  pointer-events: none;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  /* transform: rotate(-130deg); */
-}
-#star2 {
-  position: absolute;
-}
-#star3 {
-  position: absolute;
-}
-#star4 {
-  position: absolute;
+  top: 0;
+  left: -100%;
 }
 /* keyframes */
 @keyframes typing {
@@ -158,7 +160,11 @@ a:hover {
 /* Stars  */
 @keyframes shoot1 {
   to {
-    opacity: 1;
-    width: 60px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes shoot2 {
+  to {
+    left: 140%;
   }
 }

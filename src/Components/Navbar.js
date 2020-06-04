@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
 import leftArrow from "../resources/Icons/left-arrow-arrows-svgrepo-com.svg";
+import Stars from "./Stars";
 
 // Component
 class Navbar extends Component {
@@ -116,7 +117,7 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/">
-              Home
+              <Stars id={"home"}>Home</Stars>
             </Link>
           </Lnk>
           <Lnk
@@ -127,7 +128,7 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/about">
-              About
+              <Stars id={"about"}>About</Stars>
             </Link>
           </Lnk>
           <Lnk
@@ -138,7 +139,7 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/Projects">
-              Projects
+              <Stars id={"projects"}>Projects</Stars>
             </Link>
           </Lnk>
           <Lnk
@@ -149,7 +150,7 @@ class Navbar extends Component {
             }}
           >
             <Link className="link" to="/Contact">
-              Contact
+              <Stars id={"contact"}>Contact</Stars>
             </Link>
           </Lnk>
         </List>
@@ -179,6 +180,7 @@ const Lnk = styled.span`
   top: -10vh;
   left: 0;
   opacity: 0;
+  padding-right: 1rem;
   margin: 0.5rem;
 `;
 const Burger = styled.div`

@@ -67,7 +67,7 @@ const Show = (props) => {
   return (
     <Container>
       <Link to="/projects">
-        <Stars top={"2rem"} left={"2rem"}>
+        <Stars id={"back"}>
           <Button>Back</Button>
         </Stars>
       </Link>
