@@ -43,10 +43,18 @@ export default Home;
 const Container = styled.div`
   position: relative;
   top: 13vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 1rem 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   border-radius: 8px;
@@ -84,7 +92,6 @@ const Img = styled.img`
   margin-bottom: -4rem;
   z-index: 1;
   left: -30%;
-  /* border: 1px solid red; */
   display: none;
   width: ${(props) => props.width + "rem"};
   @media ${device.tablet} {

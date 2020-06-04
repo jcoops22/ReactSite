@@ -60,9 +60,9 @@ const Letter = styled.span`
   animation: ${shimmer} 5s ease-out infinite;
   animation-delay: ${(props) => props.delay};
   margin: 0 ${(props) => props.marginSides};
+  top: ${(props) => props.top};
   color: #fff;
   position: relative;
-  top: ${(props) => props.top};
   font-size: 18px;
   font-family: "Liu Jian Mao Cao";
 `;

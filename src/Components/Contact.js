@@ -167,8 +167,15 @@ const Container = styled.div`
   padding: 0.6rem;
   height: 90vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   @media ${device.tablet} {
     width: 90%;
@@ -179,23 +186,42 @@ const Wrapper = styled.div`
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 2rem 1rem 0;
   margin-top: 1.5rem;
-  /* border: 2px solid red; */
   @media ${device.mobileL} {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
   }
   @media ${device.tablet} {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
   @media ${device.laptop} {
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     height: 80%;
     margin-top: -1rem;
@@ -207,36 +233,50 @@ const Link = styled.a`
     opacity: 0.8;
   }
   opacity: 1;
+  -webkit-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
   transition-duration: 0.6s;
   min-height: 3.8rem;
   width: 300px;
   max-height: 3.8rem;
   max-width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0.5rem 0;
+  -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
+  -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
   @media ${device.laptop} {
     &:hover {
       padding-right: 65px;
     }
-    /* margin: 2rem 200px 2rem 2rem; */
     padding-right: 100px;
   }
 `;
 const Text = styled.div`
   position: relative;
   border-radius: 8px;
-  background: ${(props) => props.background};
   width: 100%;
-  color: ${(props) => props.color};
   text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+  background: ${(props) => props.background};
+  color: ${(props) => props.color};
   @media ${device.laptop} {
     justify-content: flex-end;
     padding-right: 3rem;
@@ -245,12 +285,12 @@ const Text = styled.div`
 const Img = styled.img`
   cursor: pointer;
   z-index: 1;
-  margin-left: -${(props) => props.width + "rem"};
   position: relative;
   top: 0rem;
-  left: ${(props) => props.width - 0.2 + "rem"};
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  margin-left: -${(props) => props.width + "rem"};
+  left: ${(props) => props.width - 0.2 + "rem"};
   background: ${(props) => props.background};
   width: ${(props) => props.width + "rem"};
   @media ${device.laptop} {

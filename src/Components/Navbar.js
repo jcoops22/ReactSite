@@ -183,9 +183,6 @@ const List = styled.ul`
   width: 100%;
 `;
 const Lnk = styled.span`
-  &:hover {
-    transform: scale(1.3);
-  }
   transition-duration: 0.3s;
   position: fixed;
   z-index: 100;
@@ -193,9 +190,14 @@ const Lnk = styled.span`
   left: 1rem;
   opacity: 0;
   height: 3rem;
-  width: 8rem;
+  width: 5rem;
   margin: 0.5rem;
-  /* border: 1px solid red; */
+  @media ${device.tablet} {
+    &:hover {
+      width: 8rem;
+      transform: scale(1.5);
+    }
+  }
 `;
 const Burger = styled.div`
   &:focus {

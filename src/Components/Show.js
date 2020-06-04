@@ -23,7 +23,6 @@ const Show = (props) => {
       load.forEach((loader) => {
         loader.style.animationPlayState = "paused";
       });
-      player.style.backgroundColor = "black";
     }, 600);
     setTimeout(() => {
       load.forEach((loader) => {
@@ -31,7 +30,6 @@ const Show = (props) => {
         loading.style.display = "none";
       });
       document.getElementById("react_p").scrollIntoView();
-      player.style.backgroundColor = "transparent";
       player.style.opacity = 1;
       setPlaying(true);
     }, 1000);
@@ -144,15 +142,24 @@ const ButtonDiv = styled.div`
 const Button = styled.button`
   cursor: pointer;
   width: 5rem;
+  height: 8rem;
   margin: 1rem;
   color: white;
-  background-color: grey;
+  border: none;
+  border-radius: 5px;
+  /* background-color: #00ff00; */
+  background-color: rgba(0, 255, 0, 0.3);
 `;
 const H1 = styled.h1`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   color: white;
   margin-top: 8vw;
 `;
 const Vid = styled.div`
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   position: relative;
   padding: 56.25% 2rem 0;
@@ -166,9 +173,18 @@ const Loading = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -181,16 +197,21 @@ const Loading = styled.div`
   }
 `;
 const Img = styled.img`
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   position: absolute;
   top: 3rem;
   left: 45%;
   margin-top: 25%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-direction: forwards;
+  animation-direction: forwards;
   animation-name: ${(props) => props.name};
   animation-duration: ${(props) => props.duration};
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: forwards;
   @media ${device.tablet} {
     margin-top: 15%;
   }
@@ -203,7 +224,7 @@ const Desc = styled.div`
   margin: 3rem;
   @media ${device.tablet} {
     width: 60%;
-    margin: 6rem auto;
+    margin: 6rem 2rem 6rem auto;
   }
 `;
 const FSButton = styled.span`
@@ -212,6 +233,8 @@ const FSButton = styled.span`
   }
   background: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591157488/Portfolio%20Site/Icons/expand-fullscreen-svgrepo-com_jetai9.svg");
   opacity: 0;
+  -webkit-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
   transition-duration: 0.7s;
   cursor: pointer;
   position: absolute;

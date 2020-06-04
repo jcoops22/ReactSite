@@ -78,16 +78,20 @@ const Cards = styled.div`
   margin: 1rem 0;
   width: 100%;
   max-width: 450px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
   @media ${device.tablet} {
     margin: 1rem;
   }
-`;
-const Name = styled.p`
-  color: #fff;
 `;
 const Img = styled.img`
   width: ${(props) => props.width};
@@ -95,30 +99,36 @@ const Img = styled.img`
   opacity: 0;
   position: relative;
   z-index: 1;
+  -webkit-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
   transition-duration: 0.6s;
 `;
 const Desc = styled.div`
   position: relative;
   top: 0;
   left: 0;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   pointer-events: none;
-  color: ${(props) => props.color};
   max-width: 380px;
   z-index: -1;
+  color: ${(props) => props.color};
   @media ${device.tablet} {
     display: inline;
   }
 `;
 const Overlay = styled.div`
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   position: absolute;
   top: 0;
   left: 0;
   padding: 15% 1rem 1rem;
   opacity: 0;
-  background-color: ${(props) => props.background};
   height: 100%;
   max-height: 220px;
   width: 100%;
+  background-color: ${(props) => props.background};
 `;

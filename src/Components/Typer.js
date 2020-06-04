@@ -68,18 +68,27 @@ export default Typer;
 const Type = styled.span`
   position: relative;
   color: #fff;
+  /* color: #00ff00; */
   visibility: hidden;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
   transition-duration: 1s;
+  -webkit-animation-name: none;
   animation-name: none;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
-  /* animation-iteration-count: ${(props) => props.repeat}; */
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  animation-delay: ${(props) => props.delay};
   font-family: "Chelsea Market", cursive;
+  animation-delay: ${(props) => props.delay};
 `;
 const Underline = styled.div`
+  -webkit-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
   transition-duration: 0.8s;
   margin-top: 8px;
   position: relative;
@@ -93,15 +102,21 @@ const Underline = styled.div`
 `;
 const Icon = styled.img`
   display: none;
+  -webkit-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
   transition-duration: 0.8s;
   position: relative;
   width: 1.4rem;
   top: -2rem;
   left: 104%;
   opacity: 0;
+  -webkit-animation-name: twist;
   animation-name: twist;
+  -webkit-animation-duration: 1.6s;
   animation-duration: 1.6s;
+  -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   @media ${device.mobileL} {
     display: initial;

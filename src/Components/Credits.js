@@ -88,13 +88,20 @@ const Icon = styled.button`
 `;
 const CreditsDiv = styled.div`
   padding: 1rem;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   width: 400px;
   position: fixed;
   overflow: scroll;
   top: 40vh;
   cursor: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border: 3px solid #fff;
   border-radius: 8px;
@@ -104,7 +111,10 @@ const CreditsDiv = styled.div`
 const Line = styled.div`
   width: 100%;
   font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   margin: 5px;
 `;
