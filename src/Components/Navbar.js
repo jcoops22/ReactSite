@@ -194,8 +194,8 @@ const Lnk = styled.span`
   margin: 0.5rem;
   @media ${device.tablet} {
     &:hover {
-      width: 8rem;
-      transform: scale(1.5);
+      width: 6rem;
+      transform: scale(1.3);
     }
   }
 `;

@@ -16,5 +16,6 @@ const Container = styled.div`
   width: 100%;
 `;
 const H1 = styled.h1`
+  font-size: 1rem;
   color: #fff;
 `;

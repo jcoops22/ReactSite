@@ -36,32 +36,6 @@ const Show = (props) => {
   };
   // end video ready funtion
 
-  const showFullScreen = () => {
-    let fs = document.querySelector(".fsbutton");
-    fs.style.opacity = 0.6;
-  };
-  const hideFullScreen = () => {
-    let fs = document.querySelector(".fsbutton");
-    fs.style.opacity = 0;
-  };
-
-  //  go fullscreen
-  const openFullscreen = () => {
-    let player = document.querySelector(".react_player");
-    if (player.requestFullscreen) {
-      player.requestFullscreen();
-    } else if (player.mozRequestFullScreen) {
-      /* Firefox */
-      player.mozRequestFullScreen();
-    } else if (player.webkitRequestFullscreen) {
-      /* Chrome, Safari and Opera */
-      player.webkitRequestFullscreen();
-    } else if (player.msRequestFullscreen) {
-      /* IE/Edge */
-      player.msRequestFullscreen();
-    }
-  };
-
   return (
     <Container>
       <Link to="/projects">
@@ -73,11 +47,7 @@ const Show = (props) => {
       </Link>
       <H1>{project.name}</H1>
       <Desc>{project.desc}</Desc>
-      <Vid
-        className="vid"
-        onMouseOver={showFullScreen}
-        onMouseOut={hideFullScreen}
-      >
+      <Vid className="vid">
         <Loading className="loading">
           <Typer
             sentence="Loading..."
@@ -108,6 +78,7 @@ const Show = (props) => {
           />
         </Loading>
         <ReactPlayer
+          controls={true}
           id="react_p"
           className="react_player"
           onReady={loader}
@@ -116,7 +87,6 @@ const Show = (props) => {
           width="100%"
           height="100%"
         />
-        <FSButton className="fsbutton" onClick={openFullscreen} />
       </Vid>
     </Container>
   );
@@ -225,25 +195,5 @@ const Desc = styled.div`
   @media ${device.tablet} {
     width: 60%;
     margin: 6rem 2rem 6rem auto;
-  }
-`;
-const FSButton = styled.span`
-  &:hover {
-    opacity: 1;
-  }
-  background: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591157488/Portfolio%20Site/Icons/expand-fullscreen-svgrepo-com_jetai9.svg");
-  opacity: 0;
-  -webkit-transition-duration: 0.7s;
-  -o-transition-duration: 0.7s;
-  transition-duration: 0.7s;
-  cursor: pointer;
-  position: absolute;
-  top: 0rem;
-  margin-top: 4%;
-  left: calc(100% - 40px);
-  height: 40px;
-  width: 40px;
-  @media ${device.tablet} {
-    margin-top: 58%;
   }
 `;
