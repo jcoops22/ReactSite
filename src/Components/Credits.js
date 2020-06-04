@@ -38,10 +38,11 @@ class Credits extends Component {
 
   render() {
     return (
-      <Icon
-        onClick={this.showCredits}
-        style={{ backgroundColor: this.state.showing ? "green" : "white" }}
-      >
+      <div>
+        <Icon
+          onClick={this.showCredits}
+          style={{ backgroundColor: this.state.showing ? "green" : "white" }}
+        ></Icon>
         <CreditsDiv
           style={{
             left: this.state.left,
@@ -59,7 +60,7 @@ class Credits extends Component {
             );
           })}
         </CreditsDiv>
-      </Icon>
+      </div>
     );
   }
 }
@@ -71,17 +72,19 @@ const Icon = styled.button`
   &:focus {
     outline: none;
   }
+  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591248061/Portfolio%20Site/Icons/planet-svgrepo-com_2_s5rzfu.svg");
   display: none;
   border-radius: 50%;
   border: 3px solid #aaa;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
   position: fixed;
-  left: calc(100% - 20px);
+  left: calc(100% - 30px);
   top: 90vh;
   z-index: 98;
   padding: 0;
+  animation: rotate 5s linear infinite forwards;
   @media ${device.tablet} {
     display: initial;
   }
@@ -95,6 +98,7 @@ const CreditsDiv = styled.div`
   position: fixed;
   overflow: scroll;
   top: 40vh;
+  z-index: 98;
   cursor: auto;
   display: -webkit-box;
   display: -ms-flexbox;

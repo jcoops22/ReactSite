@@ -167,3 +167,8 @@ a:hover {
     left: 100%;
   }
 }
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
