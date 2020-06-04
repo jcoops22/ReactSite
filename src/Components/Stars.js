@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import star from "../resources/Icons/star.svg";
 
 const Stars = (props) => {
@@ -7,7 +7,7 @@ const Stars = (props) => {
     let star = document.getElementById(`star${id}`);
     let div = document.getElementById(`div${id}`);
     star.style.animationName = "shoot1";
-    div.style.animationName = "shoot2";
+    div.style.animationName = "slideIn";
     console.log("you hovered");
   };
   const callStars = (id) => {
@@ -27,9 +27,9 @@ const Stars = (props) => {
       }}
     >
       {props.children}
-      <ImgWrapper id={`div${props.id}`}>
+      <div id={`div${props.id}`}>
         <img src={star} id={`star${props.id}`} width="30px" />
-      </ImgWrapper>
+      </div>
     </Star>
   );
 };
@@ -44,4 +44,3 @@ const Star = styled.div`
   top: 0;
   left: 0;
 `;
-const ImgWrapper = styled.div``;

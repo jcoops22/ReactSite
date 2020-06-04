@@ -26,10 +26,6 @@ a:hover {
 .overlay {
   transition-duration: 1s;
 }
-.tag {
-  width: 8rem;
-  margin-right: 50px;
-}
 .react_player {
   transition-duration: 0.7s;
   position: absolute;
@@ -57,8 +53,8 @@ a:hover {
 #divcontact,
 #divback {
   position: absolute;
-  transition-duration: 0.7s;
   pointer-events: none;
+  animation-delay: 0.1s;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -163,7 +159,7 @@ a:hover {
     transform: rotate(360deg);
   }
 }
-@keyframes shoot2 {
+@keyframes slideIn {
   to {
     left: 140%;
   }

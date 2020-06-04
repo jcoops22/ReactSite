@@ -175,12 +175,16 @@ const List = styled.ul`
   width: 100%;
 `;
 const Lnk = styled.span`
+  &:hover {
+    transform: scale(1.3);
+  }
+  transition-duration: 1s;
   position: fixed;
   z-index: 100;
   top: -10vh;
-  left: 0;
+  left: 1rem;
   opacity: 0;
-  padding-right: 1rem;
+  width: 8rem;
   margin: 0.5rem;
 `;
 const Burger = styled.div`
