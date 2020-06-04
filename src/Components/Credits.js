@@ -48,7 +48,6 @@ class Credits extends Component {
             left: this.state.left,
           }}
         >
-          <span>(click to hide)</span>
           {this.state.credits.map((c, ind) => {
             return (
               <Line key={ind}>

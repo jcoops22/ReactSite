@@ -8,6 +8,7 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
 import Show from "./Components/Show";
+import Name from "./Components/Name";
 
 // Component
 function App(props) {
@@ -31,6 +32,7 @@ function App(props) {
   // <Overlay />
   return (
     <Container className="App">
+      <Name />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
@@ -57,17 +59,3 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-// const Overlay = styled.div`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   opacity: 0;
-//   background: rgba(0, 0, 0, 0.6);
-//   background: linear-gradient(
-//     0deg,
-//     rgba(0, 0, 0, 1) 59%,
-//     rgba(255, 255, 255, 1) 100%
-//   );
-//   height: 100vh;
-//   width: 100%;
-// `;
