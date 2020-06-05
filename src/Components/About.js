@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Typer from "./Typer";
 import spaceship from "../resources/Icons/spaceship.svg";
+import cometPic from "../resources/Icons/comet.svg";
 
 class About extends Component {
   state = {
@@ -12,20 +13,34 @@ class About extends Component {
       "I also love to rock out on my Roland TD-25k electric drum kit and game out on Xbox One and Nintendo Switch.",
       "However, most of the time I'm usually with my wonderful wife or spending time with our family. ",
     ],
+    comets: [],
   };
 
   componentDidMount() {
+    this.populateComets(8, 100);
     this.animateSentences();
   }
+  // slide in sentences
   animateSentences = () => {
     let sentences = document.querySelectorAll(".sentence");
-    console.log("shoulda ran");
-
+    // list out sentences
     sentences.forEach((sentence, ind) => {
       setTimeout(() => {
         sentence.style.animationName = "slipIn";
       }, `${ind}000`);
     });
+  };
+  // make comets
+  populateComets = (topVal, leftVal) => {
+    let num = 35;
+    let temp = [];
+    // populate array of comets
+    for (let i = 0; i < num; i++) {
+      let setTop = Math.floor(Math.random() * topVal) + "em";
+      let setLeft = Math.floor(Math.random() * leftVal) + "%";
+      temp.push({ top: setTop, left: setLeft });
+    }
+    this.setState({ comets: temp });
   };
   render() {
     return (
@@ -39,9 +54,18 @@ class About extends Component {
         />
         <Wrapper>
           <Cover />
-          <ImgDiv className="animation_div"></ImgDiv>
+          <Comets>
+            {this.state.comets.map((comet, ind) => (
+              <Comet
+                key={ind}
+                top={comet.top}
+                left={comet.left}
+                src={cometPic}
+              />
+            ))}
+          </Comets>
           <div className="spaceship_wrapper">
-            <Img width="40px" src={spaceship} />
+            <Img src={spaceship} />
           </div>
           {this.state.sentences.map((sentence, ind) => (
             <span key={ind} className="sentence">
@@ -65,30 +89,45 @@ const Container = styled.div`
   padding: 2rem 0.6rem 0;
   height: 88vh;
 `;
-const ImgDiv = styled.div`
+const Comets = styled.div`
+  position: relative;
+  top: -10vh;
+  left: 0;
+  height: 4rem;
+  width: 1000%;
+  background-size: contain;
   animation-name: flyBy;
+  animation-timing-function: linear;
   animation-direction: forwards;
-  animation-iteration-count: 1;
-  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+`;
+const Comet = styled.img`
+  position: relative;
+  width: 20px;
+  top: ${(props) => props.top};
+  left: ${(props) => props.left};
 `;
 const Img = styled.img`
   position: relative;
   transform: rotate(90deg);
+  width: 40px;
   top: -15vh;
   left: 65%;
   animation-name: fly;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-  animation-duration: 1s;
+  animation-duration: 3s;
 `;
 const Wrapper = styled.div`
   margin-top: 2rem;
 `;
 const Cover = styled.div`
+  z-index: 1;
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   background-size: cover;
-  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1590472333/Portfolio%20Site/keeper1_jnmhie.jpg");
+  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591388976/Portfolio%20Site/keeper1_jfdgtj.jpg");
 `;

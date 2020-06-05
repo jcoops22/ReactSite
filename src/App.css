@@ -40,8 +40,6 @@ a:hover {
 #starcontact,
 #starback {
   position: relative;
-  /* top: 0.7rem; */
-  /* margin-top: 50%; */
   pointer-events: none;
   width: 20px;
   animation-duration: 1s;
@@ -65,14 +63,10 @@ a:hover {
   top: 0;
   left: -100%;
 }
-.animation_div {
-  border: 1px solid red;
-  position: relative;
-}
 .spaceship_wrapper {
-  position: absolute;
+  position: relative;
   left: -1000%;
-  border: 1px solid green;
+  margin-bottom: -40px;
   animation-name: swoop;
   animation-delay: 2s;
   animation-iteration-count: 1;
@@ -102,20 +96,29 @@ a:hover {
     left: 80%;
   }
   100% {
-    left: 60%;
+    left: 0%;
   }
 }
 @keyframes fly {
   0% {
+    top: -16vh;
+  }
+  20% {
     top: -19vh;
   }
-  100% {
+  40% {
     top: -10vh;
+  }
+  60% {
+    top: -17vh;
+  }
+  100% {
+    top: -12vh;
   }
 }
 @keyframes flyBy {
   to {
-    left: -100%;
+    left: -1000%;
   }
 }
 @keyframes slipIn {
