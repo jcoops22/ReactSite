@@ -65,7 +65,24 @@ a:hover {
   top: 0;
   left: -100%;
 }
+.sentence {
+  position: relative;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+.sentence:nth-child(odd) {
+  left: -100%;
+}
+.sentence:nth-child(even) {
+  left: 100%;
+}
 /* keyframes */
+@keyframes slipIn {
+  to {
+    left: 0;
+  }
+}
 @keyframes typing {
   to {
     visibility: visible;
