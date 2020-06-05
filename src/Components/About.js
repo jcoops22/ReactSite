@@ -21,7 +21,6 @@ class About extends Component {
     console.log("shoulda ran");
 
     sentences.forEach((sentence, ind) => {
-      sentence.style.animationDelay = `${ind}000`;
       setTimeout(() => {
         sentence.style.animationName = "slipIn";
       }, `${ind}000`);
