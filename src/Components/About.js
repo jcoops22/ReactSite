@@ -18,7 +18,7 @@ class About extends Component {
   };
 
   componentDidMount() {
-    this.populateComets(8, 100);
+    this.populateComets(8, 100, 12);
     this.animateSentences();
   }
   // slide in sentences
@@ -32,14 +32,15 @@ class About extends Component {
     });
   };
   // make comets
-  populateComets = (topVal, leftVal) => {
-    let num = 35;
+  populateComets = (topVal, leftVal, widthVal) => {
+    let num = 55;
     let temp = [];
     // populate array of comets
     for (let i = 0; i < num; i++) {
       let setTop = Math.floor(Math.random() * topVal) + "em";
       let setLeft = Math.floor(Math.random() * leftVal) + "%";
-      temp.push({ top: setTop, left: setLeft });
+      let setWidth = Math.floor(Math.random() * widthVal) + "px";
+      temp.push({ top: setTop, left: setLeft, width: setWidth });
     }
     this.setState({ comets: temp });
   };
@@ -57,6 +58,7 @@ class About extends Component {
           <Comets>
             {this.state.comets.map((comet, ind) => (
               <Comet
+                width={comet.width}
                 key={ind}
                 top={comet.top}
                 left={comet.left}
@@ -93,6 +95,7 @@ const Container = styled.div`
   height: 88vh;
 `;
 const Comets = styled.div`
+  visibility: hidden;
   position: relative;
   top: -10vh;
   left: 0;
@@ -108,7 +111,7 @@ const Comets = styled.div`
 `;
 const Comet = styled.img`
   position: relative;
-  width: 10px;
+  width: ${(props) => props.width};
   top: ${(props) => props.top};
   left: ${(props) => props.left};
 `;
