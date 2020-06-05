@@ -68,7 +68,7 @@ a:hover {
   left: -1000%;
   margin-bottom: -40px;
   animation-name: swoop;
-  animation-delay: 2s;
+  animation-delay: 5s;
   animation-iteration-count: 1;
   animation-duration: 4.5s;
   /* animation-timing-function: cubic-bezier(0.33, 0.29, 0.33, 1.3); */

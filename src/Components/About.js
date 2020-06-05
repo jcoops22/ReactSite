@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { device } from "../resources/mediaquery";
 import Typer from "./Typer";
 import spaceship from "../resources/Icons/spaceship.svg";
 import cometPic from "../resources/Icons/comet.svg";
@@ -52,8 +53,7 @@ class About extends Component {
           fontSize={"5vh"}
           delay={1500}
         />
-        <Wrapper>
-          <Cover />
+        <div style={{ margin: "3rem 0" }}>
           <Comets>
             {this.state.comets.map((comet, ind) => (
               <Comet
@@ -67,6 +67,9 @@ class About extends Component {
           <div className="spaceship_wrapper">
             <Img src={spaceship} />
           </div>
+        </div>
+        <Wrapper>
+          <Picture />
           {this.state.sentences.map((sentence, ind) => (
             <span key={ind} className="sentence">
               {" "}
@@ -97,6 +100,7 @@ const Comets = styled.div`
   width: 1000%;
   background-size: contain;
   animation-name: flyBy;
+  animation-delay: 6s;
   animation-timing-function: linear;
   animation-direction: forwards;
   animation-iteration-count: infinite;
@@ -104,7 +108,7 @@ const Comets = styled.div`
 `;
 const Comet = styled.img`
   position: relative;
-  width: 20px;
+  width: 10px;
   top: ${(props) => props.top};
   left: ${(props) => props.left};
 `;
@@ -121,8 +125,19 @@ const Img = styled.img`
 `;
 const Wrapper = styled.div`
   margin-top: 2rem;
+  padding: 0.7rem;
+  width: 100%;
+  @media ${device.tablet} {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+  }
 `;
-const Cover = styled.div`
+const Picture = styled.div`
+  margin-bottom: 2rem;
   z-index: 1;
   position: relative;
   width: 200px;
