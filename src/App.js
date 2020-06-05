@@ -32,7 +32,6 @@ function App(props) {
   // <Overlay />
   return (
     <Container className="App">
-      <Name />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />

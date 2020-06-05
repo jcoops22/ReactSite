@@ -108,7 +108,7 @@ const CreditsDiv = styled.div`
   flex-direction: column;
   border: 3px solid #fff;
   border-radius: 8px;
-  background-color: #aaa;
+  background-color: #bbb;
   font-family: "Raleway", sans-serif;
 `;
 const Line = styled.div`
