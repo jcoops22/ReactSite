@@ -37,12 +37,13 @@ class About extends Component {
           fontSize={"5vh"}
           delay={1500}
         />
-
-        {this.state.sentences.map((sentence, ind) => (
-          <p key={ind} className="sentence">
-            {sentence}
-          </p>
-        ))}
+        <Wrapper>
+          {this.state.sentences.map((sentence, ind) => (
+            <p key={ind} className="sentence">
+              {sentence}
+            </p>
+          ))}
+        </Wrapper>
       </Container>
     );
   }
@@ -54,4 +55,8 @@ export default About;
 const Container = styled.div`
   color: #fff;
   overflow-x: hidden;
+  padding: 2rem 0.6rem 0;
+`;
+const Wrapper = styled.div`
+  margin-top: 2rem;
 `;
