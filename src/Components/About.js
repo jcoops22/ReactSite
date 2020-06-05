@@ -18,6 +18,10 @@ class About extends Component {
   };
 
   componentDidMount() {
+    // slide to the paragraph
+    setTimeout(() => {
+      document.getElementById("bottom").scrollIntoView();
+    }, 7000);
     this.populateComets(8, 100, 12);
     this.animateSentences();
   }
@@ -28,7 +32,7 @@ class About extends Component {
     sentences.forEach((sentence, ind) => {
       setTimeout(() => {
         sentence.style.animationName = "slipIn";
-      }, `${ind}000`);
+      }, `${ind}00`);
     });
   };
   // make comets
@@ -44,17 +48,20 @@ class About extends Component {
     }
     this.setState({ comets: temp });
   };
+
   render() {
     return (
       <Container>
-        <Typer
-          sentence="A little bit about me..."
-          underline="false"
-          icon="false"
-          fontSize={"5vh"}
-          delay={1500}
-        />
-        <div style={{ margin: "3rem 0" }}>
+        <div>
+          <Typer
+            sentence="A little bit about me..."
+            underline="false"
+            icon="false"
+            fontSize={"5vh"}
+            delay={1500}
+          />
+        </div>
+        <div className="animationWrapper">
           <Comets>
             {this.state.comets.map((comet, ind) => (
               <Comet
@@ -78,6 +85,7 @@ class About extends Component {
               {sentence}
             </span>
           ))}
+          <span id="bottom"></span>
         </Wrapper>
       </Container>
     );
@@ -137,6 +145,10 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     max-width: 60%;
+  }
+  @media ${device.laptop} {
+    /* border: 1px solid red; */
+    margin-top: 20vh;
   }
 `;
 const Picture = styled.div`
