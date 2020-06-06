@@ -123,8 +123,11 @@ const Icon = styled.button`
 `;
 const Header = styled.h4`
   color: #fff;
+  width: 50%;
   text-align: center;
   margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
 `;
 const CreditsDiv = styled.div`
   padding: 1rem;
