@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import star from "../resources/Icons/star.svg";
 
 const Stars = (props) => {
@@ -9,7 +9,6 @@ const Stars = (props) => {
     star.style.animationName = "shoot1";
     star.style.top = `${top}`;
     div.style.animationName = "slideIn";
-    console.log("you hovered");
   };
   const callStars = (id) => {
     let star = document.getElementById(`star${id}`);

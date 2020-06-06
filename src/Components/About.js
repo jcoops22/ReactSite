@@ -8,11 +8,11 @@ import cometPic from "../resources/Icons/comet.svg";
 class About extends Component {
   state = {
     sentences: [
-      "Though originally from North Carolina, I've been living here in Utah for about 5 years now!",
-      "I have more than 4 years of experience working in the tech industry. Mostly troubleshooting software issues on the support side of things.",
-      "While this has taught me much, builing websites and developing web applications has quickly become something I'm passionate about.",
-      "I also love to rock out on my Roland TD-25k electric drum kit and game out on Xbox One and Nintendo Switch.",
-      "However, most of the time I'm usually with my wonderful wife or spending time with our family. ",
+      "Though I'm originally from North Carolina, I've been living here in Utah for about 5 years now.",
+      "I have more than 4 years of experience working in the tech industry, mostly troubleshooting software issues on the support side.",
+      "While this has taught me much, builing websites and developing web applications has quickly become a passion of mine.",
+      "When I'm not neck deep in code, I'm probably gaming on Xbox One or the Nintendo Switch. Or jamming out on my electric drum kit.",
+      "However, most of the time I'm usually with my wonderful wife or spending time with our family.",
     ],
     comets: [],
   };
