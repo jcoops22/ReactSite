@@ -168,7 +168,7 @@ const Wrapper = styled.div`
     max-width: 60%;
   }
   @media ${device.laptop} {
-    margin-top: 20vh;
+    margin-top: 9vh;
   }
 `;
 const Picture = styled.div`
@@ -180,4 +180,8 @@ const Picture = styled.div`
   border-radius: 50%;
   background-size: cover;
   background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591388976/Portfolio%20Site/keeper1_jfdgtj.jpg");
+  @media ${device.tablet} {
+    width: 300px;
+    height: 300px;
+  }
 `;

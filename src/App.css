@@ -43,7 +43,8 @@ a:hover {
 #starabout,
 #starprojects,
 #starcontact,
-#starback {
+#starback,
+#starcheckout_projects {
   position: relative;
   pointer-events: none;
   width: 20px;
@@ -102,14 +103,12 @@ a:hover {
 }
 @media screen and (min-width: 411px) {
   .animationWrapper {
-    top: 3rem;
+    top: 4rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .animationWrapper {
-    position: relative;
-    top: 20vh;
-    /* border: 2px solid red; */
+    top: 10vh;
   }
 }
 .sentence {
