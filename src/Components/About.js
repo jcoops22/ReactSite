@@ -110,11 +110,17 @@ const Comets = styled.div`
   height: 4rem;
   width: 1000%;
   background-size: contain;
+  -webkit-animation-name: flyBy;
   animation-name: flyBy;
+  -webkit-animation-delay: 6s;
   animation-delay: 6s;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
+  -webkit-animation-direction: forwards;
   animation-direction: forwards;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-duration: 30s;
   animation-duration: 30s;
 `;
 const Comet = styled.img`
@@ -125,13 +131,19 @@ const Comet = styled.img`
 `;
 const Img = styled.img`
   position: relative;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   width: 40px;
   top: -15vh;
   left: 65%;
+  -webkit-animation-name: fly;
   animation-name: fly;
+  -webkit-animation-direction: alternate;
   animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
   animation-duration: 3s;
 `;
 const Wrapper = styled.div`
@@ -140,14 +152,22 @@ const Wrapper = styled.div`
   width: 100%;
   @media ${device.tablet} {
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     max-width: 60%;
   }
   @media ${device.laptop} {
-    /* border: 1px solid red; */
     margin-top: 20vh;
   }
 `;

@@ -1,14 +1,15 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Chelsea Market", cursive;
+  scroll-behavior: smooth;
 }
 html {
   background-color: #000;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -24,9 +25,13 @@ a:hover {
   width: 100%;
 }
 .overlay {
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
   transition-duration: 1s;
 }
 .react_player {
+  -webkit-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
   transition-duration: 0.7s;
   position: absolute;
   top: 0;
@@ -42,9 +47,13 @@ a:hover {
   position: relative;
   pointer-events: none;
   width: 20px;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 #divhome,
@@ -55,10 +64,15 @@ a:hover {
   pointer-events: none;
   position: absolute;
   pointer-events: none;
+  -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
+  -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   top: 0;
   left: -100%;
@@ -67,15 +81,22 @@ a:hover {
   position: relative;
   left: -1000%;
   margin-bottom: -40px;
+  -webkit-animation-name: swoop;
   animation-name: swoop;
+  -webkit-animation-delay: 5s;
   animation-delay: 5s;
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  -webkit-animation-duration: 4.5s;
   animation-duration: 4.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.33, 0.29, 0.33, 1.3);
   animation-timing-function: cubic-bezier(0.33, 0.29, 0.33, 1.3);
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 .animationWrapper {
   margin: 3rem 0;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -93,9 +114,13 @@ a:hover {
 }
 .sentence {
   position: relative;
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.33, 0.29, 0.33, 1.3);
   animation-timing-function: cubic-bezier(0.33, 0.29, 0.33, 1.3);
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 .sentence:nth-child(odd) {
@@ -105,6 +130,17 @@ a:hover {
   left: 1000%;
 }
 /* keyframes */
+@-webkit-keyframes swoop {
+  0% {
+    left: -1000%;
+  }
+  50% {
+    left: 80%;
+  }
+  100% {
+    left: 0%;
+  }
+}
 @keyframes swoop {
   0% {
     left: -1000%;
@@ -114,6 +150,23 @@ a:hover {
   }
   100% {
     left: 0%;
+  }
+}
+@-webkit-keyframes fly {
+  0% {
+    top: -16vh;
+  }
+  20% {
+    top: -19vh;
+  }
+  40% {
+    top: -10vh;
+  }
+  60% {
+    top: -17vh;
+  }
+  100% {
+    top: -12vh;
   }
 }
 @keyframes fly {
@@ -133,6 +186,14 @@ a:hover {
     top: -12vh;
   }
 }
+@-webkit-keyframes flyBy {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    left: -1000%;
+  }
+}
 @keyframes flyBy {
   0% {
     visibility: visible;
@@ -141,9 +202,19 @@ a:hover {
     left: -1000%;
   }
 }
+@-webkit-keyframes slipIn {
+  to {
+    left: 0;
+  }
+}
 @keyframes slipIn {
   to {
     left: 0;
+  }
+}
+@-webkit-keyframes typing {
+  to {
+    visibility: visible;
   }
 }
 @keyframes typing {
@@ -151,54 +222,125 @@ a:hover {
     visibility: visible;
   }
 }
-@keyframes shift {
+@-webkit-keyframes shift {
   0% {
+    -webkit-transform: translateX(1rem);
     transform: translateX(1rem);
   }
   50% {
+    -webkit-transform: translateX(0rem);
     transform: translateX(0rem);
   }
   100% {
+    -webkit-transform: translateX(1rem);
     transform: translateX(1rem);
+  }
+}
+@keyframes shift {
+  0% {
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem);
+  }
+  50% {
+    -webkit-transform: translateX(0rem);
+    transform: translateX(0rem);
+  }
+  100% {
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem);
+  }
+}
+@-webkit-keyframes swing {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
+  }
+  20% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
 }
 @keyframes swing {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(200%);
     transform: translateX(200%);
   }
   20% {
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
   100% {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+@-webkit-keyframes jump {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
+  }
+  20% {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @keyframes jump {
   0% {
     opacity: 0;
+    -webkit-transform: translateY(200%);
     transform: translateY(200%);
   }
   20% {
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
   100% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
+  }
+}
+@-webkit-keyframes twist {
+  0% {
+    -webkit-transform: rotate(170deg);
+    transform: rotate(170deg);
+  }
+  50% {
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  100% {
+    -webkit-transform: rotate(170deg);
+    transform: rotate(170deg);
   }
 }
 @keyframes twist {
   0% {
+    -webkit-transform: rotate(170deg);
     transform: rotate(170deg);
   }
   50% {
+    -webkit-transform: rotate(200deg);
     transform: rotate(200deg);
   }
   100% {
+    -webkit-transform: rotate(170deg);
     transform: rotate(170deg);
   }
 }
-@keyframes spin {
+@-webkit-keyframes spin {
   0% {
+    -webkit-transform: rotate(0);
     transform: rotate(0);
     opacity: 0.5;
   }
@@ -207,12 +349,46 @@ a:hover {
     opacity: 0.8;
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+    opacity: 0.5;
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 0.5;
+  }
+  50% {
+    margin-left: 0rem;
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes cycle {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 0.5;
+  }
+  50% {
+    margin-left: 0rem;
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
     opacity: 0.5;
   }
 }
 @keyframes cycle {
   0% {
+    -webkit-transform: rotate(0);
     transform: rotate(0);
     opacity: 0.5;
   }
@@ -221,25 +397,52 @@ a:hover {
     opacity: 0.8;
   }
   100% {
+    -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes cycle2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
     opacity: 0.5;
   }
 }
 @keyframes cycle2 {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     opacity: 0.5;
   }
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
     opacity: 0.5;
   }
 }
 
 /* Stars  */
+@-webkit-keyframes shoot1 {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 @keyframes shoot1 {
   to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes slideIn {
+  to {
+    left: 100%;
   }
 }
 @keyframes slideIn {
@@ -247,8 +450,15 @@ a:hover {
     left: 100%;
   }
 }
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 @keyframes rotate {
   to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
