@@ -51,8 +51,8 @@ const Show = (props) => {
         <Tech>
           <h4 style={{ margin: "1rem 0" }}>Technologies:</h4>
           <TechList>
-            {project.technologies.map((tech) => (
-              <li>{tech}</li>
+            {project.technologies.map((tech, ind) => (
+              <li key={ind}>{tech}</li>
             ))}
           </TechList>
         </Tech>
@@ -130,11 +130,13 @@ const Button = styled.button`
   background-color: rgba(145, 153, 147, 0.9);
 `;
 const H1 = styled.h1`
-  position: -webkit-sticky;
-  position: sticky;
   top: 0;
   color: white;
   margin-top: 8vw;
+  @media ${device.tablet} {
+    position: -webkit-sticky;
+    position: sticky;
+  }
 `;
 const Vid = styled.div`
   -webkit-transition-duration: 0.5s;

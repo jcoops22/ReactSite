@@ -21,9 +21,11 @@ class About extends Component {
   componentDidMount() {
     // slide to the paragraph
     setTimeout(() => {
-      document.getElementById("bottom").scrollIntoView();
+      if (window.innerWidth > 768) {
+        document.getElementById("bottom").scrollIntoView();
+      }
     }, 7000);
-    this.populateComets(8, 100, 12);
+    this.populateComets(8, 100, 42);
     this.animateSentences();
   }
   // slide in sentences
@@ -134,6 +136,7 @@ const Comets = styled.div`
 `;
 const Comet = styled.img`
   position: relative;
+  transform: rotate(135deg);
   width: ${(props) => props.width};
   top: ${(props) => props.top};
   left: ${(props) => props.left};
