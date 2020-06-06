@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { device } from "../resources/mediaquery";
 import Typer from "./Typer";
 import spaceship from "../resources/Icons/spaceship.svg";
@@ -9,10 +10,10 @@ class About extends Component {
   state = {
     sentences: [
       "Though I'm originally from North Carolina, I've been living here in Utah for about 5 years now.",
-      "I have more than 4 years of experience working in the tech industry, mostly troubleshooting software issues on the support side.",
+      "I have more than 4 years of experience working in the tech industry, mostly troubleshooting software issues.",
       "While this has taught me much, builing websites and developing web applications has quickly become a passion of mine.",
-      "When I'm not neck deep in code, I'm probably gaming on Xbox One or the Nintendo Switch. Or jamming out on my electric drum kit.",
-      "However, most of the time I'm usually with my wonderful wife or spending time with our family.",
+      "When I'm not neck deep in code, I'm probably gaming on Xbox One or the Nintendo Switch. Sometimes I'm also jamming out on my electric drum kit.",
+      "Most of the time, however, I'm usually with my wonderful wife or spending time with our family.",
     ],
     comets: [],
   };
@@ -79,13 +80,21 @@ class About extends Component {
         </div>
         <Wrapper>
           <Picture />
-          {this.state.sentences.map((sentence, ind) => (
-            <span key={ind} className="sentence">
-              {" "}
-              {sentence}
-            </span>
-          ))}
+          <div>
+            {this.state.sentences.map((sentence, ind) => (
+              <span key={ind} className="sentence">
+                {" "}
+                {sentence}
+              </span>
+            ))}
+          </div>
           <span id="bottom"></span>
+          <p style={{ marginTop: "1rem" }}>
+            Please feel free to{" "}
+            <u>
+              <Link to="/contact">Contact me</Link>
+            </u>
+          </p>
         </Wrapper>
       </Container>
     );
@@ -151,6 +160,7 @@ const Wrapper = styled.div`
   padding: 0.7rem;
   width: 100%;
   @media ${device.tablet} {
+    max-width: 60%;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -165,7 +175,6 @@ const Wrapper = styled.div`
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    max-width: 60%;
   }
   @media ${device.laptop} {
     margin-top: 9vh;

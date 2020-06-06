@@ -16,7 +16,6 @@ function App(props) {
     changeBackground();
   });
   const backgrounds = [
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635942/Portfolio%20Site/Background%20Pics/denis-degioanni-9wH624ALFQA-unsplash_z09o6s_hgxatq.jpg",
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635941/Portfolio%20Site/Background%20Pics/wil-stewart-T26KCgCPsCI-unsplash_f0uqbl_wzr20s.jpg",
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635925/Portfolio%20Site/Background%20Pics/manuel-will-gd3t5Dtbwkw-unsplash_w48ehm_ltu8d2.jpg",
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635892/Portfolio%20Site/Background%20Pics/casey-horner-mPnxwQBtUZE-unsplash_jzbmz1_lsipdl.jpg",

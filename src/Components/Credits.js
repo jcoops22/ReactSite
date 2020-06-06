@@ -65,7 +65,6 @@ class Credits extends Component {
       ? this.setState({ left: "calc(100% - 490px)", showing: true })
       : this.setState({ left: "100%", showing: false });
   };
-
   render() {
     return (
       <div>

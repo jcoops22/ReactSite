@@ -117,8 +117,7 @@ const Button = styled.button`
   color: white;
   border: none;
   border-radius: 5px;
-  /* background-color: #00ff00; */
-  background-color: rgba(0, 255, 0, 0.3);
+  background-color: rgba(145, 153, 147, 0.9);
 `;
 const H1 = styled.h1`
   position: -webkit-sticky;
@@ -193,7 +192,13 @@ const Desc = styled.div`
   color: #fff;
   margin: 3rem;
   @media ${device.tablet} {
-    width: 60%;
-    margin: 6rem 2rem 6rem auto;
+    width: 40%;
+    padding: 2rem 1rem;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    margin: 0rem auto;
+  }
+  @media ${device.laptop} {
+    margin-left: auto;
   }
 `;
