@@ -11,6 +11,7 @@ class Projects extends Component {
         name: "HairByShandel",
         hover: "#e0bc75",
         color: "#000",
+        technologies: ["JavaScript", "HTML5", "CSS3", "GSAP ScrollMagic"],
         desc:
           "Local Hair Salon business site. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
         video:
@@ -23,6 +24,7 @@ class Projects extends Component {
         name: "GymPact",
         hover: "#353765",
         color: "#",
+        technologies: ["React", "Ruby on Rails", "PostgreSQL", "Semantic UI"],
         desc:
           "Social Media app for sharing gym workouts! Sort of an Instagram for workouts. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling.",
         video:
@@ -35,6 +37,7 @@ class Projects extends Component {
         name: "Music App",
         hover: "#fff",
         color: "#000",
+        technologies: ["VueJS", "NodeJS", "MongoDB"],
         desc:
           "Little project built with VueJS to make samples from keyboard inputs.",
         video: "",
@@ -46,6 +49,7 @@ class Projects extends Component {
         name: "Notebook App",
         hover: "lightblue",
         color: "#000",
+        technologies: ["VueJS", "HTML5", "CSS3"],
         desc:
           "Simple notepad app with a backend. Fully responsive, built with VueJS, NodeJS, and Mongo DB database.",
         video:
@@ -58,6 +62,7 @@ class Projects extends Component {
         name: "DrumFinder",
         hover: "#000",
         color: "#fff",
+        technologies: ["React", "Styled Components"],
         desc:
           "Application to help you pick the perfect drumset for you! I play the drums and wanted to build this single page app to help those others who are in the market for a new kit. Built with ReactJS.",
         video:
@@ -70,6 +75,7 @@ class Projects extends Component {
         name: "Pwd Manager",
         hover: "#92B6B1",
         color: "#000",
+        technologies: ["JavaScript", "NodeJS", "MongoDB"],
         desc:
           "Password tracker app. Lets you enter passwords and even generate your own 'strong' password and tag each entry with keywords to search quickly!",
         video:

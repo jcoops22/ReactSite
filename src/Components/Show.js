@@ -46,7 +46,17 @@ const Show = (props) => {
         </ButtonDiv>
       </Link>
       <H1>{project.name}</H1>
-      <Desc>{project.desc}</Desc>
+      <Desc>
+        {project.desc}
+        <Tech>
+          <h4 style={{ margin: "1rem 0" }}>Technologies:</h4>
+          <TechList>
+            {project.technologies.map((tech) => (
+              <li>{tech}</li>
+            ))}
+          </TechList>
+        </Tech>
+      </Desc>
       <Vid className="vid">
         <Loading className="loading">
           <Typer
@@ -201,4 +211,10 @@ const Desc = styled.div`
   @media ${device.laptop} {
     margin-left: auto;
   }
+`;
+const Tech = styled.div`
+  padding: 1rem;
+`;
+const TechList = styled.ul`
+  margin-left: 3rem;
 `;
