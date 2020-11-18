@@ -16,9 +16,9 @@ function App(props) {
     changeBackground();
   });
   const backgrounds = [
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1605682952/Portfolio%20Site/Background%20Pics/jake-weirick-Q_RBVFFXR_g-unsplash_1_g3gehe.jpg",
+    // "https://res.cloudinary.com/drucvvo7f/image/upload/v1605682952/Portfolio%20Site/Background%20Pics/jake-weirick-Q_RBVFFXR_g-unsplash_1_g3gehe.jpg",
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1605683166/Portfolio%20Site/Background%20Pics/jeremy-perkins-uhjiu8FjnsQ-unsplash_1_zagdkm.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1605683305/Portfolio%20Site/Background%20Pics/federico-beccari-L8126OwlroY-unsplash_1_t3n5hg.jpg",
+    // "https://res.cloudinary.com/drucvvo7f/image/upload/v1605683305/Portfolio%20Site/Background%20Pics/federico-beccari-L8126OwlroY-unsplash_1_t3n5hg.jpg",
   ];
   const changeBackground = () => {
     let app = document.querySelector(".App");
