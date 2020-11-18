@@ -16,11 +16,9 @@ function App(props) {
     changeBackground();
   });
   const backgrounds = [
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635941/Portfolio%20Site/Background%20Pics/wil-stewart-T26KCgCPsCI-unsplash_f0uqbl_wzr20s.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635925/Portfolio%20Site/Background%20Pics/manuel-will-gd3t5Dtbwkw-unsplash_w48ehm_ltu8d2.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635892/Portfolio%20Site/Background%20Pics/casey-horner-mPnxwQBtUZE-unsplash_jzbmz1_lsipdl.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635879/Portfolio%20Site/Background%20Pics/nightsky_vh99sk_l8ldo2_qmxcmn.jpg",
-    "https://res.cloudinary.com/drucvvo7f/image/upload/v1590635853/Portfolio%20Site/Background%20Pics/greg-jeanneau-9sxeKzuCVoE-unsplash_znhy2q_buszjq.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1605682952/Portfolio%20Site/Background%20Pics/jake-weirick-Q_RBVFFXR_g-unsplash_1_g3gehe.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1605683166/Portfolio%20Site/Background%20Pics/jeremy-perkins-uhjiu8FjnsQ-unsplash_1_zagdkm.jpg",
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1605683305/Portfolio%20Site/Background%20Pics/federico-beccari-L8126OwlroY-unsplash_1_t3n5hg.jpg",
   ];
   const changeBackground = () => {
     let app = document.querySelector(".App");
