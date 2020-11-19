@@ -43,6 +43,7 @@ a:hover {
 #starabout,
 #starprojects,
 #starcontact,
+#starresume,
 #starback,
 #starcheckout_projects {
   position: relative;
@@ -61,6 +62,7 @@ a:hover {
 #divabout,
 #divprojects,
 #divcontact,
+#divresume,
 #divback {
   pointer-events: none;
   position: absolute;

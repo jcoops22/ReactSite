@@ -4,7 +4,7 @@ import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
 import Typer from "./Typer";
 import Stars from "./Stars";
-import Spinner from "./Spinner";
+
 // import ReactPlayer from "react-player";
 
 const Show = (props) => {

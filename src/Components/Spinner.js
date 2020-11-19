@@ -40,8 +40,12 @@ export default Spinner;
 
 // styles
 const Wrapper = styled.div`
+  &:hover {
+    transform: scale(1.2);
+  }
   position: relative;
   left: 1rem;
+  transition-duration: 0.3s;
 `;
 const Img = styled.img`
   -webkit-transition-duration: 0.5s;

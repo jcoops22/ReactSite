@@ -9,14 +9,15 @@ import Stars from "./Stars";
 
 // Component
 const Navbar = ({ change }) => {
-  const [navItems, setNavItems] = useState([
+  const [navItems] = useState([
+    "Home",
     "About",
     "Contact",
-    "Resume",
     "Projects",
+    "Resume",
   ]);
   const [expanded, setExpanded] = useState(false);
-  const [places, setPlaces] = useState([
+  const [places] = useState([
     "Check out my projects",
     "Learn more 'About' me",
     "Contact me",
@@ -83,11 +84,7 @@ const Navbar = ({ change }) => {
       }, 1600);
     }
   };
-  // hide/show overlay
-  const toggleOverlay = () => {
-    let overlay = document.querySelector(".overlay");
-    overlay.style.display = "none";
-  };
+
   // get the random phrase to check out
   const phrase = () => {
     return places[Math.floor(Math.random() * 3)];
@@ -110,65 +107,32 @@ const Navbar = ({ change }) => {
       </Burger>
 
       <Explore className="explore">
-        <Icon width={1.3} src={leftArrow} />
+        <Icon width={1.3} src={leftArrow} alt="arrow" />
         {phrase()}
       </Explore>
 
       <Credits />
       <Overlay className="overlay"></Overlay>
       <List>
-        <Lnk
-          className="tag"
-          onClick={() => {
-            animateBerg();
-            change();
-          }}
-        >
-          <Link className="link" to="/">
-            <Stars id={"home"} top={"0.7rem"}>
-              Home
-            </Stars>
-          </Link>
-        </Lnk>
-        <Lnk
-          className="tag"
-          onClick={() => {
-            animateBerg();
-            change();
-          }}
-        >
-          <Link className="link" to="/about">
-            <Stars id={"about"} top={"0.7rem"}>
-              About
-            </Stars>
-          </Link>
-        </Lnk>
-        <Lnk
-          className="tag"
-          onClick={() => {
-            animateBerg();
-            change();
-          }}
-        >
-          <Link className="link" to="/Projects">
-            <Stars id={"projects"} top={"0.7rem"}>
-              Projects
-            </Stars>
-          </Link>
-        </Lnk>
-        <Lnk
-          className="tag"
-          onClick={() => {
-            animateBerg();
-            change();
-          }}
-        >
-          <Link className="link" to="/Contact">
-            <Stars id={"contact"} top={"0.7rem"}>
-              Contact
-            </Stars>
-          </Link>
-        </Lnk>
+        {navItems.map((item, ind) => (
+          <Lnk
+            key={ind}
+            className="tag"
+            onClick={() => {
+              animateBerg();
+              change();
+            }}
+          >
+            <Link
+              className="link"
+              to={item === "Home" ? "/" : item.toLowerCase()}
+            >
+              <Stars id={item.toLowerCase()} top={"0.7rem"}>
+                {item}
+              </Stars>
+            </Link>
+          </Lnk>
+        ))}
       </List>
     </div>
   );
