@@ -28,7 +28,7 @@ const Home = () => {
             delay={3000}
             sentence="I'd love to help build your next project!"
             underline="true"
-            icon="false"
+            icon="true"
             fontSize={"1rem"}
           />
         </Link>

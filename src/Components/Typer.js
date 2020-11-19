@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../App.css";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
+import Spinner from "./Spinner";
 
 const Typer = (props) => {
   // animate typing
@@ -53,11 +54,10 @@ const Typer = (props) => {
           </Type>
         ))}
         <Underline className="underline" />
+        <Icon className="icon">
+          <Spinner top={"-2rem"} width={"1.7rem"} />
+        </Icon>
       </div>
-      <Icon
-        className="icon"
-        src="https://res.cloudinary.com/drucvvo7f/image/upload/v1590472301/Portfolio%20Site/arrow_uvf7cw.svg"
-      />
     </div>
   );
 };
@@ -100,25 +100,33 @@ const Underline = styled.div`
     display: block;
   }
 `;
-const Icon = styled.img`
-  display: none;
-  -webkit-transition-duration: 0.8s;
-  -o-transition-duration: 0.8s;
-  transition-duration: 0.8s;
-  position: relative;
-  width: 1.4rem;
-  top: -2rem;
-  left: 104%;
+const Icon = styled.div`
   opacity: 0;
-  -webkit-animation-name: twist;
-  animation-name: twist;
-  -webkit-animation-duration: 1.6s;
-  animation-duration: 1.6s;
-  -webkit-animation-fill-mode: backwards;
-  animation-fill-mode: backwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  @media ${device.mobileL} {
-    display: initial;
-  }
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-start;
+  transition-duration: 1.4s;
+  /* border: 1px solid red; */
 `;
+// const Icon = styled.img`
+//   display: none;
+//   -webkit-transition-duration: 0.8s;
+//   -o-transition-duration: 0.8s;
+//   transition-duration: 0.8s;
+//   position: relative;
+//   width: 1.4rem;
+//   top: -2rem;
+//   left: 104%;
+//   opacity: 0;
+//   -webkit-animation-name: twist;
+//   animation-name: twist;
+//   -webkit-animation-duration: 1.6s;
+//   animation-duration: 1.6s;
+//   -webkit-animation-fill-mode: backwards;
+//   animation-fill-mode: backwards;
+//   -webkit-animation-iteration-count: infinite;
+//   animation-iteration-count: infinite;
+//   @media ${device.mobileL} {
+//     display: initial;
+//   }
+// `;

@@ -5,25 +5,28 @@ import galaxy from "../resources/Icons/galaxy.svg";
 import galaxy2 from "../resources/Icons/galaxy2.svg";
 import galaxylight from "../resources/Icons/galaxylight.svg";
 
-const Spinner = () => {
+const Spinner = ({ top, width }) => {
   return (
     <Wrapper>
       <Img
-        width="8%"
+        top={top}
+        width={width}
         className="load"
         duration={"1.5s"}
         src={galaxy}
         name={"spin"}
       />
       <Img
-        width="8%"
+        top={top}
+        width={width}
         className="load"
         duration={"2s"}
         src={galaxylight}
         name={"cycle"}
       />
       <Img
-        width="8%"
+        top={top}
+        width={width}
         className="load"
         duration={"2.5s"}
         src={galaxy2}
@@ -38,15 +41,15 @@ export default Spinner;
 // styles
 const Wrapper = styled.div`
   position: relative;
+  left: 1rem;
 `;
 const Img = styled.img`
   -webkit-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   position: absolute;
-  top: 3rem;
-  left: 45%;
-  margin-top: 25%;
+  top: ${(props) => props.top};
+  width: ${(props) => props.width};
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
