@@ -1,39 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
 import Typer from "./Typer";
-import galaxy from "../resources/Icons/galaxy.svg";
-import galaxy2 from "../resources/Icons/galaxy2.svg";
-import galaxylight from "../resources/Icons/galaxylight.svg";
-import ReactPlayer from "react-player";
 import Stars from "./Stars";
+import Name from "./Name";
+// import Spinner from "./Spinner";
+// import ReactPlayer from "react-player";
 
 const Show = (props) => {
-  const [playing, setPlaying] = useState(false);
+  // const [playing, setPlaying] = useState(false);
   const project = props.location.state.project;
 
   // video ready function
-  const loader = () => {
-    let player = document.querySelector(".react_player");
-    let load = document.querySelectorAll(".load");
-    let loading = document.querySelector(".loading");
+  // const loader = () => {
+  //   let player = document.querySelector(".react_player");
+  //   let load = document.querySelectorAll(".load");
+  //   let loading = document.querySelector(".loading");
 
-    setTimeout(() => {
-      load.forEach((loader) => {
-        loader.style.animationPlayState = "paused";
-      });
-    }, 600);
-    setTimeout(() => {
-      load.forEach((loader) => {
-        loader.style.display = "none";
-        loading.style.display = "none";
-      });
-      document.getElementById("react_p").scrollIntoView();
-      player.style.opacity = 1;
-      setPlaying(true);
-    }, 1000);
-  };
+  //   setTimeout(() => {
+  //     load.forEach((loader) => {
+  //       loader.style.animationPlayState = "paused";
+  //     });
+  //   }, 600);
+  //   setTimeout(() => {
+  //     load.forEach((loader) => {
+  //       loader.style.display = "none";
+  //       loading.style.display = "none";
+  //     });
+  //     document.getElementById("react_p").scrollIntoView();
+  //     player.style.opacity = 1;
+  //     setPlaying(true);
+  //   }, 1000);
+  // };
   // end video ready funtion
 
   return (
@@ -65,44 +64,24 @@ const Show = (props) => {
             icon="false"
             fontSize={"3vw"}
           />
-          <Img
-            width="8%"
-            className="load"
-            duration={"1.5s"}
-            src={galaxy}
-            name={"spin"}
-          />
-          <Img
-            width="8%"
-            className="load"
-            duration={"2s"}
-            src={galaxylight}
-            name={"cycle"}
-          />
-          <Img
-            width="8%"
-            className="load"
-            duration={"2.5s"}
-            src={galaxy2}
-            name={"cycle2"}
-          />
         </Loading>
-        <ReactPlayer
-          controls={true}
-          id="react_p"
-          className="react_player"
-          onReady={loader}
-          playing={playing}
-          url={project.video}
-          width="100%"
-          height="100%"
-        />
       </Vid>
     </Container>
   );
 };
 
 export default Show;
+
+// <ReactPlayer
+//   controls={true}
+//   id="react_p"
+//   className="react_player"
+//   onReady={loader}
+//   playing={playing}
+//   url={project.video}
+//   width="100%"
+//   height="100%"
+// />;
 
 // styles
 const Container = styled.div`
@@ -175,29 +154,6 @@ const Loading = styled.div`
   }
   @media ${device.laptop} {
     top: -12rem;
-  }
-`;
-const Img = styled.img`
-  -webkit-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  position: absolute;
-  top: 3rem;
-  left: 45%;
-  margin-top: 25%;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-direction: forwards;
-  animation-direction: forwards;
-  animation-name: ${(props) => props.name};
-  animation-duration: ${(props) => props.duration};
-  @media ${device.tablet} {
-    margin-top: 15%;
-  }
-  @media ${device.laptop} {
-    /* margin-top: %; */
   }
 `;
 const Desc = styled.div`

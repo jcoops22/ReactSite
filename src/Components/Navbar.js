@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Credits from "./Credits";
 import "../App.css";
 import styled from "styled-components";
@@ -8,18 +8,25 @@ import leftArrow from "../resources/Icons/left-arrow-arrows-svgrepo-com.svg";
 import Stars from "./Stars";
 
 // Component
-class Navbar extends Component {
-  state = {
-    navItems: ["About", "Contact", "Resume", "Projects"],
-    expanded: false,
-    places: ["Check out my projects", "Learn more 'About' me", "Contact me"],
-  };
-
+const Navbar = ({ change }) => {
+  const [navItems, setNavItems] = useState([
+    "About",
+    "Contact",
+    "Resume",
+    "Projects",
+  ]);
+  const [expanded, setExpanded] = useState(false);
+  const [places, setPlaces] = useState([
+    "Check out my projects",
+    "Learn more 'About' me",
+    "Contact me",
+  ]);
   // functions
-  componentDidMount() {
-    this.explore();
-  }
-  animateBerg = () => {
+  useEffect(() => {
+    explore();
+  }, []);
+
+  const animateBerg = () => {
     // remove animation for "explore"
     let explore = document.querySelector(".explore");
     explore.style.display = "none";
@@ -28,7 +35,7 @@ class Navbar extends Component {
     let a = document.querySelectorAll(".tag");
     // slide in links
     setTimeout(() => {
-      if (this.state.expanded) {
+      if (expanded) {
         a.forEach((a, ind) => {
           a.style.transitionDuration = "0.4s";
           a.style.transitionDelay = `${ind}00ms`;
@@ -47,15 +54,16 @@ class Navbar extends Component {
     let patty1 = document.querySelector(".patty1");
     let patty2 = document.querySelector(".patty2");
     let overlay = document.querySelector(".overlay");
-    this.setState({ expanded: !this.state.expanded });
+    // change state of burger
+    setExpanded(!expanded);
 
-    if (this.state.expanded) {
+    if (expanded) {
       berg.style.transform = "rotate(137deg)";
       patty1.style.transform = "rotate(-90deg)";
       patty1.style.top = "17px";
       patty2.style.top = "14px";
       setTimeout(() => {
-        this.state.expanded
+        expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
         berg.style.left = "calc(100% - 44px)";
@@ -69,23 +77,23 @@ class Navbar extends Component {
         berg.style.left = "1rem";
       }, 600);
       setTimeout(() => {
-        this.state.expanded
+        expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
       }, 1600);
     }
   };
   // hide/show overlay
-  toggleOverlay = () => {
+  const toggleOverlay = () => {
     let overlay = document.querySelector(".overlay");
     overlay.style.display = "none";
   };
   // get the random phrase to check out
-  phrase = () => {
-    return this.state.places[Math.floor(Math.random() * 3)];
+  const phrase = () => {
+    return places[Math.floor(Math.random() * 3)];
   };
   // checkout something
-  explore = () => {
+  const explore = () => {
     let explore = document.querySelector(".explore");
     setTimeout(() => {
       explore.style.display = "flex";
@@ -93,79 +101,78 @@ class Navbar extends Component {
     }, 12000);
   };
   // RENDER
-  render() {
-    return (
-      <div className="navDiv">
-        <Burger className="burger" onClick={this.animateBerg}>
-          <Pat1 className="patty1" />
-          <Pat2 className="patty2" />
-        </Burger>
 
-        <Explore className="explore">
-          <Icon width={1.3} src={leftArrow} />
-          {this.phrase()}
-        </Explore>
+  return (
+    <div className="navDiv">
+      <Burger className="burger" onClick={animateBerg}>
+        <Pat1 className="patty1" />
+        <Pat2 className="patty2" />
+      </Burger>
 
-        <Credits />
-        <Overlay className="overlay"></Overlay>
-        <List>
-          <Lnk
-            className="tag"
-            onClick={() => {
-              this.animateBerg();
-              this.props.change();
-            }}
-          >
-            <Link className="link" to="/">
-              <Stars id={"home"} top={"0.7rem"}>
-                Home
-              </Stars>
-            </Link>
-          </Lnk>
-          <Lnk
-            className="tag"
-            onClick={() => {
-              this.animateBerg();
-              this.props.change();
-            }}
-          >
-            <Link className="link" to="/about">
-              <Stars id={"about"} top={"0.7rem"}>
-                About
-              </Stars>
-            </Link>
-          </Lnk>
-          <Lnk
-            className="tag"
-            onClick={() => {
-              this.animateBerg();
-              this.props.change();
-            }}
-          >
-            <Link className="link" to="/Projects">
-              <Stars id={"projects"} top={"0.7rem"}>
-                Projects
-              </Stars>
-            </Link>
-          </Lnk>
-          <Lnk
-            className="tag"
-            onClick={() => {
-              this.animateBerg();
-              this.props.change();
-            }}
-          >
-            <Link className="link" to="/Contact">
-              <Stars id={"contact"} top={"0.7rem"}>
-                Contact
-              </Stars>
-            </Link>
-          </Lnk>
-        </List>
-      </div>
-    );
-  }
-}
+      <Explore className="explore">
+        <Icon width={1.3} src={leftArrow} />
+        {phrase()}
+      </Explore>
+
+      <Credits />
+      <Overlay className="overlay"></Overlay>
+      <List>
+        <Lnk
+          className="tag"
+          onClick={() => {
+            animateBerg();
+            change();
+          }}
+        >
+          <Link className="link" to="/">
+            <Stars id={"home"} top={"0.7rem"}>
+              Home
+            </Stars>
+          </Link>
+        </Lnk>
+        <Lnk
+          className="tag"
+          onClick={() => {
+            animateBerg();
+            change();
+          }}
+        >
+          <Link className="link" to="/about">
+            <Stars id={"about"} top={"0.7rem"}>
+              About
+            </Stars>
+          </Link>
+        </Lnk>
+        <Lnk
+          className="tag"
+          onClick={() => {
+            animateBerg();
+            change();
+          }}
+        >
+          <Link className="link" to="/Projects">
+            <Stars id={"projects"} top={"0.7rem"}>
+              Projects
+            </Stars>
+          </Link>
+        </Lnk>
+        <Lnk
+          className="tag"
+          onClick={() => {
+            animateBerg();
+            change();
+          }}
+        >
+          <Link className="link" to="/Contact">
+            <Stars id={"contact"} top={"0.7rem"}>
+              Contact
+            </Stars>
+          </Link>
+        </Lnk>
+      </List>
+    </div>
+  );
+};
 
 export default Navbar;
 
