@@ -28,7 +28,7 @@ const Stars = (props) => {
     >
       {props.children}
       <div id={`div${props.id}`}>
-        <img src={star} id={`star${props.id}`} width="30px" />
+        <img src={star} id={`star${props.id}`} width="30px" alt="stars" />
       </div>
     </Star>
   );

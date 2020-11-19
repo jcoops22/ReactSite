@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { device } from "../resources/mediaquery";
 
 const Card = (props) => {
-  const [showing, setShowing] = useState(true);
+  // const [showing, setShowing] = useState(true);
   useEffect(() => {
     addEvents();
   });

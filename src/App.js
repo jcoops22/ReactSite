@@ -8,7 +8,6 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
 import Show from "./Components/Show";
-import Name from "./Components/Name";
 
 // Component
 function App(props) {

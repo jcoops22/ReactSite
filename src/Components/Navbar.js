@@ -47,7 +47,7 @@ class Navbar extends Component {
     let patty1 = document.querySelector(".patty1");
     let patty2 = document.querySelector(".patty2");
     let overlay = document.querySelector(".overlay");
-    this.state.expanded = !this.state.expanded;
+    this.setState({ expanded: !this.state.expanded });
 
     if (this.state.expanded) {
       berg.style.transform = "rotate(137deg)";

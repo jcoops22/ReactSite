@@ -87,14 +87,14 @@ const Intro = styled.p`
     width: 70%;
   }
 `;
-const Img = styled.img`
-  position: relative;
-  margin-bottom: -4rem;
-  z-index: 1;
-  left: -30%;
-  display: none;
-  width: ${(props) => props.width + "rem"};
-  @media ${device.tablet} {
-    display: block;
-  }
-`;
+// const Img = styled.img`
+//   position: relative;
+//   margin-bottom: -4rem;
+//   z-index: 1;
+//   left: -30%;
+//   display: none;
+//   width: ${(props) => props.width + "rem"};
+//   @media ${device.tablet} {
+//     display: block;
+//   }
+// `;
