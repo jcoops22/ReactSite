@@ -32,6 +32,7 @@ class Letters extends Component {
       >
         {this.state.word.split("").map((l, ind) => (
           <Letter
+            size={this.props.size}
             marginSides={this.props.marginSides}
             key={ind}
             delay={this.state.arr[ind]}
@@ -63,6 +64,6 @@ const Letter = styled.span`
   top: ${(props) => props.top};
   color: #fff;
   position: relative;
-  font-size: 18px;
+  font-size: ${(props) => props.size};
   font-family: "Liu Jian Mao Cao";
 `;

@@ -9,6 +9,7 @@ import Stars from "./Stars";
 
 // Component
 const Navbar = ({ change }) => {
+  const [expanded, setExpanded] = useState(false);
   const [navItems] = useState([
     "Home",
     "About",
@@ -16,7 +17,6 @@ const Navbar = ({ change }) => {
     "Projects",
     "Resume",
   ]);
-  const [expanded, setExpanded] = useState(false);
   const [places] = useState([
     "Check out my projects",
     "Learn more 'About' me",
@@ -25,7 +25,7 @@ const Navbar = ({ change }) => {
   // functions
   useEffect(() => {
     explore();
-  }, []);
+  }, [expanded]);
 
   const animateBerg = () => {
     // remove animation for "explore"
@@ -36,7 +36,7 @@ const Navbar = ({ change }) => {
     let a = document.querySelectorAll(".tag");
     // slide in links
     setTimeout(() => {
-      if (expanded) {
+      if (!expanded) {
         a.forEach((a, ind) => {
           a.style.transitionDuration = "0.4s";
           a.style.transitionDelay = `${ind}00ms`;
@@ -55,19 +55,18 @@ const Navbar = ({ change }) => {
     let patty1 = document.querySelector(".patty1");
     let patty2 = document.querySelector(".patty2");
     let overlay = document.querySelector(".overlay");
-    // change state of burger
-    setExpanded(!expanded);
 
-    if (expanded) {
+    if (!expanded) {
       berg.style.transform = "rotate(137deg)";
       patty1.style.transform = "rotate(-90deg)";
       patty1.style.top = "17px";
       patty2.style.top = "14px";
       setTimeout(() => {
-        expanded
+        !expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
         berg.style.left = "calc(100% - 44px)";
+        setExpanded(true);
       }, 600);
     } else {
       berg.style.transform = "rotate(0deg)";
@@ -78,9 +77,10 @@ const Navbar = ({ change }) => {
         berg.style.left = "1rem";
       }, 600);
       setTimeout(() => {
-        expanded
+        !expanded
           ? (overlay.style.display = "initial")
           : (overlay.style.display = "none");
+        setExpanded(false);
       }, 1600);
     }
   };
@@ -101,7 +101,12 @@ const Navbar = ({ change }) => {
 
   return (
     <div className="navDiv">
-      <Burger className="burger" onClick={animateBerg}>
+      <Burger
+        className="burger"
+        onClick={() => {
+          animateBerg();
+        }}
+      >
         <Pat1 className="patty1" />
         <Pat2 className="patty2" />
       </Burger>
@@ -112,7 +117,7 @@ const Navbar = ({ change }) => {
       </Explore>
 
       <Credits />
-      <Overlay className="overlay"></Overlay>
+      <Overlay className="overlay" onClick={() => animateBerg()} />
       <List>
         {navItems.map((item, ind) => (
           <Lnk

@@ -1,37 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
 import Typer from "./Typer";
 import Stars from "./Stars";
-
-// import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/lib";
 
 const Show = (props) => {
-  // const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const project = props.location.state.project;
 
   // video ready function
-  // const loader = () => {
-  //   let player = document.querySelector(".react_player");
-  //   let load = document.querySelectorAll(".load");
-  //   let loading = document.querySelector(".loading");
+  const loader = () => {
+    let player = document.querySelector(".react_player");
+    let load = document.querySelectorAll(".load");
+    let loading = document.querySelector(".loading");
 
-  //   setTimeout(() => {
-  //     load.forEach((loader) => {
-  //       loader.style.animationPlayState = "paused";
-  //     });
-  //   }, 600);
-  //   setTimeout(() => {
-  //     load.forEach((loader) => {
-  //       loader.style.display = "none";
-  //       loading.style.display = "none";
-  //     });
-  //     document.getElementById("react_p").scrollIntoView();
-  //     player.style.opacity = 1;
-  //     setPlaying(true);
-  //   }, 1000);
-  // };
+    setTimeout(() => {
+      load.forEach((loader) => {
+        loader.style.animationPlayState = "paused";
+      });
+    }, 600);
+    setTimeout(() => {
+      load.forEach((loader) => {
+        loader.style.display = "none";
+        loading.style.display = "none";
+      });
+      document.getElementById("react_p").scrollIntoView();
+      player.style.opacity = 1;
+      setPlaying(true);
+    }, 1000);
+  };
   // end video ready funtion
 
   return (
@@ -64,23 +63,23 @@ const Show = (props) => {
             fontSize={"3vw"}
           />
         </Loading>
+        //{" "}
+        <ReactPlayer
+          controls={true}
+          id="react_p"
+          className="react_player"
+          onReady={loader}
+          playing={playing}
+          url={project.video}
+          width="100%"
+          height="100%"
+        />
       </Vid>
     </Container>
   );
 };
 
 export default Show;
-
-// <ReactPlayer
-//   controls={true}
-//   id="react_p"
-//   className="react_player"
-//   onReady={loader}
-//   playing={playing}
-//   url={project.video}
-//   width="100%"
-//   height="100%"
-// />;
 
 // styles
 const Container = styled.div`

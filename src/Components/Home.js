@@ -15,7 +15,7 @@ const Home = () => {
         justifyContent: "center",
       }}
     >
-      <Letters word="WELCOME" top={50} marginSides={"5vw"} />
+      <Letters word="WELCOME" top={50} marginSides={"5vw"} size={"12px"} />
       <Container>
         <Header>Hello, I'm Jonathan...</Header>
         <Intro>

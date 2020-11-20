@@ -15,19 +15,19 @@ function App(props) {
     changeBackground();
   });
   const backgrounds = [
-    // "https://res.cloudinary.com/drucvvo7f/image/upload/v1605682952/Portfolio%20Site/Background%20Pics/jake-weirick-Q_RBVFFXR_g-unsplash_1_g3gehe.jpg",
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1605683166/Portfolio%20Site/Background%20Pics/jeremy-perkins-uhjiu8FjnsQ-unsplash_1_zagdkm.jpg",
-    // "https://res.cloudinary.com/drucvvo7f/image/upload/v1605683305/Portfolio%20Site/Background%20Pics/federico-beccari-L8126OwlroY-unsplash_1_t3n5hg.jpg",
   ];
   const changeBackground = () => {
-    let app = document.querySelector(".App");
+    let app = document.querySelector(".background");
     let limit = backgrounds.length;
     let ind = Math.floor(Math.random() * limit);
     app.style.backgroundImage = `url(${backgrounds[ind]})`;
   };
-  // <Overlay />
   return (
     <Container className="App">
+      <Background className="background">
+        <Overlay />
+      </Background>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
@@ -45,12 +45,54 @@ export default App;
 // styles
 
 const Container = styled.div`
-  background-attachment: fixed;
-  background-size: cover;
   height: 100vh;
   width: 100%;
   padding: 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+const Background = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  animation: pulseContainer 30s alternate infinite;
+  /* border: 1px solid red; */
+
+  @keyframes pulseContainer {
+    to {
+      transform: scale(1.5);
+    }
+  }
+`;
+const Overlay = styled.div`
+  /* position: fixed; */
+  width: 100vw;
+  height: 100vh;
+  /* background-color: blue; */
+  animation: changeColors 60s infinite forwards;
+  opacity: 0.4;
+
+  @keyframes changeColors {
+    0% {
+      background-color: #000;
+    }
+    20% {
+      background-color: #252b5c;
+    }
+    40% {
+      background-color: #181d4d;
+    }
+    60% {
+      background-color: #0f196e;
+    }
+    80% {
+      background-color: #060e52;
+    }
+    100% {
+      background-color: #000;
+    }
+  }
 `;
