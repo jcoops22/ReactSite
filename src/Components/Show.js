@@ -63,7 +63,6 @@ const Show = (props) => {
             fontSize={"3vw"}
           />
         </Loading>
-        //{" "}
         <ReactPlayer
           controls={true}
           id="react_p"
