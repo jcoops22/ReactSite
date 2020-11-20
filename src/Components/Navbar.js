@@ -148,7 +148,7 @@ export default Navbar;
 // styles
 const Container = styled.div`
   height: 4em;
-  border: 4px solid red;
+  /* border: 4px solid red; */
 `;
 const List = styled.ul`
   display: -webkit-box;

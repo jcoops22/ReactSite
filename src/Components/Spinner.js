@@ -44,8 +44,15 @@ const Wrapper = styled.div`
     transform: scale(1.2);
   }
   position: relative;
-  left: 1rem;
+  top: 3rem;
+  right: 10.5rem;
   transition-duration: 0.3s;
+
+  @media ${device.mobileL} {
+    left: 1rem;
+    right: 0;
+    top: 0;
+  }
 `;
 const Img = styled.img`
   -webkit-transition-duration: 0.5s;

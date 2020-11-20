@@ -51,27 +51,31 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: red;
 `;
 const Background = styled.div`
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-attachment: fixed;
-  background-size: cover;
-  animation: pulseContainer 30s alternate infinite;
+  /* background-attachment: fixed; */
+  background-size: contain;
+  animation: pulseContainer 25s alternate infinite;
   /* border: 1px solid red; */
 
   @keyframes pulseContainer {
     to {
-      transform: scale(1.5);
+      transform: scale(1.4);
     }
   }
 `;
 const Overlay = styled.div`
+  display: none;
   /* position: fixed; */
   width: 100vw;
   height: 100vh;
-  /* background-color: blue; */
+  /* background-color: red; */
   animation: changeColors 60s infinite forwards;
   opacity: 0.4;
 

@@ -58,6 +58,7 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   border-radius: 8px;
+  /* border: 1px solid red; */
   @media ${device.mobileM} {
     top: 21%;
   }
