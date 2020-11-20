@@ -100,7 +100,7 @@ const Navbar = ({ change }) => {
   // RENDER
 
   return (
-    <div className="navDiv">
+    <Container className="navDiv">
       <Burger
         className="burger"
         onClick={() => {
@@ -139,13 +139,17 @@ const Navbar = ({ change }) => {
           </Lnk>
         ))}
       </List>
-    </div>
+    </Container>
   );
 };
 
 export default Navbar;
 
 // styles
+const Container = styled.div`
+  height: 4em;
+  border: 4px solid red;
+`;
 const List = styled.ul`
   display: -webkit-box;
   display: -ms-flexbox;

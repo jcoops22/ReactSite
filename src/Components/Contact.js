@@ -8,13 +8,13 @@ class Contact extends Component {
     methods: [
       {
         name: "GMail",
-        phrase: "preferred method of contact",
+        phrase: "preferred method of contact 😊",
         color: "#D44638",
         link: "mailto:%20jcooper232074@gmail.com?subject=Getting%20In%20Touch",
         bg: "#fff",
         imgbg: "#",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590544957/Portfolio%20Site/Icons/1275488131581395615_risrcs.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/gmail-svgrepo-com_j9ul8h.svg",
       },
       {
         name: "GitHub",
@@ -24,7 +24,7 @@ class Contact extends Component {
         bg: "#211F1F",
         imgbg: "#fff",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590540901/Portfolio%20Site/Icons/github-icon-1-logo-svgrepo-com_m53z7h.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/github-svgrepo-com_ce9o9l.svg",
       },
       {
         name: "LinkedIn",
@@ -34,7 +34,7 @@ class Contact extends Component {
         bg: "#0e76a8",
         imgbg: "#0e76a8",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590616011/Portfolio%20Site/Icons/5808508161555589661_fqzgz4.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854967/Portfolio%20Site/Icons/linkedin-svgrepo-com_aplyna.svg",
       },
       {
         name: "Instagram",
@@ -45,7 +45,7 @@ class Contact extends Component {
           "linear-gradient(90deg, rgba(250,161,30,1) 5%, rgba(250,126,30,1) 26%, rgba(214,41,118,1) 42%, rgba(150,47,191,1) 64%, rgba(79,91,213,1) 82%)",
         imgbg: "#",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590542498/Portfolio%20Site/Icons/instagram-2-1-logo-svgrepo-com_tuerrj.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/instagram-svgrepo-com_m5uilh.svg",
       },
       {
         name: "Codepen",
@@ -55,7 +55,7 @@ class Contact extends Component {
         bg: "#fff",
         imgbg: "#",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590542642/Portfolio%20Site/Icons/11898456151579517832_fhixga.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854967/Portfolio%20Site/Icons/codepen-svgrepo-com_jlmvqg.svg",
       },
       {
         name: "YouTube",
@@ -66,17 +66,17 @@ class Contact extends Component {
         bg: "#c4302b",
         imgbg: "#fff",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590545420/Portfolio%20Site/Icons/youtube-svgrepo-com_jkwykh.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/youtube-svgrepo-com_zhu0gn.svg",
       },
       {
         name: "Twitter",
-        phrase: "*Tweet *tweet",
+        phrase: "*tweet *tweet",
         color: "#fff",
         link: "https://twitter.com/Maffmatology",
         bg: "#00acee",
         imgbg: "#fff",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590615825/Portfolio%20Site/Icons/9457207801555590088_u71mai.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/twitter-svgrepo-com_q4pgsl.svg",
       },
       {
         name: "FaceBook",
@@ -86,7 +86,7 @@ class Contact extends Component {
         bg: "#3b5998",
         imgbg: "#3b5998",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590615825/Portfolio%20Site/Icons/10165394971530077750_uqwvpu.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/facebook-svgrepo-com_atam81.svg",
       },
     ],
   };

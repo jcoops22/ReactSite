@@ -103,16 +103,16 @@ const Icon = styled.button`
   &:focus {
     outline: none;
   }
-  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591248061/Portfolio%20Site/Icons/planet-svgrepo-com_2_s5rzfu.svg");
+  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1605854453/Portfolio%20Site/Icons/planet-svgrepo-com_hmkl9h.svg");
   display: none;
   border-radius: 50%;
   border: 3px solid #aaa;
-  height: 30px;
-  width: 30px;
+  height: 36px;
+  width: 36px;
   cursor: pointer;
   position: fixed;
-  left: calc(100% - 30px);
-  top: 90vh;
+  left: calc(100% - 42px);
+  top: 90.5vh;
   z-index: 98;
   padding: 0;
   animation: rotate 5s linear infinite forwards;
