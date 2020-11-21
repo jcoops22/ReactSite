@@ -25,9 +25,7 @@ function App(props) {
   };
   return (
     <Container className="App">
-      <Background className="background">
-        <Overlay />
-      </Background>
+      <Background className="background"></Background>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
@@ -51,9 +49,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: red;
+  /* background-color: red; */
 `;
 const Background = styled.div`
+  /* display: none; */
   position: fixed;
   top: 0;
   left: 0;

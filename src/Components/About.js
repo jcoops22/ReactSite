@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { device } from "../resources/mediaquery";
 import Typer from "./Typer";
 import spaceship from "../resources/Icons/spaceship.svg";
@@ -8,36 +7,14 @@ import cometPic from "../resources/Icons/comet.svg";
 
 class About extends Component {
   state = {
-    sentences: [
-      "Though I'm originally from North Carolina, I've been living here in Utah for about 5 years now.",
-      "I have more than 4 years of experience working in the tech industry, mostly troubleshooting software issues.",
-      "While this has taught me much, builing websites and developing web applications has quickly become a passion of mine.",
-      "When I'm not neck deep in code, I'm probably gaming on Xbox One or the Nintendo Switch. Sometimes I'm also jamming out on my electric drum kit.",
-      "Most of the time, however, I'm usually with my wonderful wife or spending time with our family.",
-    ],
     comets: [],
   };
 
   componentDidMount() {
     // slide to the paragraph
-    setTimeout(() => {
-      if (window.innerWidth > 768) {
-        document.getElementById("bottom").scrollIntoView();
-      }
-    }, 7000);
     this.populateComets(8, 100, 42);
-    this.animateSentences();
   }
-  // slide in sentences
-  animateSentences = () => {
-    let sentences = document.querySelectorAll(".sentence");
-    // list out sentences
-    sentences.forEach((sentence, ind) => {
-      setTimeout(() => {
-        sentence.style.animationName = "slipIn";
-      }, `${ind}00`);
-    });
-  };
+
   // make comets
   populateComets = (topVal, leftVal, widthVal) => {
     let num = 55;
@@ -55,7 +32,7 @@ class About extends Component {
   render() {
     return (
       <Container>
-        <div>
+        <TyperWrapper>
           <Typer
             sentence="A little bit about me..."
             underline="false"
@@ -63,7 +40,7 @@ class About extends Component {
             fontSize={"5vh"}
             delay={1500}
           />
-        </div>
+        </TyperWrapper>
         <div className="animationWrapper">
           <Comets>
             {this.state.comets.map((comet, ind) => (
@@ -77,26 +54,20 @@ class About extends Component {
             ))}
           </Comets>
           <div className="spaceship_wrapper">
-            <Img src={spaceship} />
+            <Ship src={spaceship} />
           </div>
         </div>
         <Wrapper>
           <Picture />
-          <div>
-            {this.state.sentences.map((sentence, ind) => (
-              <span key={ind} className="sentence">
-                {" "}
-                {sentence}
-              </span>
-            ))}
-          </div>
-          <span id="bottom"></span>
-          <p style={{ marginTop: "1rem" }}>
-            Please feel free to{" "}
-            <u>
-              <Link to="/contact">Contact me</Link>
-            </u>
-          </p>
+          <Bio>
+            <span>Though I'm originally from North Carolina </span>, I've been
+            living here in Utah for about 6 years now. I have more than 4 years
+            of experience working in the tech industry, mostly troubleshooting
+            software issues. While this has taught me much, builing websites and
+            developing web applications has quickly become a passion of mine.
+            When I'm not neck deep in code, I'm probably spending time with my
+            wife, gaming or playing drums.
+          </Bio>
         </Wrapper>
       </Container>
     );
@@ -107,11 +78,16 @@ export default About;
 
 // styles
 const Container = styled.div`
+  position: relative;
   color: #fff;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 2rem 0.6rem 0;
   height: 88vh;
+  /* border: 1px solid red; */
+`;
+const TyperWrapper = styled.div`
+  margin-top: 1rem;
+  /* border: 1px solid red; */
 `;
 const Comets = styled.div`
   visibility: hidden;
@@ -133,6 +109,7 @@ const Comets = styled.div`
   animation-iteration-count: infinite;
   -webkit-animation-duration: 30s;
   animation-duration: 30s;
+  /* border: 1px solid red; */
 `;
 const Comet = styled.img`
   position: relative;
@@ -141,7 +118,7 @@ const Comet = styled.img`
   top: ${(props) => props.top};
   left: ${(props) => props.left};
 `;
-const Img = styled.img`
+const Ship = styled.img`
   position: relative;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -157,24 +134,29 @@ const Img = styled.img`
   animation-iteration-count: infinite;
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
+  /* border: 1px solid blue; */
 `;
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin-top: 2rem;
   padding: 0.7rem;
   width: 100%;
+  overflow-x: hidden;
+  /* border: 1px solid green; */
+
   @media ${device.tablet} {
-    max-width: 60%;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: space-around;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -184,16 +166,58 @@ const Wrapper = styled.div`
   }
 `;
 const Picture = styled.div`
-  margin-bottom: 2rem;
-  z-index: 1;
   position: relative;
+  z-index: 1;
+  left: 0;
   width: 200px;
   height: 200px;
+  margin-bottom: 2rem;
   border-radius: 50%;
   background-size: cover;
-  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1591388976/Portfolio%20Site/keeper1_jfdgtj.jpg");
+  animation: slideInFromLeft 0.8s backwards;
+  animation-delay: 3s;
+  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/e_auto_saturation/v1605908375/Portfolio%20Site/Background%20Pics/LinkedIn_ltcvfa.jpg");
+  box-shadow: 0 0 25px 4px #fff;
+  /* border: 1px solid blue; */
   @media ${device.tablet} {
     width: 300px;
     height: 300px;
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      left: -100%;
+    }
+  }
+`;
+const Bio = styled.div`
+  position: relative;
+  left: 0;
+  color: #fff;
+  padding: 0.7rem;
+  width: 100%;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-family: "Josefin Sans", sans-serif;
+  animation: slideInFromRight 0.8s backwards;
+  animation-delay: 3s;
+  /* border: 1px solid red; */
+
+  span {
+    font-size: 2rem;
+    color: #67cf97;
+    font-weight: bolder;
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  @media ${device.tabletS} {
+    font-size: 1.4rem;
+    width: 50%;
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      left: 100%;
+    }
   }
 `;
