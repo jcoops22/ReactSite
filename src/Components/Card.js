@@ -107,12 +107,15 @@ const Desc = styled.div`
   position: relative;
   top: 0;
   left: 0;
+  z-index: -1;
   -webkit-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   pointer-events: none;
   max-width: 380px;
-  z-index: -1;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.1;
   color: ${(props) => props.color};
   @media ${device.tablet} {
     display: inline;

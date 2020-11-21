@@ -17,7 +17,7 @@ class Projects extends Component {
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769279/Portfolio%20Site/project%20videos/hbssc_t9zgga.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590703017/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.14.42_jfuiny.png",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605987244/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_12.32.14_PM_dhtpic.png",
         github: "",
       },
       {
@@ -30,19 +30,7 @@ class Projects extends Component {
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769333/Portfolio%20Site/project%20videos/pwdsc_jgexsq.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590703015/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.42.06_srtizh.png",
-        github: "",
-      },
-      {
-        name: "Music App",
-        hover: "#fff",
-        color: "#000",
-        technologies: ["VueJS", "NodeJS", "MongoDB"],
-        desc:
-          "Little project built with VueJS to make samples from keyboard inputs.",
-        video: "",
-        img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702972/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.34.40_twwuyx.png",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605997096/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.17.27_PM_urzivt.png",
         github: "",
       },
       {
@@ -55,34 +43,34 @@ class Projects extends Component {
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769320/Portfolio%20Site/project%20videos/notebooksc_tvtkiu.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702964/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.36.36_m4y5fu.png",
-        github: "",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605997598/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.26.11_PM_f72pmz.png",
+        github: "https://github.com/jcoops22/notebookApp",
       },
-      {
-        name: "DrumFinder",
-        hover: "#000",
-        color: "#fff",
-        technologies: ["React", "Styled Components"],
-        desc:
-          "Application to help you pick the perfect drumset for you! I play the drums and wanted to build this single page app to help those others who are in the market for a new kit. Built with ReactJS.",
-        video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769316/Portfolio%20Site/project%20videos/drumfinder_hb4z2x.mov",
-        img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702963/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.33.35_vnkvi0.png",
-        github: "",
-      },
+      // {
+      //   name: "DrumFinder",
+      //   hover: "#000",
+      //   color: "#fff",
+      //   technologies: ["React", "Styled Components"],
+      //   desc:
+      //     "Application to help you pick the perfect drumset for you! I play the drums and wanted to build this single page app to help those others who are in the market for a new kit. Built with ReactJS.",
+      //   video:
+      //     "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769316/Portfolio%20Site/project%20videos/drumfinder_hb4z2x.mov",
+      //   img:
+      //     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702963/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.33.35_vnkvi0.png",
+      //   github: "https://github.com/jcoops22/drumfinder",
+      // },
       {
         name: "Pwd Manager",
         hover: "#92B6B1",
         color: "#000",
         technologies: ["JavaScript", "NodeJS", "MongoDB"],
         desc:
-          "Password tracker app. Lets you enter passwords and even generate your own 'strong' password and tag each entry with keywords to search quickly!",
+          "Password tracker app. Lets you enter passwords and even generate your own strong password and tag each entry with keywords to search quickly!",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769333/Portfolio%20Site/project%20videos/pwdsc_jgexsq.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702958/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.37.07_mry4p0.png",
-        github: "",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605980808/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_10.45.18_AM_iqjwyq.png",
+        github: "https://github.com/jcoops22/pwdManager",
       },
     ],
   };
@@ -99,7 +87,7 @@ class Projects extends Component {
         />
         <Wrapper>
           {this.state.projects.map((project, ind) => (
-            <Card key={ind} project={project}></Card>
+            <Card key={ind} project={project} />
           ))}
         </Wrapper>
       </Container>
