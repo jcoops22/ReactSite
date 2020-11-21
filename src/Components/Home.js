@@ -73,7 +73,7 @@ const Container = styled.div`
   }
 `;
 const Header = styled.h1`
-  color: #fff;
+  color: #67cf97;
   margin: 1rem 0;
   text-align: center;
 `;

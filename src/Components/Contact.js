@@ -13,6 +13,7 @@ class Contact extends Component {
         link: "mailto:%20jcooper232074@gmail.com?subject=Getting%20In%20Touch",
         bg: "#fff",
         imgbg: "#",
+        left: 4,
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/gmail-svgrepo-com_j9ul8h.svg",
       },
@@ -34,7 +35,7 @@ class Contact extends Component {
         bg: "#0e76a8",
         imgbg: "#0e76a8",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854967/Portfolio%20Site/Icons/linkedin-svgrepo-com_aplyna.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605943684/Portfolio%20Site/Icons/linkedin-svgrepo-com_1_civoix.svg",
       },
       {
         name: "Instagram",
@@ -45,7 +46,7 @@ class Contact extends Component {
           "linear-gradient(90deg, rgba(250,161,30,1) 5%, rgba(250,126,30,1) 26%, rgba(214,41,118,1) 42%, rgba(150,47,191,1) 64%, rgba(79,91,213,1) 82%)",
         imgbg: "#",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/instagram-svgrepo-com_m5uilh.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605945507/Portfolio%20Site/Icons/instagram-2-1-logo-svgrepo-com_ur6gbq.svg",
       },
       {
         name: "Codepen",
@@ -54,6 +55,7 @@ class Contact extends Component {
         link: "https://codepen.io/jon-cooper",
         bg: "#fff",
         imgbg: "#",
+        width: 3.5,
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854967/Portfolio%20Site/Icons/codepen-svgrepo-com_jlmvqg.svg",
       },
@@ -66,7 +68,7 @@ class Contact extends Component {
         bg: "#c4302b",
         imgbg: "#fff",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/youtube-svgrepo-com_zhu0gn.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605943818/Portfolio%20Site/Icons/youtube-svgrepo-com_kgcsgg.svg",
       },
       {
         name: "Twitter",
@@ -74,9 +76,10 @@ class Contact extends Component {
         color: "#fff",
         link: "https://twitter.com/Maffmatology",
         bg: "#00acee",
-        imgbg: "#fff",
+        imgbg: "#00acee",
+        left: 5,
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/twitter-svgrepo-com_q4pgsl.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605938045/Portfolio%20Site/Icons/twitter-svgrepo-com_ubccsl.svg",
       },
       {
         name: "FaceBook",
@@ -85,8 +88,9 @@ class Contact extends Component {
         link: "https://www.facebook.com/jon.cooper.9849/",
         bg: "#3b5998",
         imgbg: "#3b5998",
+        width: 3,
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/facebook-svgrepo-com_atam81.svg",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605942378/Portfolio%20Site/Icons/facebook-svgrepo-com_1_qjpbik.svg",
       },
     ],
   };
@@ -140,7 +144,16 @@ class Contact extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Img background={method.imgbg} src={method.img} width={4} />
+              <Img
+                background={method.imgbg}
+                src={method.img}
+                top={method.top ? method.top : null}
+                left={method.left ? method.left : 3.6}
+                height={method.height ? method.height : null}
+                width={method.width ? method.width : 4}
+                alt="link logo"
+              />
+
               <Text color={method.color} background={method.bg}>
                 <span>{method.name}</span>
                 <Hover className="hover">
@@ -201,6 +214,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   padding: 2rem 1rem 0;
   margin-top: 1.5rem;
+  /* border: 1px solid red; */
   @media ${device.mobileL} {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -228,10 +242,38 @@ const Wrapper = styled.div`
     overflow: visible;
   }
 `;
+const Text = styled.div`
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  background: ${(props) => props.background};
+  color: ${(props) => props.color};
+  /* border: 1px solid red; */
+
+  @media ${device.laptop} {
+    justify-content: flex-end;
+    padding-right: 3rem;
+  }
+`;
 const Link = styled.a`
+  &:hover ${Text} {
+    box-shadow: 0 0 15px 4px #67cf97;
+  }
   &:hover {
     opacity: 0.8;
   }
+  position: relative;
   opacity: 1;
   -webkit-transition-duration: 0.6s;
   -o-transition-duration: 0.6s;
@@ -253,6 +295,8 @@ const Link = styled.a`
   animation-duration: 1.5s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  /* border: 1px solid red; */
+
   @media ${device.laptop} {
     &:hover {
       padding-right: 65px;
@@ -260,39 +304,18 @@ const Link = styled.a`
     padding-right: 100px;
   }
 `;
-const Text = styled.div`
-  position: relative;
-  border-radius: 8px;
-  width: 100%;
-  text-align: end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  background: ${(props) => props.background};
-  color: ${(props) => props.color};
-  @media ${device.laptop} {
-    justify-content: flex-end;
-    padding-right: 3rem;
-  }
-`;
 const Img = styled.img`
   cursor: pointer;
-  z-index: 1;
   position: relative;
-  top: 0rem;
+  z-index: 1;
+  top: ${(props) => props.top + "rem"};
+  left: ${(props) => props.left + "rem"};
+  width: ${(props) => props.width + "rem"};
+  height: ${(props) => props.height + "rem"};
+  margin-left: -${(props) => props.width + "rem"};
+  background: ${(props) => props.background};
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  margin-left: -${(props) => props.width + "rem"};
-  left: ${(props) => props.width - 0.2 + "rem"};
-  background: ${(props) => props.background};
-  width: ${(props) => props.width + "rem"};
   @media ${device.laptop} {
     &:hover + ${Text} {
       justify-content: flex-end;
