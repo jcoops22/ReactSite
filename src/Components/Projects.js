@@ -39,7 +39,7 @@ class Projects extends Component {
         color: "#000",
         technologies: ["VueJS", "HTML5", "CSS3"],
         desc:
-          "Simple notepad app with a backend. Fully responsive, built with VueJS, NodeJS, and Mongo DB database.",
+          "Simple notepad app with a backend. Built with VueJS, NodeJS, and Mongo DB database.",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769320/Portfolio%20Site/project%20videos/notebooksc_tvtkiu.mov",
         img:

@@ -256,6 +256,7 @@ const Text = styled.div`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  font-family: "Goldman", cursive;
   cursor: pointer;
   background: ${(props) => props.background};
   color: ${(props) => props.color};
@@ -295,6 +296,7 @@ const Link = styled.a`
   animation-duration: 1.5s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  font-family: "Goldman", cursive;
   /* border: 1px solid red; */
 
   @media ${device.laptop} {

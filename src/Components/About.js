@@ -61,12 +61,12 @@ class About extends Component {
           <Picture />
           <Bio>
             <span>Though I'm originally from North Carolina </span>, I've been
-            living here in Utah for about 6 years now. I have more than 4 years
-            of experience working in the tech industry, mostly troubleshooting
+            living here in Utah for about 6 years now. I have almost 5 years of
+            experience working in the tech industry, mostly troubleshooting
             software issues. While this has taught me much, builing websites and
             developing web applications has quickly become a passion of mine.
             When I'm not neck deep in code, I'm probably spending time with my
-            wife, gaming or playing drums.
+            family, gaming online or playing the drums.
           </Bio>
         </Wrapper>
       </Container>
@@ -196,7 +196,7 @@ const Bio = styled.div`
   color: #fff;
   padding: 0.7rem;
   width: 100%;
-  line-height: 1.6;
+  line-height: 1.5;
   font-size: 1rem;
   font-family: "Josefin Sans", sans-serif;
   animation: slideInFromRight 0.8s backwards;

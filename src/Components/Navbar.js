@@ -10,13 +10,7 @@ import Stars from "./Stars";
 // Component
 const Navbar = ({ change }) => {
   const [expanded, setExpanded] = useState(false);
-  const [navItems] = useState([
-    "Home",
-    "About",
-    "Contact",
-    "Projects",
-    "Resume",
-  ]);
+  const [navItems] = useState(["Home", "About", "Projects", "Contact"]);
   const [places] = useState([
     "Check out my projects",
     "Learn more 'About' me",
