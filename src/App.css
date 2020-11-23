@@ -3,6 +3,8 @@
 /* font-family: 'Josefin Sans', sans-serif; */
 /* font-family: 'Goldman', cursive; */
 /* green: #67cf97 */
+/* showbutton blue: #4287f5 */
+/* cream: #f7f6f0 */
 
 * {
   padding: 0;
@@ -34,15 +36,6 @@ a:hover {
   -webkit-transition-duration: 1s;
   -o-transition-duration: 1s;
   transition-duration: 1s;
-}
-.react_player {
-  -webkit-transition-duration: 0.7s;
-  -o-transition-duration: 0.7s;
-  transition-duration: 0.7s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
 }
 /* stars */
 #starhome,

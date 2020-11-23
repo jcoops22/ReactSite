@@ -69,33 +69,3 @@ const Background = styled.div`
     }
   }
 `;
-const Overlay = styled.div`
-  display: none;
-  /* position: fixed; */
-  width: 100vw;
-  height: 100vh;
-  /* background-color: red; */
-  animation: changeColors 60s infinite forwards;
-  opacity: 0.4;
-
-  @keyframes changeColors {
-    0% {
-      background-color: #000;
-    }
-    20% {
-      background-color: #252b5c;
-    }
-    40% {
-      background-color: #181d4d;
-    }
-    60% {
-      background-color: #0f196e;
-    }
-    80% {
-      background-color: #060e52;
-    }
-    100% {
-      background-color: #000;
-    }
-  }
-`;

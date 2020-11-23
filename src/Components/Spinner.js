@@ -5,12 +5,20 @@ import galaxy from "../resources/Icons/galaxy.svg";
 import galaxy2 from "../resources/Icons/galaxy2.svg";
 import galaxylight from "../resources/Icons/galaxylight.svg";
 
-const Spinner = ({ top, width }) => {
+const Spinner = ({
+  top,
+  width,
+  right,
+  wrapperTop,
+  wrapperLeft,
+  pointerEvents,
+}) => {
   return (
-    <Wrapper>
+    <Wrapper top={wrapperTop} left={wrapperLeft} pointerEvents={pointerEvents}>
       <Img
         top={top}
         width={width}
+        right={right}
         className="load"
         duration={"1.5s"}
         src={galaxy}
@@ -19,6 +27,7 @@ const Spinner = ({ top, width }) => {
       <Img
         top={top}
         width={width}
+        right={right}
         className="load"
         duration={"2s"}
         src={galaxylight}
@@ -27,6 +36,7 @@ const Spinner = ({ top, width }) => {
       <Img
         top={top}
         width={width}
+        right={right}
         className="load"
         duration={"2.5s"}
         src={galaxy2}
@@ -44,15 +54,11 @@ const Wrapper = styled.div`
     transform: scale(1.2);
   }
   position: relative;
-  top: 3rem;
-  right: 10.5rem;
+  top: ${(props) => props.top};
+  left: ${(props) => props.left};
   transition-duration: 0.3s;
-
-  @media ${device.mobileL} {
-    left: 1rem;
-    right: 0;
-    top: 0;
-  }
+  pointer-events: ${(props) => props.pointerEvents};
+  /* border: 1px solid red; */
 `;
 const Img = styled.img`
   -webkit-transition-duration: 0.5s;
@@ -71,8 +77,5 @@ const Img = styled.img`
   animation-duration: ${(props) => props.duration};
   @media ${device.tablet} {
     margin-top: 15%;
-  }
-  @media ${device.laptop} {
-    /* margin-top: %; */
   }
 `;

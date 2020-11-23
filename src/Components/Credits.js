@@ -21,41 +21,6 @@ class Credits extends Component {
         description: "Styled with",
         href: "https://styled-components.com/docs/basics#coming-from-css",
       },
-      {
-        source: "Kristopher Roller",
-        description: "milky way above body of water",
-        href: "https://unsplash.com/@krisroller",
-      },
-      {
-        source: "Casey Horner",
-        description: "gray mountains under starry night",
-        href: "https://unsplash.com/@mischievous_penguins",
-      },
-      {
-        source: "Henry Be",
-        description: "brown house beside mountain",
-        href: "https://unsplash.com/@henry_be",
-      },
-      {
-        source: "Manuel Will",
-        description: "rocky mountain",
-        href: "https://unsplash.com/@manufactured",
-      },
-      {
-        source: "Casey Horner",
-        description: "high-angle photography of mountain at sunset",
-        href: "https://unsplash.com/@mischievous_penguins",
-      },
-      {
-        source: "Greg Jeanneau",
-        description: "starry night wallpaper",
-        href: "https://unsplash.com/@gregjeanneau",
-      },
-      {
-        source: "Wil Stewart",
-        description: "trees under blue sky and stars during nighttime photo",
-        href: "https://unsplash.com/@wilstewart3",
-      },
     ],
     showing: false,
     left: "100%",

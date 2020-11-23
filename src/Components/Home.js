@@ -27,9 +27,12 @@ const Home = () => {
           <Typer
             delay={3000}
             sentence="I'd love to help build your next project!"
-            underline="true"
-            icon="true"
+            underline={"true"}
+            icon={"true"}
             fontSize={"1rem"}
+            wrapperTop={"3rem"}
+            wrapperLeft={"0"}
+            pointerEvents={"auto"}
           />
         </Link>
       </Container>

@@ -1,79 +1,87 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { device } from "../resources/mediaquery";
 import { Link } from "react-router-dom";
-import Typer from "./Typer";
+import Spinner from "./Spinner";
 import Stars from "./Stars";
 import ReactPlayer from "react-player/lib";
 
 const Show = (props) => {
-  const [playing, setPlaying] = useState(false);
   const project = props.location.state.project;
+  const [loading, setLoading] = useState(true);
+  const [gitIcon] = useState(
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854965/Portfolio%20Site/Icons/github-svgrepo-com_ce9o9l.svg"
+  );
+  const [siteLink] = useState(
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1606111633/Portfolio%20Site/Icons/external-svgrepo-com_exwjzd.svg"
+  );
 
-  // video ready function
-  const loader = () => {
-    let player = document.querySelector(".react_player");
-    let load = document.querySelectorAll(".load");
-    let loading = document.querySelector(".loading");
+  useEffect(() => {}, [loading]);
 
-    setTimeout(() => {
-      load.forEach((loader) => {
-        loader.style.animationPlayState = "paused";
-      });
-    }, 600);
-    setTimeout(() => {
-      load.forEach((loader) => {
-        loader.style.display = "none";
-        loading.style.display = "none";
-      });
-      document.getElementById("react_p").scrollIntoView();
-      player.style.opacity = 1;
-      setPlaying(true);
-    }, 1000);
+  const ready = () => {
+    setLoading(false);
   };
-  // end video ready funtion
 
   return (
     <Container>
       <Link to="/projects">
-        <ButtonDiv>
-          <Stars id={"back"} top={"1.4rem"}>
-            <Button>Back</Button>
+        <BackButtonDiv>
+          <Stars id={"back"} top={"1.4rem"} color="#fff">
+            <Button bg="#67cf97">Back</Button>
           </Stars>
-        </ButtonDiv>
+        </BackButtonDiv>
       </Link>
       <H1>{project.name}</H1>
-      <Desc>
-        {project.desc}
-        <Tech>
-          <h4 style={{ margin: "1rem 0" }}>Technologies:</h4>
-          <TechList>
-            {project.technologies.map((tech, ind) => (
-              <li key={ind}>{tech}</li>
-            ))}
-          </TechList>
-        </Tech>
-      </Desc>
-      <Vid className="vid">
-        <Loading className="loading">
-          <Typer
-            sentence="Loading..."
-            underline="false"
-            icon="false"
-            fontSize={"3vw"}
+      <Wrapper>
+        <Desc>
+          {project.desc}
+          <Tech>
+            <h4 style={{ margin: "1rem 0" }}>Technologies:</h4>
+            <TechList>
+              {project.technologies.map((tech, ind) => (
+                <li key={ind}>{tech}</li>
+              ))}
+            </TechList>
+          </Tech>
+        </Desc>
+
+        <LoadingContainer colors={loading ? "0, 0, 0, 0.7" : "0, 0, 0, 0"}>
+          {loading ? (
+            <LoadingWrapper opacity={loading ? "1" : "0"}>
+              <Spinner width={"2.7rem"} />
+            </LoadingWrapper>
+          ) : null}
+        </LoadingContainer>
+
+        <Vid className="vid">
+          <ReactPlayer
+            controls={true}
+            id="react_p"
+            className="react_player"
+            onReady={ready}
+            playing={true}
+            url={project.video}
+            width="100%"
+            height="100%"
           />
-        </Loading>
-        <ReactPlayer
-          controls={true}
-          id="react_p"
-          className="react_player"
-          onReady={loader}
-          playing={playing}
-          url={project.video}
-          width="100%"
-          height="100%"
-        />
-      </Vid>
+        </Vid>
+      </Wrapper>
+      <ButtonsWrapper>
+        {project.github ? (
+          <a href={project.github} target="_blank" rel="noopener noreferrer">
+            <ProjectButton bg="#fff">
+              GitHub repo <img src={gitIcon} alt="github" />
+            </ProjectButton>
+          </a>
+        ) : null}
+        {project.site ? (
+          <a href={project.site} target="_blank" rel="noopener noreferrer">
+            <ProjectButton bg="#4287f5" color="#fff">
+              Visit site <img src={siteLink} alt="site link" />
+            </ProjectButton>
+          </a>
+        ) : null}
+      </ButtonsWrapper>
     </Container>
   );
 };
@@ -82,86 +90,66 @@ export default Show;
 
 // styles
 const Container = styled.div`
+  position: relative;
   height: 90vh;
   width: 100%;
   padding: 0.5rem;
   overflow-x: hidden;
   overflow-y: scroll;
+  /* border: 1px solid red; */
   @media ${device.laptop} {
     width: 80%;
   }
 `;
-const ButtonDiv = styled.div`
+const BackButtonDiv = styled.div`
   height: 4rem;
   width: 8rem;
 `;
 const Button = styled.button`
+  position: relative;
+  z-index: 1;
   cursor: pointer;
   width: 5rem;
   height: 8rem;
   margin: 1rem;
-  color: white;
   border: none;
   border-radius: 5px;
-  background-color: rgba(145, 153, 147, 0.9);
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.bg};
 `;
 const H1 = styled.h1`
-  top: 0;
   color: white;
-  margin-top: 8vw;
+  top: 0;
+  margin: 1rem 0;
+
   @media ${device.tablet} {
     position: -webkit-sticky;
     position: sticky;
   }
 `;
-const Vid = styled.div`
-  -webkit-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  position: relative;
-  padding: 56.25% 2rem 0;
-  width: 100%;
-  margin: 10% auto 0;
-  @media ${device.tablet} {
-    width: 70%;
-  }
-`;
-const Loading = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
+const Wrapper = styled.div`
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  color: #fff;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+
   @media ${device.tablet} {
-    top: -8rem;
-  }
-  @media ${device.laptop} {
-    top: -12rem;
+    margin-top: 2rem;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
   }
 `;
 const Desc = styled.div`
   color: #fff;
   margin: 3rem;
+  font-family: "Goldman", cursive;
+
   @media ${device.tablet} {
     width: 40%;
-    padding: 2rem 1rem;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
     margin: 0rem auto;
+    padding: 2rem 1rem;
+    /* border-left: 1px solid #fff; */
+    /* border-right: 1px solid #fff; */
+    /* border: 1px solid green; */
   }
   @media ${device.laptop} {
     margin-left: auto;
@@ -172,4 +160,73 @@ const Tech = styled.div`
 `;
 const TechList = styled.ul`
   margin-left: 3rem;
+
+  li {
+    font-family: "Goldman", cursive;
+  }
+`;
+const LoadingContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  transition-duration: 0.8s;
+  background-color: rgba(${(props) => props.colors});
+  /* border: 1px solid red; */
+`;
+const LoadingWrapper = styled.div`
+  position: absolute;
+  z-index: 1;
+`;
+const Vid = styled.div`
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  position: relative;
+  width: 100%;
+  margin-right: 0.6rem;
+  box-shadow: 0 0 25px 4px #fff;
+  /* border: 6px solid blue; */
+
+  @media ${device.tablet} {
+    width: 70%;
+  }
+`;
+const ButtonsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  /* border: 1px solid cornflowerblue; */
+`;
+const ProjectButton = styled.button`
+  &:focus {
+    outline-color: #67cf97;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  min-width: 4rem;
+  min-height: 3rem;
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.bg};
+  margin: 0 1rem;
+  padding: 0 0.7rem;
+  font-family: "Goldman", cursive;
+  border-radius: 5px;
+  border: none;
+
+  img {
+    width: 20px;
+    margin-left: 0.5rem;
+  }
 `;

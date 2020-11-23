@@ -36,6 +36,7 @@ const Stars = (props) => {
 export default Stars;
 
 const Star = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   display: -webkit-inline-box;
@@ -51,7 +52,4 @@ const Star = styled.div`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
-  top: 0;
-  left: 0;
 `;

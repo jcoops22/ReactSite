@@ -53,10 +53,19 @@ const Typer = (props) => {
             {letter}
           </Type>
         ))}
-        <Underline className="underline" />
-        <Icon className="icon">
-          <Spinner top={"-2rem"} width={"1.7rem"} />
-        </Icon>
+        {props.underline ? <Underline className="underline" /> : null}
+        {props.icon ? (
+          <Icon className="icon">
+            <Spinner
+              top={"-2rem"}
+              width={"1.7rem"}
+              right={"10.5rem"}
+              wrapperLeft={props.wrapperLeft}
+              wrapperTop={props.wrapperTop}
+              pointerEvents={props.pointerEvents}
+            />
+          </Icon>
+        ) : null}
       </div>
     </div>
   );
@@ -68,7 +77,6 @@ export default Typer;
 const Type = styled.span`
   position: relative;
   color: #fff;
-  /* color: #00ff00; */
   visibility: hidden;
   -webkit-transition-duration: 1s;
   -o-transition-duration: 1s;
@@ -101,32 +109,11 @@ const Underline = styled.div`
   }
 `;
 const Icon = styled.div`
+  position: relative;
   opacity: 0;
   display: flex;
-  justify-content: flex-end;
-  align-content: flex-start;
+  justify-content: center;
+  align-content: center;
   transition-duration: 1.4s;
   /* border: 1px solid red; */
 `;
-// const Icon = styled.img`
-//   display: none;
-//   -webkit-transition-duration: 0.8s;
-//   -o-transition-duration: 0.8s;
-//   transition-duration: 0.8s;
-//   position: relative;
-//   width: 1.4rem;
-//   top: -2rem;
-//   left: 104%;
-//   opacity: 0;
-//   -webkit-animation-name: twist;
-//   animation-name: twist;
-//   -webkit-animation-duration: 1.6s;
-//   animation-duration: 1.6s;
-//   -webkit-animation-fill-mode: backwards;
-//   animation-fill-mode: backwards;
-//   -webkit-animation-iteration-count: infinite;
-//   animation-iteration-count: infinite;
-//   @media ${device.mobileL} {
-//     display: initial;
-//   }
-// `;
