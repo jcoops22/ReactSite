@@ -17,7 +17,7 @@ class Projects extends Component {
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769279/Portfolio%20Site/project%20videos/hbssc_t9zgga.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605987244/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_12.32.14_PM_dhtpic.png",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1606172387/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_12.32.14_PM_hvljzi.png",
         github: "https://github.com/jcoops22/hbs",
         site: "https://jcoops22.github.io/hbs/",
       },
@@ -31,7 +31,7 @@ class Projects extends Component {
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769333/Portfolio%20Site/project%20videos/pwdsc_jgexsq.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605997096/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.17.27_PM_urzivt.png",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159529/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.17.27_PM_niibjs.png",
         github: "https://github.com/devpointlabs/gym-pact",
         site: "http://gympact.herokuapp.com/",
       },
@@ -45,7 +45,7 @@ class Projects extends Component {
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769320/Portfolio%20Site/project%20videos/notebooksc_tvtkiu.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605997598/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.26.11_PM_f72pmz.png",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159526/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.26.11_PM_m91ghb.png",
         github: "https://github.com/jcoops22/notebookApp",
         site: null,
       },
@@ -72,7 +72,7 @@ class Projects extends Component {
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769333/Portfolio%20Site/project%20videos/pwdsc_jgexsq.mov",
         img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1605980808/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_10.45.18_AM_iqjwyq.png",
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159526/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_10.45.18_AM_ql5daw.png",
         github: "https://github.com/jcoops22/pwdManager",
         site: null,
       },

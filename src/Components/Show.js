@@ -106,6 +106,9 @@ const BackButtonDiv = styled.div`
   width: 8rem;
 `;
 const Button = styled.button`
+  &:focus {
+    outline-color: #67cf97;
+  }
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -147,8 +150,7 @@ const Desc = styled.div`
     width: 40%;
     margin: 0rem auto;
     padding: 2rem 1rem;
-    /* border-left: 1px solid #fff; */
-    /* border-right: 1px solid #fff; */
+    line-height: 1.4;
     /* border: 1px solid green; */
   }
   @media ${device.laptop} {
@@ -200,10 +202,12 @@ const Vid = styled.div`
 `;
 const ButtonsWrapper = styled.div`
   width: 100%;
+  max-width: 550px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 1rem;
-  margin-top: 1rem;
+  margin: 0 auto;
+  margin-top: 2rem;
   /* border: 1px solid cornflowerblue; */
 `;
 const ProjectButton = styled.button`
@@ -219,7 +223,6 @@ const ProjectButton = styled.button`
   min-height: 3rem;
   color: ${(props) => props.color};
   background-color: ${(props) => props.bg};
-  margin: 0 1rem;
   padding: 0 0.7rem;
   font-family: "Goldman", cursive;
   border-radius: 5px;

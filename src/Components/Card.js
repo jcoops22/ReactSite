@@ -75,7 +75,7 @@ export default Card;
 // styles
 const Cards = styled.div`
   &:hover {
-    box-shadow: 0 0 15px 4px #67cf97;
+    /* box-shadow: 0 0 15px 4px #67cf97; */
   }
   position: relative;
   margin: 1rem 0;
