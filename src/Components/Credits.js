@@ -102,6 +102,7 @@ const Header = styled.h4`
   border-bottom: 1px solid black;
 `;
 const CreditsDiv = styled.div`
+  display: none;
   padding: 1rem;
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -113,9 +114,6 @@ const CreditsDiv = styled.div`
   top: 30vh;
   z-index: 97;
   cursor: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   justify-content: center;
   padding-left: 4rem;
   -webkit-box-orient: vertical;
@@ -131,6 +129,10 @@ const CreditsDiv = styled.div`
   box-shadow: -8px 4px 12px 0px #eb4242;
   border-left: 7px solid #eb5b42;
   /* border: 1px solid red; */
+
+  @media ${device.tablet} {
+    display: flex;
+  }
 `;
 const Line = styled.div`
   width: 100%;
