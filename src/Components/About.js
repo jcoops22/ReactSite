@@ -11,8 +11,15 @@ class About extends Component {
   };
 
   componentDidMount() {
+    let wrapper = document.querySelector("#about_wrapper");
     // slide to the paragraph
     this.populateComets(8, 100, 42);
+    // if mobile slide into view
+    return window.innerWidth < 768
+      ? setTimeout(() => {
+          wrapper.scrollIntoView();
+        }, 7000)
+      : null;
   }
 
   // make comets
@@ -41,7 +48,7 @@ class About extends Component {
             delay={1500}
           />
         </TyperWrapper>
-        <div className="animationWrapper">
+        <AnimationWrapper className="animationWrapper">
           <Comets>
             {this.state.comets.map((comet, ind) => (
               <Comet
@@ -56,8 +63,8 @@ class About extends Component {
           <div className="spaceship_wrapper">
             <Ship src={spaceship} />
           </div>
-        </div>
-        <Wrapper>
+        </AnimationWrapper>
+        <Wrapper id="about_wrapper">
           <Picture />
           <Bio>
             <span>Though I'm originally from North Carolina </span>, I've been
@@ -83,11 +90,15 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
   height: 88vh;
+  padding-top: 1rem;
   /* border: 1px solid red; */
 `;
 const TyperWrapper = styled.div`
   margin-top: 1rem;
   /* border: 1px solid red; */
+`;
+const AnimationWrapper = styled.div`
+  margin-bottom: 2rem;
 `;
 const Comets = styled.div`
   visibility: hidden;
@@ -141,7 +152,6 @@ const Wrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 2rem;
   padding: 0.7rem;
   width: 100%;
   overflow-x: hidden;
@@ -163,6 +173,10 @@ const Wrapper = styled.div`
   }
   @media ${device.laptop} {
     margin-top: 9vh;
+  }
+
+  @media ${device.laptopL} {
+    width: 80%;
   }
 `;
 const Picture = styled.div`

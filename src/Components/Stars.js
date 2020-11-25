@@ -52,4 +52,5 @@ const Star = styled.div`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  /* border: 1px solid red; */
 `;

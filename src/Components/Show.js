@@ -15,7 +15,9 @@ const Show = (props) => {
   const [siteLink] = useState(
     "https://res.cloudinary.com/drucvvo7f/image/upload/v1606111633/Portfolio%20Site/Icons/external-svgrepo-com_exwjzd.svg"
   );
-
+  const [backArrow] = useState(
+    "https://res.cloudinary.com/drucvvo7f/image/upload/v1606280694/Portfolio%20Site/Icons/left-arrow-svgrepo-com_fidtww.svg"
+  );
   useEffect(() => {}, [loading]);
 
   const ready = () => {
@@ -65,6 +67,11 @@ const Show = (props) => {
             height="100%"
           />
         </Vid>
+        <ArrowDiv>
+          <Link to="/projects">
+            <img src={backArrow} alt="go back" />
+          </Link>
+        </ArrowDiv>
       </Wrapper>
       <ButtonsWrapper>
         {project.github ? (
@@ -97,13 +104,18 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
   /* border: 1px solid red; */
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     width: 80%;
   }
 `;
 const BackButtonDiv = styled.div`
   height: 4rem;
   width: 8rem;
+  /* border: 1px solid red; */
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 const Button = styled.button`
   &:focus {
@@ -119,6 +131,7 @@ const Button = styled.button`
   border-radius: 5px;
   color: ${(props) => props.color};
   background-color: ${(props) => props.bg};
+  /* border: 1px solid red; */
 `;
 const H1 = styled.h1`
   color: white;
@@ -126,6 +139,7 @@ const H1 = styled.h1`
   margin: 1rem 0;
 
   @media ${device.tablet} {
+    margin-bottom: 3rem;
     position: -webkit-sticky;
     position: sticky;
   }
@@ -133,6 +147,8 @@ const H1 = styled.h1`
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   /* border: 1px solid red; */
 
   @media ${device.tablet} {
@@ -164,6 +180,7 @@ const TechList = styled.ul`
   margin-left: 3rem;
 
   li {
+    color: #67cf97;
     font-family: "Goldman", cursive;
   }
 `;
@@ -192,12 +209,32 @@ const Vid = styled.div`
   transition-duration: 0.5s;
   position: relative;
   width: 100%;
+  height: fit-content;
   margin-right: 0.6rem;
   box-shadow: 0 0 25px 4px #fff;
   /* border: 6px solid blue; */
 
   @media ${device.tablet} {
-    width: 70%;
+    width: 100%;
+  }
+`;
+const ArrowDiv = styled.div`
+  display: none;
+  height: 100%;
+  align-self: center;
+  margin-right: 8%;
+  /* border: 2px solid red; */
+
+  img {
+    &:hover {
+      opacity: 1;
+    }
+    opacity: 0.7;
+    width: 3rem;
+  }
+
+  @media ${device.tablet} {
+    display: initial;
   }
 `;
 const ButtonsWrapper = styled.div`

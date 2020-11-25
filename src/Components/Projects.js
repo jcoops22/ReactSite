@@ -105,12 +105,14 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 88%;
+  padding-top: 2rem;
   /* border: 1px solid red; */
 `;
 const Wrapper = styled.div`
   padding: 0.6rem;
   height: 87%;
   width: 100%;
+  margin-top: 1rem;
   overflow-y: scroll;
   display: -webkit-box;
   display: -ms-flexbox;

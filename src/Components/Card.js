@@ -74,9 +74,6 @@ export default Card;
 
 // styles
 const Cards = styled.div`
-  &:hover {
-    /* box-shadow: 0 0 15px 4px #67cf97; */
-  }
   position: relative;
   margin: 1rem 0;
   width: 100%;
@@ -92,6 +89,9 @@ const Cards = styled.div`
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
+  border-radius: 5px;
+  /* border: 1px solid red; */
+
   @media ${device.tablet} {
     margin: 1rem;
   }
