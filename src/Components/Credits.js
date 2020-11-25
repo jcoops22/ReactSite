@@ -14,12 +14,12 @@ class Credits extends Component {
       {
         source: "React",
         description: "Built with",
-        href: "https://reactjs.org/docs/getting-started.html",
+        href: "https://reactjs.org/",
       },
       {
         source: "Styled Components",
         description: "Styled with",
-        href: "https://styled-components.com/docs/basics#coming-from-css",
+        href: "https://styled-components.com/",
       },
       {
         source: "Jake Weirick",
