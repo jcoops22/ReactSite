@@ -28,14 +28,12 @@ const Card = (props) => {
     // hover events
     images.forEach((image, ind) => {
       image.addEventListener("mouseover", () => {
-        // overlay[ind].style.maxHeight = "none";
         overlay[ind].style.opacity = 1;
         image.style.opacity = "0.2";
         image.style.transform = "scale(1.2)";
         desc[ind].style.zIndex = "1";
       });
       image.addEventListener("mouseout", () => {
-        // overlay[ind].style.maxHeight = "212px";
         overlay[ind].style.opacity = 0;
         image.style.opacity = "1";
         image.style.transform = "scale(1)";
@@ -43,6 +41,7 @@ const Card = (props) => {
       });
     });
   };
+
   return (
     <Cards className="card">
       <Link
@@ -62,6 +61,7 @@ const Card = (props) => {
         />
         <Overlay className="card_overlay" background={props.project.hover}>
           <Desc className="desc" color={props.project.color}>
+            <ProjectName>{props.project.name}</ProjectName>
             {props.project.desc}
           </Desc>
         </Overlay>
@@ -120,9 +120,16 @@ const Desc = styled.div`
   font-size: 1.1rem;
   line-height: 1.1;
   color: ${(props) => props.color};
+
   @media ${device.tablet} {
     display: inline;
   }
+`;
+const ProjectName = styled.h4`
+  position: absolute;
+  top: -2rem;
+  left: 1rem;
+  font-size: 1.2rem;
 `;
 const Overlay = styled.div`
   -webkit-transition-duration: 0.5s;

@@ -190,7 +190,7 @@ const Picture = styled.div`
   background-size: cover;
   animation: slideInFromLeft 0.8s backwards;
   animation-delay: 3s;
-  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/e_auto_saturation/v1605908375/Portfolio%20Site/Background%20Pics/LinkedIn_ltcvfa.jpg");
+  background-image: url("https://res.cloudinary.com/drucvvo7f/image/upload/v1606713593/Portfolio%20Site/Background%20Pics/LinkedIn_xi1shg.jpg");
   box-shadow: 0 0 25px 4px #fff;
   /* border: 1px solid blue; */
   @media ${device.tablet} {

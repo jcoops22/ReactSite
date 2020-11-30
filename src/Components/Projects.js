@@ -8,6 +8,27 @@ class Projects extends Component {
   state = {
     projects: [
       {
+        name: "Phew! Apparel",
+        hover: "#5C80BC",
+        color: "#fff",
+        technologies: [
+          "ReactJS",
+          "Redux",
+          "NodeJS",
+          "Firebase",
+          "Stripe/Paypal Integration",
+          "NodeMailer",
+        ],
+        desc:
+          "Simple online store built with React/Redux with Firebase database. UserAuth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders.",
+        video:
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1606714361/Portfolio%20Site/project%20videos/Screen_Recording_2020-11-29_at_10.27.58_PM_i2syt6.mov",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1606710568/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-29_at_9.10.09_PM_n9lfws.jpg",
+        github: "https://github.com/jcoops22/phewapparel",
+        site: "https://phewapparel.herokuapp.com/",
+      },
+      {
         name: "HairByShandel",
         hover: "#e0bc75",
         color: "#000",
@@ -29,7 +50,7 @@ class Projects extends Component {
         desc:
           "Social Media app for sharing gym workouts! Sort of an Instagram for workouts. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling.",
         video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769333/Portfolio%20Site/project%20videos/pwdsc_jgexsq.mov",
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1606715036/Portfolio%20Site/project%20videos/Screen_Recording_2020-11-29_at_10.40.39_PM_jmaoap.mov",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159529/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.17.27_PM_niibjs.png",
         github: "https://github.com/devpointlabs/gym-pact",
