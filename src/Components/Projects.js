@@ -36,7 +36,7 @@ class Projects extends Component {
         desc:
           "Local Hair Salon business site. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
         video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769279/Portfolio%20Site/project%20videos/hbssc_t9zgga.mov",
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1606966711/Portfolio%20Site/project%20videos/Screen_Recording_2020-12-02_at_8.29.35_PM_j4on1j.mov",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606172387/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_12.32.14_PM_hvljzi.png",
         github: "https://github.com/jcoops22/hbs",

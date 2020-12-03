@@ -17,7 +17,7 @@ class About extends Component {
     // if mobile slide into view
     return window.innerWidth < 768
       ? setTimeout(() => {
-          wrapper.scrollIntoView();
+          wrapper.scrollIntoView({ behavior: "smooth" });
         }, 7000)
       : null;
   }
