@@ -34,6 +34,8 @@ class Credits extends Component {
       "https://res.cloudinary.com/drucvvo7f/image/upload/v1605854453/Portfolio%20Site/Icons/planet-svgrepo-com_hmkl9h.svg",
     planet:
       "https://res.cloudinary.com/drucvvo7f/image/upload/v1606156556/Portfolio%20Site/Icons/destroyed-planet-svgrepo-com_wdbuko.svg",
+    debris:
+      "https://res.cloudinary.com/drucvvo7f/image/upload/v1607233806/Portfolio%20Site/Icons/meteorite-svgrepo-com_1_ppybtj.svg",
   };
   showCredits = () => {
     this.state.showing === false
@@ -42,8 +44,8 @@ class Credits extends Component {
   };
   render() {
     return (
-      <div>
-        <Icon onClick={this.showCredits} bg={this.state.planetIcon}></Icon>
+      <Container>
+        <Icon onClick={this.showCredits} bg={this.state.planetIcon} />
         <CreditsDiv
           bg={this.state.planet}
           style={{
@@ -64,7 +66,53 @@ class Credits extends Component {
             );
           })}
         </CreditsDiv>
-      </div>
+        <DebrisDiv
+          style={{
+            left: this.state.left,
+          }}
+        >
+          <Debris
+            src={this.state.debris}
+            alt="space debris"
+            top={"-10"}
+            left={"55"}
+            delay={"0.5s"}
+            width={"2rem"}
+          />
+          <Debris
+            src={this.state.debris}
+            alt="space debris"
+            top={"10"}
+            left={"0"}
+            delay={"0.3s"}
+            width={"5rem"}
+          />
+          <Debris
+            src={this.state.debris}
+            alt="space debris"
+            top={"50"}
+            left={"55"}
+            delay={"0.1s"}
+            width={"3rem"}
+          />
+          <Debris
+            src={this.state.debris}
+            alt="space debris"
+            top={"70"}
+            left={"55"}
+            delay={".7s"}
+            width={"5rem"}
+          />
+          <Debris
+            src={this.state.debris}
+            alt="space debris"
+            top={"90"}
+            left={"5"}
+            delay={".6s"}
+            width={"2.5rem"}
+          />
+        </DebrisDiv>
+      </Container>
     );
   }
 }
@@ -72,10 +120,18 @@ class Credits extends Component {
 export default Credits;
 
 // styles
+const Container = styled.div`
+  position: relative;
+  /* border: 1px solid red; */
+`;
 const Icon = styled.button`
   &:focus {
     outline: none;
   }
+  position: fixed;
+  left: calc(100% - 42px);
+  top: 90.5vh;
+  z-index: 98;
   background-image: url(${(props) => props.bg});
   display: none;
   border-radius: 50%;
@@ -83,23 +139,11 @@ const Icon = styled.button`
   height: 36px;
   width: 36px;
   cursor: pointer;
-  position: fixed;
-  left: calc(100% - 42px);
-  top: 90.5vh;
-  z-index: 98;
   padding: 0;
   animation: rotate 5s linear infinite forwards;
   @media ${device.tablet} {
     display: initial;
   }
-`;
-const Header = styled.h4`
-  color: #fff;
-  width: 50%;
-  text-align: center;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid black;
 `;
 const CreditsDiv = styled.div`
   display: none;
@@ -134,6 +178,47 @@ const CreditsDiv = styled.div`
     display: flex;
   }
 `;
+const DebrisDiv = styled.div`
+  display: none;
+  pointer-events: none;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  top: 30vh;
+  z-index: 97;
+  /* border: 1px solid red; */
+
+  @media ${device.tablet} {
+    display: flex;
+  }
+`;
+const Debris = styled.img`
+  position: absolute;
+  width: ${(props) => props.width};
+  top: ${(props) => props.top + "%"};
+  left: ${(props) => props.left + "%"};
+  animation: floatDebris 1s forwards ease ${(props) => props.delay} infinite
+    alternate;
+  /* border: 1px solid blue; */
+
+  @keyframes floatDebris {
+    to {
+      /* top: ${(props) => props.top + 3 + "%"}; */
+      margin-top: 0.5rem;
+    }
+  }
+`;
+const Header = styled.h4`
+  color: #fff;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+`;
 const Line = styled.div`
   width: 100%;
   font-size: 1.1rem;
@@ -144,4 +229,10 @@ const Line = styled.div`
   justify-content: space-around;
   flex-direction: column;
   margin: 5px 0;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;

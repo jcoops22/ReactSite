@@ -20,7 +20,7 @@ class Projects extends Component {
           "NodeMailer",
         ],
         desc:
-          "Simple online store built with React/Redux with Firebase database. UserAuth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders.",
+          "Simple online store built with React/Redux with Firebase database. UserAuth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders. Feel free to buy a shirt from my cousin!",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1606714361/Portfolio%20Site/project%20videos/Screen_Recording_2020-11-29_at_10.27.58_PM_i2syt6.mov",
         img:
@@ -34,7 +34,7 @@ class Projects extends Component {
         color: "#000",
         technologies: ["JavaScript", "HTML5", "CSS3", "GSAP ScrollMagic"],
         desc:
-          "Local Hair Salon business site. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
+          "Local Hair Salon business website. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1606966711/Portfolio%20Site/project%20videos/Screen_Recording_2020-12-02_at_8.29.35_PM_j4on1j.mov",
         img:
@@ -48,7 +48,7 @@ class Projects extends Component {
         color: "#",
         technologies: ["React", "Ruby on Rails", "PostgreSQL", "Semantic UI"],
         desc:
-          "Social Media app for sharing gym workouts! Sort of an Instagram for workouts. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling.",
+          "Social Media app for sharing gym workouts! Sort of an Instagram for workouts. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling. Worked on a team with two other developers.",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1606715036/Portfolio%20Site/project%20videos/Screen_Recording_2020-11-29_at_10.40.39_PM_jmaoap.mov",
         img:
