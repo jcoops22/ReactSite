@@ -126,10 +126,12 @@ const Desc = styled.div`
   }
 `;
 const ProjectName = styled.h4`
-  position: absolute;
+  position: relative;
   top: -2rem;
   left: 1rem;
+  width: 100%;
   font-size: 1.2rem;
+  /* border: 1px solid red; */
 `;
 const Overlay = styled.div`
   -webkit-transition-duration: 0.5s;

@@ -1,7 +1,10 @@
 /* Fonts:  */
-/* font-family: "Roboto Mono", monospace; */
-/* font-family: 'Josefin Sans', sans-serif; */
-/* font-family: 'Goldman', cursive; */
+/* 
+font-family: "Roboto Mono", monospace; 
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Goldman', cursive; 
+font-family: 'Do Hyeon', sans-serif; 
+/*
 /* green: #67cf97 */
 /* showbutton blue: #4287f5 */
 /* cream: #f7f6f0 */
@@ -11,7 +14,8 @@
   margin: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Chelsea Market", cursive;
+  /* font-family: "Chelsea Market", cursive; */
+  font-family: "Do Hyeon", sans-serif;
   scroll-behavior: smooth;
 }
 html {

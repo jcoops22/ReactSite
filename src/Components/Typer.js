@@ -91,7 +91,6 @@ const Type = styled.span`
   animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  font-family: "Chelsea Market", cursive;
   animation-delay: ${(props) => props.delay};
 `;
 const Underline = styled.div`

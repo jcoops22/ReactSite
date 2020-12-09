@@ -29,7 +29,7 @@ const Home = () => {
             sentence="I'd love to help build your next project!"
             underline={"true"}
             icon={"true"}
-            fontSize={"1rem"}
+            fontSize={"1.2rem"}
             wrapperTop={"3rem"}
             wrapperLeft={"0"}
             pointerEvents={"auto"}
@@ -86,7 +86,7 @@ const Intro = styled.p`
   padding: 0.5rem;
   text-align: center;
   line-height: 1.4;
-  font-family: "Chelsea Market", cursive;
+  font-size: 1.2rem;
   @media ${device.tablet} {
     width: 70%;
   }

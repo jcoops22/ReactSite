@@ -166,6 +166,7 @@ const Lnk = styled.span`
   height: 3rem;
   width: 5rem;
   margin: 0.5rem;
+  font-size: 1.3rem;
   @media ${device.tablet} {
     &:hover {
       width: 6rem;

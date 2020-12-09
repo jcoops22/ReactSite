@@ -147,6 +147,7 @@ const Wrapper = styled.div`
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  /* border: 1px solid red; */
   @media ${device.tablet} {
     /* width: 90%; */
   }
