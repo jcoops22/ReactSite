@@ -22,7 +22,7 @@ class Projects extends Component {
         desc:
           "Simple online store built with React/Redux with Firebase database. UserAuth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders. Feel free to buy a shirt from my cousin!",
         video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1606714361/Portfolio%20Site/project%20videos/Screen_Recording_2020-11-29_at_10.27.58_PM_i2syt6.mov",
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1607709562/Portfolio%20Site/project%20videos/PhewVid_jv975h.mp4",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606710568/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-29_at_9.10.09_PM_n9lfws.jpg",
         github: "https://github.com/jcoops22/phewapparel",
@@ -36,7 +36,7 @@ class Projects extends Component {
         desc:
           "Local Hair Salon business website. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
         video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1606966711/Portfolio%20Site/project%20videos/Screen_Recording_2020-12-02_at_8.29.35_PM_j4on1j.mov",
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711621/Portfolio%20Site/project%20videos/HBSVid_caulah.mp4",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606172387/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_12.32.14_PM_hvljzi.png",
         github: "https://github.com/jcoops22/hbs",
@@ -50,7 +50,7 @@ class Projects extends Component {
         desc:
           "Social Media app for sharing gym workouts! Sort of an Instagram for workouts. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling. Worked on a team with two other developers.",
         video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1606715036/Portfolio%20Site/project%20videos/Screen_Recording_2020-11-29_at_10.40.39_PM_jmaoap.mov",
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711616/Portfolio%20Site/project%20videos/GymPactVid_c7tsav.mp4",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159529/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.17.27_PM_niibjs.png",
         github: "https://github.com/devpointlabs/gym-pact",
@@ -64,7 +64,7 @@ class Projects extends Component {
         desc:
           "Simple notepad app with a backend. Built with VueJS, NodeJS, and Mongo DB database.",
         video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769320/Portfolio%20Site/project%20videos/notebooksc_tvtkiu.mov",
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711591/Portfolio%20Site/project%20videos/NotebookVid_jktb7z.mp4",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159526/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.26.11_PM_m91ghb.png",
         github: "https://github.com/jcoops22/notebookApp",
@@ -91,7 +91,7 @@ class Projects extends Component {
         desc:
           "Password tracker app. Lets you enter passwords and even generate your own strong password and tag each entry with keywords to search quickly!",
         video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769333/Portfolio%20Site/project%20videos/pwdsc_jgexsq.mov",
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711657/Portfolio%20Site/project%20videos/PwdTrackerVid_fhv9ht.mp4",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159526/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_10.45.18_AM_ql5daw.png",
         github: "https://github.com/jcoops22/pwdManager",

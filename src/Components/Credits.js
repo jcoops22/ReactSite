@@ -53,7 +53,7 @@ class Credits extends Component {
           }}
         >
           <Header>
-            Gotta give some <span style={{ color: "#000" }}> props...</span>
+            Giving some <span style={{ color: "#000" }}> props...</span>
           </Header>
           {this.state.credits.map((c, ind) => {
             return (
