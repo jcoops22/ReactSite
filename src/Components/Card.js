@@ -24,7 +24,7 @@ const Card = (props) => {
       images.forEach((image) => {
         image.style.opacity = "1";
       });
-    }, 1000);
+    }, 100);
     // hover events
     images.forEach((image, ind) => {
       image.addEventListener("mouseover", () => {

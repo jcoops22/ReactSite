@@ -20,7 +20,7 @@ class Projects extends Component {
           "NodeMailer",
         ],
         desc:
-          "Simple online store built with React/Redux with Firebase database. UserAuth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders. Feel free to buy a shirt from my cousin!",
+          "Robust online store built with React/Redux and Firebase database. UserAuth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders. Feel free to buy a shirt from my cousin!",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1607709562/Portfolio%20Site/project%20videos/PhewVid_jv975h.mp4",
         img:
@@ -34,7 +34,7 @@ class Projects extends Component {
         color: "#000",
         technologies: ["JavaScript", "HTML5", "CSS3", "GSAP ScrollMagic"],
         desc:
-          "Local Hair Salon business website. Static site, built with vanilla JS, HTML5, CSS3, and some GSAP ScrollMagic",
+          "Local Hair Salon business website. Static site, built with JS, HTML5, CSS3, and GSAP ScrollMagic library",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711621/Portfolio%20Site/project%20videos/HBSVid_caulah.mp4",
         img:
@@ -48,7 +48,7 @@ class Projects extends Component {
         color: "#",
         technologies: ["React", "Ruby on Rails", "PostgreSQL", "Semantic UI"],
         desc:
-          "Social Media app for sharing gym workouts! Sort of an Instagram for workouts. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling. Worked on a team with two other developers.",
+          "Social Media app for sharing gym workouts! Sort of an 'Instagram for workouts'. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling. Worked on a team with two other developers for this Bootcamp capstone project.",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711616/Portfolio%20Site/project%20videos/GymPactVid_c7tsav.mp4",
         img:
