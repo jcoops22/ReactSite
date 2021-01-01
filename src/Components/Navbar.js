@@ -89,7 +89,7 @@ const Navbar = ({ change }) => {
     setTimeout(() => {
       explore.style.display = "flex";
       explore.style.animationName = "shift";
-    }, 12000);
+    }, 15000);
   };
   // RENDER
 

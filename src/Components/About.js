@@ -72,8 +72,18 @@ class About extends Component {
             experience working in the tech industry, mostly troubleshooting
             software issues. While this has taught me much, builing websites and
             developing web applications has quickly become a passion of mine.
-            When I'm not neck deep in code, I'm probably spending time with my
-            family, gaming online or playing the drums.
+            Over the last three years I've taught myself code through various
+            online tutorials and most recently the{" "}
+            <a
+              href="https://www.devpointlabs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DevPoint Labs
+            </a>{" "}
+            bootcamp (Salt Lake City). When I'm not neck deep in code, I'm
+            probably spending time with my family, playing the drums or gaming
+            with friends.
           </Bio>
         </Wrapper>
       </Container>
@@ -183,6 +193,7 @@ const Picture = styled.div`
   position: relative;
   z-index: 1;
   left: 0;
+  top: -3rem;
   width: 200px;
   height: 200px;
   margin-bottom: 2rem;
@@ -216,6 +227,13 @@ const Bio = styled.div`
   animation: slideInFromRight 0.8s backwards;
   animation-delay: 3s;
   /* border: 1px solid red; */
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+    color: #67cf97;
+  }
 
   span {
     font-size: 2rem;

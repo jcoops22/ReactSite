@@ -8,6 +8,20 @@ class Projects extends Component {
   state = {
     projects: [
       {
+        name: "Stock Market Dividends Tracker",
+        hover: "#7249d1",
+        color: "#fff",
+        technologies: ["ReactJS", "Redux", "NodeJS", "Firebase", "D3"],
+        desc:
+          "Stock Market app to track your dividend payouts. Hooks into two API's, one for the stock marget symbol data and one for the real-time market data. D3 for graph visualizations. Firebase database and user auth",
+        video:
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1609539228/Portfolio%20Site/project%20videos/Untitled_v8jsh3.mp4",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1609535654/Portfolio%20Site/Projects%20Images/Screen_Shot_2021-01-01_at_2.10.34_PM_ryq51b.png",
+        github: "https://github.com/jcoops22/dividend_tracker",
+        site: "https://sleepy-stonebraker-5b5314.netlify.app/",
+      },
+      {
         name: "Phew! Apparel",
         hover: "#5C80BC",
         color: "#fff",
@@ -20,7 +34,7 @@ class Projects extends Component {
           "NodeMailer",
         ],
         desc:
-          "Robust online store built with React/Redux and Firebase database. UserAuth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders. Feel free to buy a shirt from my cousin!",
+          "Robust online store built with React/Redux and Firebase database. User auth, emailed receipts and updates on shipping. Paypal/Stripe payment integration. A complete admin system to manage products and orders. Feel free to buy a shirt from my cousin!",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1607709562/Portfolio%20Site/project%20videos/PhewVid_jv975h.mp4",
         img:
@@ -34,7 +48,7 @@ class Projects extends Component {
         color: "#000",
         technologies: ["JavaScript", "HTML5", "CSS3", "GSAP ScrollMagic"],
         desc:
-          "Local Hair Salon business website. Static site, built with JS, HTML5, CSS3, and GSAP ScrollMagic library",
+          "Local Hair Salon business website. Static site, built with JavaScript, HTML5, CSS3, and GSAP ScrollMagic library",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711621/Portfolio%20Site/project%20videos/HBSVid_caulah.mp4",
         img:
@@ -48,13 +62,27 @@ class Projects extends Component {
         color: "#",
         technologies: ["React", "Ruby on Rails", "PostgreSQL", "Semantic UI"],
         desc:
-          "Social Media app for sharing gym workouts! Sort of an 'Instagram for workouts'. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling. Worked on a team with two other developers for this Bootcamp capstone project.",
+          "Social Media app for sharing gym workouts! Sort of an 'Instagram for workouts'. Built with React frontend Rails backend. Postgresql Database and Semantic UI for styling. Worked on a team with two other developers for this bootcamp capstone project.",
         video:
           "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711616/Portfolio%20Site/project%20videos/GymPactVid_c7tsav.mp4",
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159529/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.17.27_PM_niibjs.png",
         github: "https://github.com/devpointlabs/gym-pact",
         site: "http://gympact.herokuapp.com/",
+      },
+      {
+        name: "Pwd Manager",
+        hover: "#92B6B1",
+        color: "#000",
+        technologies: ["JavaScript", "NodeJS", "MongoDB"],
+        desc:
+          "Password tracker app. Lets you enter passwords and even generate your own strong password and tag each entry with keywords to search quickly!",
+        video:
+          "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711657/Portfolio%20Site/project%20videos/PwdTrackerVid_fhv9ht.mp4",
+        img:
+          "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159526/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_10.45.18_AM_ql5daw.png",
+        github: "https://github.com/jcoops22/pwdManager",
+        site: null,
       },
       {
         name: "Notebook App",
@@ -68,33 +96,6 @@ class Projects extends Component {
         img:
           "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159526/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_3.26.11_PM_m91ghb.png",
         github: "https://github.com/jcoops22/notebookApp",
-        site: null,
-      },
-      // {
-      //   name: "DrumFinder",
-      //   hover: "#000",
-      //   color: "#fff",
-      //   technologies: ["React", "Styled Components"],
-      //   desc:
-      //     "Application to help you pick the perfect drumset for you! I play the drums and wanted to build this single page app to help those others who are in the market for a new kit. Built with ReactJS.",
-      //   video:
-      //     "https://res.cloudinary.com/drucvvo7f/video/upload/v1590769316/Portfolio%20Site/project%20videos/drumfinder_hb4z2x.mov",
-      //   img:
-      //     "https://res.cloudinary.com/drucvvo7f/image/upload/v1590702963/Portfolio%20Site/Projects%20Images/Screenshot_2020-05-28_15.33.35_vnkvi0.png",
-      //   github: "https://github.com/jcoops22/drumfinder",
-      // },
-      {
-        name: "Pwd Manager",
-        hover: "#92B6B1",
-        color: "#000",
-        technologies: ["JavaScript", "NodeJS", "MongoDB"],
-        desc:
-          "Password tracker app. Lets you enter passwords and even generate your own strong password and tag each entry with keywords to search quickly!",
-        video:
-          "https://res.cloudinary.com/drucvvo7f/video/upload/v1607711657/Portfolio%20Site/project%20videos/PwdTrackerVid_fhv9ht.mp4",
-        img:
-          "https://res.cloudinary.com/drucvvo7f/image/upload/v1606159526/Portfolio%20Site/Projects%20Images/Screen_Shot_2020-11-21_at_10.45.18_AM_ql5daw.png",
-        github: "https://github.com/jcoops22/pwdManager",
         site: null,
       },
     ],
@@ -115,6 +116,9 @@ class Projects extends Component {
             <Card key={ind} project={project} />
           ))}
         </Wrapper>
+        <p>
+          *All projects built with mobile first reposonsive design methodologies
+        </p>
       </Container>
     );
   }
@@ -128,6 +132,21 @@ const Container = styled.div`
   height: 88%;
   padding-top: 2rem;
   /* border: 1px solid red; */
+
+  p {
+    display: none;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+
+    @media ${device.tabletS} {
+      padding-left: 10%;
+      display: initial;
+    }
+    @media ${device.tablet} {
+      padding-left: 20%;
+    }
+  }
 `;
 const Wrapper = styled.div`
   padding: 0.6rem;
@@ -148,7 +167,4 @@ const Wrapper = styled.div`
   -ms-flex-pack: center;
   justify-content: center;
   /* border: 1px solid red; */
-  @media ${device.tablet} {
-    /* width: 90%; */
-  }
 `;
