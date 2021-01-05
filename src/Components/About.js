@@ -184,16 +184,11 @@ const Wrapper = styled.div`
   @media ${device.laptop} {
     margin-top: 9vh;
   }
-
-  @media ${device.laptopL} {
-    width: 80%;
-  }
 `;
 const Picture = styled.div`
   position: relative;
   z-index: 1;
   left: 0;
-  top: -3rem;
   width: 200px;
   height: 200px;
   margin-bottom: 2rem;
