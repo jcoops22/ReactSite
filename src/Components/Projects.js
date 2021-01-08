@@ -8,7 +8,7 @@ class Projects extends Component {
   state = {
     projects: [
       {
-        name: "Stock Market Dividends Tracker",
+        name: "Dividend Tracker",
         hover: "#7249d1",
         color: "#fff",
         technologies: ["ReactJS", "Redux", "NodeJS", "Firebase", "D3"],
@@ -136,7 +136,7 @@ const Container = styled.div`
   p {
     display: none;
     width: 100%;
-    color: #fff;
+    color: #67cf97;
     text-align: center;
 
     @media ${device.tabletS} {
